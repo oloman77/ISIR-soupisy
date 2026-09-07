@@ -1,12 +1,162 @@
-<!doctype html><html lang="cs"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>ISIR – 180 dní</title>
-<style>body{font-family:system-ui;margin:0;background:#f5f6f8;color:#111827}.wrap{max-width:1400px;margin:auto;padding:24px}.panel{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px;margin:16px 0}.stats,.controls{display:flex;gap:18px;flex-wrap:wrap;align-items:center}input,select{font:inherit;padding:10px;border:1px solid #d1d5db;border-radius:10px}input{min-width:250px}select{min-width:220px}table{width:100%;border-collapse:collapse}th,td{padding:9px;border-bottom:1px solid #eee;text-align:left;vertical-align:top;font-size:13px}th{background:#f9fafb}.yes{font-weight:700;color:#065f46}.no{color:#6b7280}a{color:#2563eb}.badge{display:inline-block;padding:3px 7px;border-radius:999px;background:#f3f4f6;margin:1px 2px;font-size:12px}.warn{color:#92400e}</style></head>
-<body><div class="wrap"><h1>ISIR – soupisy majetkové podstaty</h1>
-<div class="panel stats"><div><b>Období:</b><br><span id="days">—</span> dní</div><div><b>Aktualizace:</b><br><span id="updated">—</span></div><div><b>Všechny:</b><br><span id="count">—</span></div><div><b>S nemovitostí:</b><br><span id="realCount">—</span></div><div><b>PDF čeká na analýzu:</b><br><span id="remaining">—</span></div><div><b>Stav ISIR:</b><br><span id="state">—</span></div></div>
-<div class="panel controls"><input id="q" placeholder="Spis, text, obec, k. ú.…" oninput="render()"><select id="rf" onchange="render()"><option value="all">Všechny soupisy</option><option value="yes">Jen s nemovitostí</option><option value="no">Jen bez zjištěné nemovitosti</option></select><select id="office" onchange="render()"><option value="">Všechna katastrální pracoviště</option></select></div>
-<div class="panel" style="overflow:auto;padding:0"><table><thead><tr><th>Datum</th><th>Spis</th><th>Nemovitost</th><th>Katastrální území</th><th>Katastrální pracoviště</th><th>Signály</th><th>Popis</th><th>Dokument</th></tr></thead><tbody id="rows"></tbody></table></div></div>
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ISIR – nemovitosti</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;background:#f5f6f8;color:#111827}
+.wrap{max-width:1400px;margin:auto;padding:24px}
+h1{margin-bottom:6px}.muted{color:#6b7280}
+.panel{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px;margin:16px 0}
+.stats,.controls{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+input,select{font:inherit;padding:10px;border:1px solid #d1d5db;border-radius:10px}
+input{min-width:280px}select{min-width:250px}
+table{width:100%;border-collapse:collapse}
+th,td{padding:9px;border-bottom:1px solid #eee;text-align:left;vertical-align:top;font-size:13px}
+th{background:#f9fafb;position:sticky;top:0}
+a{color:#2563eb}
+.badge{display:inline-block;padding:3px 7px;border-radius:999px;background:#f3f4f6;margin:1px 2px;font-size:12px}
+.small{font-size:12px;color:#6b7280}.warn{color:#92400e}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>ISIR – nemovitosti v soupisu majetkové podstaty</h1>
+<div class="muted">
+Zobrazeny jsou pouze dokumenty PDF, které byly úspěšně přečteny
+a ve kterých crawler potvrdil znaky nemovitosti.
+</div>
+
+<div class="panel stats">
+  <div><b>Období:</b><br><span id="days">—</span> dní</div>
+  <div><b>Aktualizace:</b><br><span id="updated">—</span></div>
+  <div><b>Potvrzené nemovitosti:</b><br><span id="realCount">—</span></div>
+  <div><b>PDF čeká na kontrolu:</b><br><span id="remaining">—</span></div>
+  <div><b>Stav ISIR:</b><br><span id="state">—</span></div>
+</div>
+
+<div class="panel controls">
+  <input id="q" placeholder="Spis, text, obec, k. ú.…" oninput="render()">
+  <select id="office" onchange="render()">
+    <option value="">Všechna katastrální pracoviště</option>
+  </select>
+</div>
+
+<div class="panel" style="overflow:auto;padding:0">
+<table>
+<thead>
+<tr>
+  <th>Datum</th>
+  <th>Spis</th>
+  <th>Katastrální území</th>
+  <th>Katastrální pracoviště</th>
+  <th>Signály nemovitosti</th>
+  <th>Popis</th>
+  <th>PDF</th>
+</tr>
+</thead>
+<tbody id="rows"></tbody>
+</table>
+</div>
+
+</div>
+
 <script>
-let data={items:[]};function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}function badges(a){return(a||[]).map(x=>`<span class="badge">${esc(x)}</span>`).join('')}
-function populate(){const s=document.getElementById('office');const opts=data.katastralni_pracoviste_options||[];s.innerHTML='<option value="">Všechna katastrální pracoviště</option>'+opts.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join('')}
-function render(){const q=(document.getElementById('q').value||'').toLowerCase(),rf=document.getElementById('rf').value,of=document.getElementById('office').value;const items=(data.items||[]).filter(x=>{const h=[x.spisova_znacka,x.popis_udalosti,x.poznamka,(x.katastralni_uzemi||[]).join(' '),(x.katastralni_pracoviste||[]).join(' '),(x.obce||[]).join(' ')].join(' ').toLowerCase();if(q&&!h.includes(q))return false;if(rf==='yes'&&!x.obsahuje_nemovitost)return false;if(rf==='no'&&x.obsahuje_nemovitost)return false;if(of&&!(x.katastralni_pracoviste||[]).includes(of))return false;return true});document.getElementById('rows').innerHTML=items.map(x=>`<tr><td>${esc(x.datum_zverejneni||x.datum_zalozeni)}</td><td>${esc(x.spisova_znacka)}</td><td>${x.obsahuje_nemovitost?'<span class="yes">ANO</span>':(x.pdf_checked?'<span class="no">NE</span>':'<span class="warn">ČEKÁ</span>')}</td><td>${badges(x.katastralni_uzemi)}</td><td>${badges(x.katastralni_pracoviste)}</td><td>${esc((x.nemovitost_signaly||[]).join(', '))}</td><td>${esc(x.popis_udalosti||x.poznamka)}</td><td>${x.dokument_url?`<a target="_blank" href="${esc(x.dokument_url)}">Otevřít</a>`:'—'}</td></tr>`).join('')}
-async function load(){const r=await fetch('results.json?ts='+Date.now());data=await r.json();document.getElementById('days').textContent=data.days_back??'—';document.getElementById('updated').textContent=data.updated_at?new Date(data.updated_at).toLocaleString('cs-CZ'):'—';document.getElementById('count').textContent=data.count??0;document.getElementById('realCount').textContent=data.count_real_estate??0;document.getElementById('remaining').textContent=data.remaining_pdf_analysis??0;document.getElementById('state').textContent=data.caught_up?'Aktuální':'Dohání historická data';populate();render()}load();
-</script></body></html>
+let data={items:[]};
+
+function esc(s){
+  return String(s??'').replace(/[&<>"']/g,m=>({
+    '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'
+  }[m]))
+}
+
+function badges(arr){
+  return (arr||[]).map(x=>`<span class="badge">${esc(x)}</span>`).join('');
+}
+
+function confirmedItems(){
+  return (data.items||[]).filter(x =>
+    x.obsahuje_nemovitost === true &&
+    x.pdf_checked === true &&
+    x.pdf_status === 'ok' &&
+    !!x.dokument_url
+  );
+}
+
+function populateOffices(){
+  const sel=document.getElementById('office');
+  const current=sel.value;
+
+  const offices=[...new Set(
+    confirmedItems().flatMap(x=>x.katastralni_pracoviste||[])
+  )].sort((a,b)=>a.localeCompare(b,'cs'));
+
+  sel.innerHTML=
+    '<option value="">Všechna katastrální pracoviště</option>'+
+    offices.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join('');
+
+  if(offices.includes(current)) sel.value=current;
+}
+
+function render(){
+  const q=(document.getElementById('q').value||'').toLowerCase();
+  const office=document.getElementById('office').value;
+
+  const items=confirmedItems().filter(x=>{
+    const hay=[
+      x.spisova_znacka,
+      x.popis_udalosti,
+      x.poznamka,
+      (x.katastralni_uzemi||[]).join(' '),
+      (x.katastralni_pracoviste||[]).join(' '),
+      (x.obce||[]).join(' '),
+      (x.nemovitost_signaly||[]).join(' ')
+    ].join(' ').toLowerCase();
+
+    if(q && !hay.includes(q)) return false;
+    if(office && !(x.katastralni_pracoviste||[]).includes(office)) return false;
+    return true;
+  });
+
+  document.getElementById('rows').innerHTML=items.map(x=>`
+  <tr>
+    <td>${esc(x.datum_zverejneni||x.datum_zalozeni)}</td>
+    <td>${esc(x.spisova_znacka)}</td>
+    <td>${badges(x.katastralni_uzemi)}</td>
+    <td>${badges(x.katastralni_pracoviste)}</td>
+    <td class="small">${esc((x.nemovitost_signaly||[]).join(', '))}</td>
+    <td>${esc(x.popis_udalosti||x.poznamka)}</td>
+    <td><a target="_blank" href="${esc(x.dokument_url)}">Otevřít PDF</a></td>
+  </tr>`).join('');
+}
+
+async function load(){
+  try{
+    const r=await fetch('results.json?ts='+Date.now());
+    data=await r.json();
+
+    document.getElementById('days').textContent=data.days_back??'—';
+    document.getElementById('updated').textContent=
+      data.updated_at ? new Date(data.updated_at).toLocaleString('cs-CZ') : '—';
+    document.getElementById('realCount').textContent=confirmedItems().length;
+    document.getElementById('remaining').textContent=data.remaining_pdf_analysis??0;
+
+    const current=data.current_id??0, latest=data.latest_id??0;
+    document.getElementById('state').textContent=
+      data.caught_up
+      ? 'Aktuální'
+      : `Dohání historii (${current.toLocaleString('cs-CZ')} / ${latest.toLocaleString('cs-CZ')})`;
+
+    populateOffices();
+    render();
+  }catch(e){
+    document.getElementById('state').textContent='Chyba načtení results.json';
+  }
+}
+
+load();
+</script>
+</body>
+</html>
