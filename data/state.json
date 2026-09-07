@@ -1,7 +1,7 @@
 {
-  "current_id": 76387170,
-  "latest_id_at_run": 80282419,
-  "last_run": "2026-09-07T22:13:58.462930+00:00",
+  "current_id": 76643535,
+  "latest_id_at_run": 80282713,
+  "last_run": "2026-09-07T22:40:10.987145+00:00",
   "days_back": 180,
   "caught_up": false,
   "phase": "isir_backfill"
