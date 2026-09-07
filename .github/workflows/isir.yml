@@ -22,8 +22,8 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install dependencies
-        run: pip install requests pypdf
-      - name: Crawl ISIR
+        run: pip install requests pypdf fonttools
+      - name: Crawl ISIR + map CUZK office
         env:
           DAYS_BACK: "30"
           MAX_BATCHES: "1500"
