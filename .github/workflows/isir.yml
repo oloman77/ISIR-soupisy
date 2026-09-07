@@ -1,45 +1,61 @@
 name: ISIR crawler + Pages
+
 on:
   workflow_dispatch:
   schedule:
     - cron: "17 */2 * * *"
+
 permissions:
   contents: write
   pages: write
   id-token: write
+
 concurrency:
   group: "isir-pages"
   cancel-in-progress: false
+
 jobs:
   crawl-and-deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     steps:
       - uses: actions/checkout@v6
+
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+
       - name: Install dependencies
         run: pip install requests pypdf fonttools
-      - name: Crawl ISIR 180 days
+
+      - name: Crawl ISIR short stage
         env:
           DAYS_BACK: "180"
-          MAX_BATCHES: "1500"
-          MAX_PDF_PER_RUN: "300"
-          PAUSE: "0.10"
+          MAX_BATCHES: "100"
+          MAX_PDF_PER_RUN: "100"
+          PAUSE: "0.08"
+          SOAP_TIMEOUT: "45"
+          PDF_TIMEOUT: "25"
+          MAX_PDF_PAGES: "40"
         run: python crawler.py
+
       - name: Commit state and results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/state.json docs/results.json
-          git diff --cached --quiet || git commit -m "Update ISIR 180-day data"
+          git diff --cached --quiet || git commit -m "Update ISIR staged data"
           git push
+
       - uses: actions/configure-pages@v5
+
       - uses: actions/upload-pages-artifact@v4
         with:
           path: docs
+
       - id: deployment
         uses: actions/deploy-pages@v4
