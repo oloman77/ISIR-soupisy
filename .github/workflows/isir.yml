@@ -23,10 +23,11 @@ jobs:
           python-version: "3.12"
       - name: Install dependencies
         run: pip install requests pypdf fonttools
-      - name: Crawl ISIR + map CUZK office
+      - name: Crawl ISIR 180 days
         env:
-          DAYS_BACK: "30"
+          DAYS_BACK: "180"
           MAX_BATCHES: "1500"
+          MAX_PDF_PER_RUN: "300"
           PAUSE: "0.10"
         run: python crawler.py
       - name: Commit state and results
@@ -34,7 +35,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/state.json docs/results.json
-          git diff --cached --quiet || git commit -m "Update ISIR data"
+          git diff --cached --quiet || git commit -m "Update ISIR 180-day data"
           git push
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
