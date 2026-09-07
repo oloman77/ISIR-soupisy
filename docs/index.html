@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ISIR – soupisy majetkové podstaty</title>
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;background:#f5f6f8;color:#111827}
+.wrap{max-width:1200px;margin:auto;padding:24px}h1{margin-bottom:6px}.muted{color:#6b7280}
+.panel{background:#fff;border:1px solid #e5e7eb;border-radius:14px;padding:16px;margin:16px 0}
+.stats{display:flex;gap:24px;flex-wrap:wrap}input{padding:10px;border:1px solid #d1d5db;border-radius:10px;min-width:240px}
+table{width:100%;border-collapse:collapse}th,td{text-align:left;padding:10px;border-bottom:1px solid #eee;vertical-align:top;font-size:13px}
+th{background:#f9fafb}a{color:#2563eb}.ok{color:#065f46}.warn{color:#92400e}
+</style>
+</head>
+<body><div class="wrap">
+<h1>ISIR – soupisy majetkové podstaty</h1>
+<div class="muted">Data připravuje GitHub Actions.</div>
+<div class="panel stats">
+<div><b>Poslední aktualizace:</b><br><span id="updated">—</span></div>
+<div><b>Nalezeno:</b><br><span id="count">—</span></div>
+<div><b>ISIR ID:</b><br><span id="ids">—</span></div>
+<div><b>Stav:</b><br><span id="state">—</span></div>
+</div>
+<div class="panel"><input id="q" placeholder="Filtrovat podle spisu, popisu…" oninput="render()"></div>
+<div class="panel" style="overflow:auto;padding:0"><table>
+<thead><tr><th>Datum</th><th>Spis</th><th>Popis</th><th>Dokument</th></tr></thead>
+<tbody id="rows"></tbody></table></div></div>
+<script>
+let data={items:[]};
+function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function render(){
+ const q=(document.getElementById('q').value||'').toLowerCase();
+ const items=(data.items||[]).filter(x=>[x.spisova_znacka,x.popis_udalosti,x.poznamka].join(' ').toLowerCase().includes(q));
+ document.getElementById('rows').innerHTML=items.map(x=>`<tr><td>${esc(x.datum_zverejneni||x.datum_zalozeni)}</td><td>${esc(x.spisova_znacka)}</td><td>${esc(x.popis_udalosti||x.poznamka)}</td><td>${x.dokument_url?`<a target="_blank" href="${esc(x.dokument_url)}">Otevřít</a>`:'—'}</td></tr>`).join('');
+}
+async function load(){
+ try{
+  const r=await fetch('results.json?ts='+Date.now()); data=await r.json();
+  document.getElementById('updated').textContent=data.updated_at?new Date(data.updated_at).toLocaleString('cs-CZ'):'—';
+  document.getElementById('count').textContent=data.count??0;
+  document.getElementById('ids').textContent=(data.current_id??'—')+' / '+(data.latest_id??'—');
+  document.getElementById('state').innerHTML=data.caught_up?'<span class="ok">Aktuální</span>':'<span class="warn">Dohání data</span>';
+  render();
+ }catch(e){document.getElementById('state').textContent='results.json zatím není vytvořen';}
+}
+load();
+</script></body></html>
