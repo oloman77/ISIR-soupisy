@@ -3,7 +3,7 @@ name: ISIR crawler + Pages
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 */2 * * *"
+    - cron: "*/30 * * * *"
 
 permissions:
   contents: write
@@ -17,7 +17,7 @@ concurrency:
 jobs:
   crawl-and-deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -32,12 +32,12 @@ jobs:
       - name: Install dependencies
         run: pip install requests pypdf fonttools
 
-      - name: Crawl ISIR short stage
+      - name: ISIR fast backfill / PDF phase
         env:
           DAYS_BACK: "180"
-          MAX_BATCHES: "100"
-          MAX_PDF_PER_RUN: "100"
-          PAUSE: "0.08"
+          MAX_BATCHES: "250"
+          MAX_PDF_PER_RUN: "150"
+          PAUSE: "0.05"
           SOAP_TIMEOUT: "45"
           PDF_TIMEOUT: "25"
           MAX_PDF_PAGES: "40"
@@ -48,7 +48,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/state.json docs/results.json
-          git diff --cached --quiet || git commit -m "Update ISIR staged data"
+          git diff --cached --quiet || git commit -m "Update ISIR fast backfill"
           git push
 
       - uses: actions/configure-pages@v5
