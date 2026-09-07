@@ -1,45 +1,34 @@
 name: ISIR crawler + Pages
-
 on:
   workflow_dispatch:
   schedule:
     - cron: "17 */2 * * *"
-
 permissions:
   contents: write
   pages: write
   id-token: write
-
 concurrency:
   group: "isir-pages"
   cancel-in-progress: false
-
 jobs:
   crawl-and-deploy:
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-
-      - name: Setup Python
-        uses: actions/setup-python@v6
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-
       - name: Install dependencies
-        run: pip install requests
-
+        run: pip install requests pypdf
       - name: Crawl ISIR
         env:
           DAYS_BACK: "30"
           MAX_BATCHES: "1500"
           PAUSE: "0.10"
         run: python crawler.py
-
       - name: Commit state and results
         run: |
           git config user.name "github-actions[bot]"
@@ -47,15 +36,9 @@ jobs:
           git add data/state.json docs/results.json
           git diff --cached --quiet || git commit -m "Update ISIR data"
           git push
-
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: docs
-
-      - name: Deploy Pages
-        id: deployment
+      - id: deployment
         uses: actions/deploy-pages@v4
