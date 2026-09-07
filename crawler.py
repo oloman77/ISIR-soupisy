@@ -23,9 +23,9 @@ STATE_FILE = ROOT / "data/state.json"
 RESULTS_FILE = ROOT / "docs/results.json"
 
 DAYS_BACK = int(os.getenv("DAYS_BACK", "180"))
-MAX_BATCHES = int(os.getenv("MAX_BATCHES", "100"))
-MAX_PDF_PER_RUN = int(os.getenv("MAX_PDF_PER_RUN", "100"))
-PAUSE = float(os.getenv("PAUSE", "0.08"))
+MAX_BATCHES = int(os.getenv("MAX_BATCHES", "250"))
+MAX_PDF_PER_RUN = int(os.getenv("MAX_PDF_PER_RUN", "150"))
+PAUSE = float(os.getenv("PAUSE", "0.05"))
 SOAP_TIMEOUT = int(os.getenv("SOAP_TIMEOUT", "45"))
 PDF_TIMEOUT = int(os.getenv("PDF_TIMEOUT", "25"))
 MAX_PDF_PAGES = int(os.getenv("MAX_PDF_PAGES", "40"))
@@ -69,15 +69,15 @@ KU_RX = [
 
 def build_session():
     retry = Retry(
-        total=4,
-        connect=4,
-        read=4,
-        backoff_factor=1.0,
+        total=5,
+        connect=5,
+        read=5,
+        backoff_factor=0.8,
         status_forcelist=(429, 500, 502, 503, 504),
         allowed_methods=frozenset(["GET", "POST"]),
         raise_on_status=False,
     )
-    adapter = HTTPAdapter(max_retries=retry)
+    adapter = HTTPAdapter(max_retries=retry, pool_connections=20, pool_maxsize=20)
     s = requests.Session()
     s.mount("https://", adapter)
     s.mount("http://", adapter)
@@ -309,93 +309,106 @@ def main():
         if x.get("id") is not None
     }
 
-    mp = load_cuzk()
     latest = get_last_id()
-
     previous_days = int(state.get("days_back") or 0)
     current = state.get("current_id")
 
     if not current or previous_days < DAYS_BACK:
         print(
-            f"Backfill: období {previous_days} -> {DAYS_BACK} dní. "
-            f"Hledám historický start…",
+            f"FÁZE 1: backfill {previous_days} -> {DAYS_BACK} dní. Hledám start…",
             flush=True,
         )
         current = locate_cutoff_id(cutoff, latest)
         print(f"Historický start ID: {current}", flush=True)
-    else:
-        print(f"Navazuji od ID: {current}", flush=True)
 
+    caught_up_before = current >= latest
     batches = 0
     processed = 0
 
-    # Krátká etapa ISIR: úmyslně jen MAX_BATCHES.
-    while current < latest and batches < MAX_BATCHES:
-        rows = get_after_id(current)
-        batches += 1
-        if not rows:
-            break
+    if not caught_up_before:
+        print("FÁZE 1: rychlé procházení ISIR bez PDF analýzy", flush=True)
 
-        progressed = False
-        for row in rows:
-            if row["id"] <= current:
-                continue
+        while current < latest and batches < MAX_BATCHES:
+            rows = get_after_id(current)
+            batches += 1
+            if not rows:
+                break
 
-            progressed = True
-            current = max(current, row["id"])
-            processed += 1
+            progressed = False
+            for row in rows:
+                if row["id"] <= current:
+                    continue
 
-            dt = parse_dt(row["datum_zverejneni"]) or parse_dt(row["datum_zalozeni"])
-            if dt and dt >= cutoff and is_soupis(row):
-                key = str(row["id"])
-                if key in existing:
-                    # Zachovat enrichment z předchozích běhů.
-                    for k, v in existing[key].items():
-                        if k not in row:
-                            row[k] = v
-                existing[key] = row
+                progressed = True
+                current = max(current, row["id"])
+                processed += 1
 
-        print(
-            f"ISIR dávka {batches}/{MAX_BATCHES} | current={current} | "
-            f"processed={processed} | soupisy={len(existing)}",
-            flush=True,
-        )
+                dt = parse_dt(row["datum_zverejneni"]) or parse_dt(row["datum_zalozeni"])
+                if dt and dt >= cutoff and is_soupis(row):
+                    key = str(row["id"])
+                    if key in existing:
+                        for k, v in existing[key].items():
+                            if k not in row:
+                                row[k] = v
+                    existing[key] = row
 
-        if not progressed:
-            break
-        time.sleep(PAUSE)
+            print(
+                f"ISIR {batches}/{MAX_BATCHES} | current={current}/{latest} | "
+                f"processed={processed} | soupisy={len(existing)}",
+                flush=True,
+            )
 
-    # Jen položky v 180denním okně.
+            if not progressed:
+                break
+
+            time.sleep(PAUSE)
+
+    caught_up = current >= latest
+
+    # Uchovej jen položky v 180denním okně.
     valid_keys = []
     for key, row in existing.items():
         dt = parse_dt(row.get("datum_zverejneni")) or parse_dt(row.get("datum_zalozeni"))
         if dt and dt >= cutoff:
             valid_keys.append(key)
 
-    # PDF kontrola po omezené dávce.
-    todo = [
-        key for key in valid_keys
-        if not existing[key].get("pdf_checked")
-    ]
-    this_run = todo[:MAX_PDF_PER_RUN]
+    # FÁZE 2 se spustí AŽ po dotažení ISIR historie.
+    pdf_done_this_run = 0
 
-    print(
-        f"PDF čeká celkem: {len(todo)} | "
-        f"v tomto běhu max: {len(this_run)}",
-        flush=True,
-    )
+    if caught_up:
+        print("FÁZE 2: historie ISIR dotažena, spouštím PDF analýzu", flush=True)
+        mp = load_cuzk()
 
-    for i, key in enumerate(this_run, 1):
-        existing[key] = enrich(existing[key], mp)
-        if i % 10 == 0 or i == len(this_run):
-            confirmed = sum(
-                1 for k in valid_keys
-                if existing[k].get("obsahuje_nemovitost") is True
-            )
-            print(
-                f"PDF {i}/{len(this_run)} | potvrzené nemovitosti={confirmed}",
-                flush=True,
-            )
+        todo = [
+            key for key in valid_keys
+            if not existing[key].get("pdf_checked")
+        ]
+        this_run = todo[:MAX_PDF_PER_RUN]
+
+        print(
+            f"PDF čeká celkem: {len(todo)} | "
+            f"v tomto běhu: {len(this_run)}",
+            flush=True,
+        )
+
+        for i, key in enumerate(this_run, 1):
+            existing[key] = enrich(existing[key], mp)
+            pdf_done_this_run = i
+
+            if i % 10 == 0 or i == len(this_run):
+                confirmed_now = sum(
+                    1 for k in valid_keys
+                    if existing[k].get("obsahuje_nemovitost") is True
+                )
+                print(
+                    f"PDF {i}/{len(this_run)} | potvrzené nemovitosti={confirmed_now}",
+                    flush=True,
+                )
+    else:
+        print(
+            "PDF analýza přeskočena – nejdřív dokončíme FÁZI 1.",
+            flush=True,
+        )
 
     valid = [existing[k] for k in valid_keys]
     valid.sort(
@@ -424,13 +437,17 @@ def main():
         for office in (x.get("katastralni_pracoviste") or [])
     })
 
-    # Stav se uloží po KAŽDÉ krátké etapě.
+    phase = "pdf_analysis" if caught_up and remaining_pdf > 0 else (
+        "complete" if caught_up and remaining_pdf == 0 else "isir_backfill"
+    )
+
     save_json(STATE_FILE, {
         "current_id": current,
         "latest_id_at_run": latest,
         "last_run": now.isoformat(),
         "days_back": DAYS_BACK,
-        "caught_up": current >= latest,
+        "caught_up": caught_up,
+        "phase": phase,
     })
 
     save_json(RESULTS_FILE, {
@@ -438,7 +455,8 @@ def main():
         "days_back": DAYS_BACK,
         "current_id": current,
         "latest_id": latest,
-        "caught_up": current >= latest,
+        "caught_up": caught_up,
+        "phase": phase,
         "count_all_soupisy": len(valid),
         "count_real_estate": len(confirmed),
         "remaining_pdf_analysis": remaining_pdf,
@@ -447,9 +465,9 @@ def main():
     })
 
     print(
-        f"BĚH HOTOV | current={current}/{latest} | "
+        f"BĚH HOTOV | phase={phase} | current={current}/{latest} | "
         f"soupisy={len(valid)} | nemovitosti={len(confirmed)} | "
-        f"PDF čeká={remaining_pdf}",
+        f"PDF čeká={remaining_pdf} | PDF dnes={pdf_done_this_run}",
         flush=True,
     )
 
