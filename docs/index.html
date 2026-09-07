@@ -17,7 +17,7 @@ th,td{padding:9px;border-bottom:1px solid #eee;text-align:left;vertical-align:to
 th{background:#f9fafb;position:sticky;top:0}
 a{color:#2563eb}
 .badge{display:inline-block;padding:3px 7px;border-radius:999px;background:#f3f4f6;margin:1px 2px;font-size:12px}
-.small{font-size:12px;color:#6b7280}.warn{color:#92400e}
+.small{font-size:12px;color:#6b7280}.warn{color:#92400e}.ok{color:#065f46}
 </style>
 </head>
 <body>
@@ -25,8 +25,8 @@ a{color:#2563eb}
 
 <h1>ISIR – nemovitosti v soupisu majetkové podstaty</h1>
 <div class="muted">
-Zobrazeny jsou pouze dokumenty PDF, které byly úspěšně přečteny
-a ve kterých crawler potvrdil znaky nemovitosti.
+Zobrazeny jsou pouze úspěšně přečtené PDF dokumenty,
+ve kterých crawler potvrdil znaky nemovitosti.
 </div>
 
 <div class="panel stats">
@@ -34,6 +34,7 @@ a ve kterých crawler potvrdil znaky nemovitosti.
   <div><b>Aktualizace:</b><br><span id="updated">—</span></div>
   <div><b>Potvrzené nemovitosti:</b><br><span id="realCount">—</span></div>
   <div><b>PDF čeká na kontrolu:</b><br><span id="remaining">—</span></div>
+  <div><b>Fáze:</b><br><span id="phase">—</span></div>
   <div><b>Stav ISIR:</b><br><span id="state">—</span></div>
 </div>
 
@@ -87,8 +88,6 @@ function confirmedItems(){
 
 function populateOffices(){
   const sel=document.getElementById('office');
-  const current=sel.value;
-
   const offices=[...new Set(
     confirmedItems().flatMap(x=>x.katastralni_pracoviste||[])
   )].sort((a,b)=>a.localeCompare(b,'cs'));
@@ -96,8 +95,6 @@ function populateOffices(){
   sel.innerHTML=
     '<option value="">Všechna katastrální pracoviště</option>'+
     offices.map(o=>`<option value="${esc(o)}">${esc(o)}</option>`).join('');
-
-  if(offices.includes(current)) sel.value=current;
 }
 
 function render(){
@@ -132,6 +129,13 @@ function render(){
   </tr>`).join('');
 }
 
+function phaseLabel(p){
+  if(p==='isir_backfill') return '1/2 – dohání historii ISIR';
+  if(p==='pdf_analysis') return '2/2 – analyzuje PDF';
+  if(p==='complete') return 'Hotovo';
+  return p || '—';
+}
+
 async function load(){
   try{
     const r=await fetch('results.json?ts='+Date.now());
@@ -142,12 +146,13 @@ async function load(){
       data.updated_at ? new Date(data.updated_at).toLocaleString('cs-CZ') : '—';
     document.getElementById('realCount').textContent=confirmedItems().length;
     document.getElementById('remaining').textContent=data.remaining_pdf_analysis??0;
+    document.getElementById('phase').textContent=phaseLabel(data.phase);
 
     const current=data.current_id??0, latest=data.latest_id??0;
     document.getElementById('state').textContent=
       data.caught_up
       ? 'Aktuální'
-      : `Dohání historii (${current.toLocaleString('cs-CZ')} / ${latest.toLocaleString('cs-CZ')})`;
+      : `${current.toLocaleString('cs-CZ')} / ${latest.toLocaleString('cs-CZ')}`;
 
     populateOffices();
     render();
