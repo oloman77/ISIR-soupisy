@@ -292,7 +292,12 @@ def normalize_pdf_text(text):
     return t
 
 KRAJ_RX = re.compile(
-    r"katastr[aá]ln[ií]\s+[úu]řad\s+pro\s+"
+    # Podporuje běžné pády:
+    # "Katastrální úřad pro ..."
+    # "Katastrálním úřadem pro ..."
+    # "Katastrálního úřadu pro ..."
+    r"katastr[aá]ln(?:[ií]|[ií]m|[ií]ho)\s+"
+    r"[úu]řad(?:em|u)?\s+pro\s+"
     r"([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][A-Za-zÁ-ž\- ]{2,60}?\s+kraj)",
     re.I,
 )
@@ -366,7 +371,7 @@ def enrich(row, mp=None, office_map=None):
     row["parcely"] = []
     row["typy_nemovitosti"] = []
 
-    row["enrichment_version"] = 7
+    row["enrichment_version"] = 8
     return row
 
 def main():
@@ -464,7 +469,7 @@ def main():
                 not existing[key].get("pdf_checked")
                 or (
                     existing[key].get("obsahuje_nemovitost") is True
-                    and int(existing[key].get("enrichment_version") or 0) < 7
+                    and int(existing[key].get("enrichment_version") or 0) < 8
                 )
             )
         ]
