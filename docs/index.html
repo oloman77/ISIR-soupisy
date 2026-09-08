@@ -31,7 +31,7 @@ button{border:0;border-radius:10px;padding:10px 14px;cursor:pointer}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:4px;text-decoration:none;font-weight:650;border-radius:7px;padding:6px 8px;white-space:nowrap;font-size:11px;line-height:1}
 .btn-primary{background:var(--blue);color:white}.btn-light{background:#f8fafc;color:#0f172a;border:1px solid #cbd5e1}
 .tablewrap{overflow:auto}
-table{width:100%;border-collapse:collapse;min-width:880px;table-layout:auto}
+table{width:100%;border-collapse:collapse;min-width:760px;table-layout:auto}
 th,td{padding:8px 8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle;font-size:12px}
 th{background:#f8fafc;font-weight:750;white-space:nowrap}
 .badge{display:inline-block;padding:3px 6px;border-radius:999px;background:var(--blue2);color:#1d4ed8;margin:1px 2px 1px 0;font-size:10.5px;white-space:nowrap}
@@ -82,7 +82,6 @@ th{background:#f8fafc;font-weight:750;white-space:nowrap}
   <th>Datum</th>
   <th>Spis</th>
   <th>Kraj</th>
-  <th>Signály podezření</th>
   <th>Popis</th>
   <th>Akce</th>
 </tr></thead>
@@ -214,7 +213,6 @@ function render(){
       <td>${fmtDate(x.datum_zverejneni||x.datum_zalozeni)}</td>
       <td><b>${esc(x.spisova_znacka)}</b></td>
       <td>${x.kraj?`<span class="badge">${esc(x.kraj)}</span>`:'—'}</td>
-      <td>${badges(x.nemovitost_signaly)||'—'}</td>
       <td>${esc(x.popis_udalosti||x.poznamka)}</td>
       <td>
         <div class="actions">
