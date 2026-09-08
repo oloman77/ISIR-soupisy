@@ -235,7 +235,6 @@ def pdf_text(url):
     try:
         r = SESSION.get(url, timeout=PDF_TIMEOUT)
         r.raise_for_status()
-
         ctype = (r.headers.get("content-type") or "").lower()
         if "pdf" not in ctype and not r.content.startswith(b"%PDF"):
             return "", "not_pdf"
@@ -251,7 +250,6 @@ def pdf_text(url):
         text = "\n".join(parts).strip()
         if not text:
             return "", "no_text"
-
         return text, "ok"
 
     except Exception as e:
@@ -313,20 +311,29 @@ def main():
     previous_days = int(state.get("days_back") or 0)
     current = state.get("current_id")
 
+    backfill_complete = bool(state.get("backfill_complete")) or any(
+        x.get("pdf_checked") for x in existing.values()
+    ) or state.get("phase") in ("pdf_analysis", "complete")
+
     if not current or previous_days < DAYS_BACK:
         print(
             f"FÁZE 1: backfill {previous_days} -> {DAYS_BACK} dní. Hledám start…",
             flush=True,
         )
         current = locate_cutoff_id(cutoff, latest)
+        backfill_complete = False
         print(f"Historický start ID: {current}", flush=True)
 
-    caught_up_before = current >= latest
     batches = 0
     processed = 0
 
-    if not caught_up_before:
-        print("FÁZE 1: rychlé procházení ISIR bez PDF analýzy", flush=True)
+    if current < latest:
+        print(
+            "BĚŽNÁ AKTUALIZACE: stahuji nové ISIR události"
+            if backfill_complete
+            else "FÁZE 1: rychlé procházení ISIR bez PDF analýzy",
+            flush=True,
+        )
 
         while current < latest and batches < MAX_BATCHES:
             rows = get_after_id(current)
@@ -363,20 +370,20 @@ def main():
 
             time.sleep(PAUSE)
 
-    caught_up = current >= latest
+    caught_up_now = current >= latest
+    if caught_up_now:
+        backfill_complete = True
 
-    # Uchovej jen položky v 180denním okně.
     valid_keys = []
     for key, row in existing.items():
         dt = parse_dt(row.get("datum_zverejneni")) or parse_dt(row.get("datum_zalozeni"))
         if dt and dt >= cutoff:
             valid_keys.append(key)
 
-    # FÁZE 2 se spustí AŽ po dotažení ISIR historie.
     pdf_done_this_run = 0
 
-    if caught_up:
-        print("FÁZE 2: historie ISIR dotažena, spouštím PDF analýzu", flush=True)
+    if backfill_complete:
+        print("FÁZE 2: analyzuji PDF soupisů", flush=True)
         mp = load_cuzk()
 
         todo = [
@@ -406,7 +413,7 @@ def main():
                 )
     else:
         print(
-            "PDF analýza přeskočena – nejdřív dokončíme FÁZI 1.",
+            "PDF analýza přeskočena – nejdřív dokončíme historický backfill.",
             flush=True,
         )
 
@@ -437,16 +444,20 @@ def main():
         for office in (x.get("katastralni_pracoviste") or [])
     })
 
-    phase = "pdf_analysis" if caught_up and remaining_pdf > 0 else (
-        "complete" if caught_up and remaining_pdf == 0 else "isir_backfill"
-    )
+    if not backfill_complete:
+        phase = "isir_backfill"
+    elif remaining_pdf > 0:
+        phase = "pdf_analysis"
+    else:
+        phase = "complete"
 
     save_json(STATE_FILE, {
         "current_id": current,
         "latest_id_at_run": latest,
         "last_run": now.isoformat(),
         "days_back": DAYS_BACK,
-        "caught_up": caught_up,
+        "caught_up": caught_up_now,
+        "backfill_complete": backfill_complete,
         "phase": phase,
     })
 
@@ -455,7 +466,8 @@ def main():
         "days_back": DAYS_BACK,
         "current_id": current,
         "latest_id": latest,
-        "caught_up": caught_up,
+        "caught_up": caught_up_now,
+        "backfill_complete": backfill_complete,
         "phase": phase,
         "count_all_soupisy": len(valid),
         "count_real_estate": len(confirmed),
@@ -466,6 +478,7 @@ def main():
 
     print(
         f"BĚH HOTOV | phase={phase} | current={current}/{latest} | "
+        f"backfill_complete={backfill_complete} | "
         f"soupisy={len(valid)} | nemovitosti={len(confirmed)} | "
         f"PDF čeká={remaining_pdf} | PDF dnes={pdf_done_this_run}",
         flush=True,
