@@ -133,14 +133,14 @@ function populateRegions(){
 function wholeCaseAction(x){
   const spis=x.spisova_znacka||'';
   if(x.isir_rizeni_url){
-    return `<a class="btn btn-light" target="_blank" href="${esc(x.isir_rizeni_url)}">↗ Celé řízení</a>`;
+    return `<a class="btn btn-light" target="_blank" href="${esc(x.isir_rizeni_url)}">↗ Celé řízení v ISIR</a>`;
   }
-  return `<button class="btn btn-light" onclick='openIsir(${JSON.stringify(spis)})'>↗ Celé řízení</button>`;
+  return `<button class="btn btn-light" onclick='openIsir(${JSON.stringify(spis)})'>↗ Celé řízení v ISIR</button>`;
 }
 
 async function openIsir(spis){
   try{await navigator.clipboard.writeText(spis)}catch(e){}
-  window.open('https://eisir.justice.cz/','_blank','noopener');
+  window.open('https://isir.justice.cz/isir/common/index.do','_blank','noopener');
 }
 
 function render(){
