@@ -9,6 +9,7 @@ import unicodedata
 import xml.etree.ElementTree as ET
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from urllib.parse import urljoin
 
 import requests
 from requests.adapters import HTTPAdapter
@@ -102,6 +103,16 @@ def find_text(el, name):
             return (ch.text or "").strip()
     return ""
 
+def extract_id_osoby_puvodce(el):
+    raw = find_text(el, "poznamka")
+    if not raw:
+        try:
+            raw = ET.tostring(el, encoding="unicode")
+        except Exception:
+            raw = ""
+    m = re.search(r"<(?:\\w+:)?idOsobyPuvodce>\\s*([^<]+?)\\s*</(?:\\w+:)?idOsobyPuvodce>", raw, re.I)
+    return m.group(1).strip() if m else ""
+
 def parse_dt(s):
     if not s:
         return None
@@ -158,6 +169,7 @@ def get_after_id(i):
             "popis_udalosti": find_text(el, "popisUdalosti"),
             "poznamka": find_text(el, "poznamka"),
             "dokument_url": find_text(el, "dokumentUrl"),
+            "id_osoby_puvodce": extract_id_osoby_puvodce(el),
         })
     return sorted(rows, key=lambda x: x["id"])
 
@@ -351,17 +363,84 @@ def extract_kraj(text):
     parts = raw.split()
     return " ".join(p[:1].upper() + p[1:] for p in parts)
 
+def isir_search_url(row):
+    spis = row.get("spisova_znacka") or ""
+    m = re.search(r"\\bINS\\s+(\\d+)\\s*/\\s*(\\d{4})\\b", spis, re.I)
+    if not m:
+        return "https://isir.justice.cz/isir/common/index.do"
+
+    params = {
+        "nazev_osoby": "",
+        "jmeno_osoby": "",
+        "ic": "",
+        "datum_narozeni": "",
+        "rc": "",
+        "mesto": "",
+        "cislo_senatu": "",
+        "bc_vec": m.group(1),
+        "rocnik": m.group(2),
+        "id_osoby_puvodce": row.get("id_osoby_puvodce") or "",
+        "druh_stav_konkursu": "",
+        "datum_stav_od": "",
+        "datum_stav_do": "",
+        "aktualnost": "AKTUALNI_I_UKONCENA",
+        "druh_kod_udalost": "",
+        "datum_akce_od": "",
+        "datum_akce_do": "",
+        "nazev_osoby_f": "",
+        "cislo_senatu_vsns": "",
+        "druh_vec_vsns": "",
+        "bc_vec_vsns": "",
+        "rocnik_vsns": "",
+        "cislo_senatu_icm": "",
+        "bc_vec_icm": "",
+        "rocnik_icm": "",
+        "rowsAtOnce": "50",
+        "spis_znacky_datum": "",
+        "spis_znacky_obdobi": "14DNI",
+    }
+    return requests.Request(
+        "GET",
+        "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do",
+        params=params,
+    ).prepare().url
+
+
+def resolve_isir_detail(row):
+    search_url = isir_search_url(row)
+    row["isir_search_url"] = search_url
+
+    try:
+        r = SESSION.get(search_url, timeout=20)
+        r.raise_for_status()
+        html = r.text
+
+        patterns = [
+            r'href=["\\\']([^"\\\']*evidence_upadcu_detail\\.do\\?id=[^"\\\']+)["\\\']',
+            r'(https?://isir\\.justice\\.cz/isir/ueu/evidence_upadcu_detail\\.do\\?id=[A-Za-z0-9\\-]+)',
+        ]
+        for pat in patterns:
+            m = re.search(pat, html, re.I)
+            if m:
+                return urljoin("https://isir.justice.cz/isir/ueu/", m.group(1))
+    except Exception as e:
+        print(f"ISIR detail lookup selhal pro {row.get('spisova_znacka')}: {e}", flush=True)
+
+    return ""
+
 def enrich(row, mp=None, office_map=None):
     text, status = pdf_text(row.get("dokument_url"))
 
     suspected, hits = detect_suspicion(text) if status == "ok" else (False, [])
     kraj = extract_kraj(text) if status == "ok" and suspected else ""
+    detail_url = resolve_isir_detail(row) if status == "ok" and suspected else ""
 
     row["pdf_checked"] = True
     row["pdf_status"] = status
     row["obsahuje_nemovitost"] = bool(status == "ok" and suspected)
     row["nemovitost_signaly"] = hits if status == "ok" else []
     row["kraj"] = kraj
+    row["isir_rizeni_url"] = detail_url
 
     # Staré detailní údaje už ve v7 nepoužíváme.
     row["katastralni_uzemi"] = []
@@ -371,7 +450,7 @@ def enrich(row, mp=None, office_map=None):
     row["parcely"] = []
     row["typy_nemovitosti"] = []
 
-    row["enrichment_version"] = 8
+    row["enrichment_version"] = 9
     return row
 
 def main():
@@ -469,7 +548,7 @@ def main():
                 not existing[key].get("pdf_checked")
                 or (
                     existing[key].get("obsahuje_nemovitost") is True
-                    and int(existing[key].get("enrichment_version") or 0) < 8
+                    and int(existing[key].get("enrichment_version") or 0) < 9
                 )
             )
         ]
