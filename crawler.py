@@ -286,141 +286,87 @@ def detect_real(text):
     return len(uniq) >= 2, uniq[:8]
 
 def normalize_pdf_text(text):
-    """Normalizace textu z PDF bez ztráty slov, ale s odstraněním rozbitých whitespace."""
     t = (text or "").replace("\u00a0", " ")
     t = re.sub(r"[ \t]+", " ", t)
     t = re.sub(r"\s*\n\s*", "\n", t)
     return t
 
-def _match_ku_candidate(candidate, mp):
-    n = norm(candidate)
-    if not n:
-        return None
-    if n in mp:
-        return mp[n]
-    matches = []
-    for key, info in mp.items():
-        if n == key or n.startswith(key + " "):
-            matches.append((len(key), info))
-    return max(matches, key=lambda x: x[0])[1] if matches else None
+KRAJ_RX = re.compile(
+    r"katastr[aá]ln[ií]\s+[úu]řad\s+pro\s+"
+    r"([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][A-Za-zÁ-ž\- ]{2,60}?\s+kraj)",
+    re.I,
+)
 
-def _find_all_known_ku(text, mp):
+STRONG_REAL_PATTERNS = [
+    r"katastr[aá]ln[ií]\s+[úu]řad\s+pro",
+    r"list\s+vlastnictv[ií]",
+    r"\bLV\s*(?:č\.?|číslo)?\s*\d+",
+    r"\bnemovitost",
+    r"parc(?:ela|ely|\.?)\s*(?:č\.?|číslo)?\s*[\d/]+",
+]
+
+def detect_suspicion(text):
     """
-    Robustní fallback: hledá známá katastrální území z číselníku ČÚZK
-    v normalizovaném textu PDF. Aby nevznikaly falešné shody, preferuje
-    delší názvy a vyžaduje hranice slov.
+    V7 záměrně neurčuje přesnou nemovitost. Jen označí PDF,
+    kde jsou rozumné signály, že dokument obsahuje nemovitý majetek.
     """
-    nt = " " + norm(text) + " "
-    found = {}
-    # Delší názvy první.
-    for key in sorted(mp.keys(), key=len, reverse=True):
-        if len(key) < 5:
-            continue
-        if f" {key} " in nt:
-            found[key] = mp[key]
-    return list(found.values())
-
-def extract_ku(text, mp):
-    text = normalize_pdf_text(text)
-    found = {}
-
-    # 1) standardní výrazy
-    for rx in KU_RX:
-        for m in rx.finditer(text):
-            cand = re.split(r"[,;\n\r\(\)]", m.group(1), maxsplit=1)[0].strip(" .:-")
-            info = _match_ku_candidate(cand, mp)
-            if info:
-                found[norm(info["ku_nazev"])] = info
-
-    # 2) varianty "k.ú.", "k. ú.", "kú" a text v tabulkách
-    direct_rx = re.compile(
-        r"(?:k\s*\.\s*[úu]\s*\.?|katastr[aá]ln[ií]\s+[úu]zem[ií])"
-        r"\s*[:\-]?\s*([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][^\n\r;,()]{2,120})",
-        re.I,
-    )
-    for m in direct_rx.finditer(text):
-        info = _match_ku_candidate(m.group(1), mp)
-        if info:
-            found[norm(info["ku_nazev"])] = info
-
-    # 3) fallback přes celý číselník; používáme hlavně u potvrzených nemovitostí.
-    if not found:
-        for info in _find_all_known_ku(text, mp):
-            found[norm(info["ku_nazev"])] = info
-
-    return list(found.values())
-
-def extract_offices(text, office_map):
-    text = normalize_pdf_text(text)
-    found = set()
-
-    for rx in OFFICE_RX:
-        for m in rx.finditer(text):
-            cand = re.split(r"[,;\n\r\(\)]", m.group(1), maxsplit=1)[0].strip(" .:-")
-            n = norm(cand)
-            if n in office_map:
-                found.add(office_map[n])
-                continue
-            matches = [
-                (len(key), office)
-                for key, office in office_map.items()
-                if n == key or n.startswith(key + " ")
-            ]
-            if matches:
-                found.add(max(matches, key=lambda x: x[0])[1])
-
-    # Fallback: hledej přesný známý název pracoviště kdekoliv v textu.
-    nt = " " + norm(text) + " "
-    if not found:
-        for key, office in sorted(office_map.items(), key=lambda kv: len(kv[0]), reverse=True):
-            if f" {key} " in nt:
-                found.add(office)
-
-    return sorted(found)
-
-def extract_property_details(text):
-    """Lehké vytěžení LV, parcel a typů nemovitostí pro detail na webu."""
     t = normalize_pdf_text(text)
-    lvs = sorted(set(re.findall(r"\bLV\s*(?:č\.?|číslo)?\s*(\d+)", t, re.I)))
-    parcels = sorted(set(
-        m.group(1) for m in re.finditer(
-            r"(?:parc(?:ela|ely|\.?)|p\.\s*č\.)\s*(?:č\.?|číslo)?\s*([0-9]+(?:/[0-9]+)?)",
-            t, re.I
-        )
-    ))
-    types = []
-    for label, pat in [
-        ("Rodinný dům", r"rodinn[ýy]\s+d[ůu]m"),
-        ("Byt / jednotka", r"\bbyt\b|\bjednotka\b"),
-        ("Pozemek", r"\bpozemek\b"),
-        ("Stavba", r"\bstavba\b|\bbudova\b"),
-        ("Garáž", r"\bgar[aá][žz]\b"),
-    ]:
-        if re.search(pat, t, re.I):
-            types.append(label)
-    return {"lv": lvs[:20], "parcely": parcels[:30], "typy": types}
+    hits = []
 
-def enrich(row, mp, office_map):
+    for pat in REAL_PATTERNS:
+        m = re.search(pat, t, re.I)
+        if m:
+            hits.append(m.group(0))
+
+    strong = any(re.search(p, t, re.I) for p in STRONG_REAL_PATTERNS)
+
+    uniq, seen = [], set()
+    for h in hits:
+        k = norm(h)
+        if k not in seen:
+            seen.add(k)
+            uniq.append(h)
+
+    suspected = strong or len(uniq) >= 2
+    return suspected, uniq[:8]
+
+def extract_kraj(text):
+    """
+    Vezme první přímý údaj typu 'Katastrální úřad pro ... kraj'.
+    Hledáme jen v první části dokumentu, abychom omezili vliv referenčních
+    nemovitostí ve znaleckých přílohách.
+    """
+    t = normalize_pdf_text(text)[:30000]
+    m = KRAJ_RX.search(t)
+    if not m:
+        return ""
+
+    raw = re.sub(r"\s+", " ", m.group(1)).strip(" .,:;-")
+    # Hezčí kapitalizace zachovávající českou diakritiku.
+    parts = raw.split()
+    return " ".join(p[:1].upper() + p[1:] for p in parts)
+
+def enrich(row, mp=None, office_map=None):
     text, status = pdf_text(row.get("dokument_url"))
-    yes, hits = detect_real(text)
 
-    infos = extract_ku(text, mp) if status == "ok" else []
-    direct_offices = extract_offices(text, office_map) if status == "ok" else []
-    offices_from_ku = {x["pracoviste"] for x in infos if x.get("pracoviste")}
-    all_offices = sorted(offices_from_ku | set(direct_offices))
-    details = extract_property_details(text) if status == "ok" else {"lv": [], "parcely": [], "typy": []}
+    suspected, hits = detect_suspicion(text) if status == "ok" else (False, [])
+    kraj = extract_kraj(text) if status == "ok" and suspected else ""
 
     row["pdf_checked"] = True
     row["pdf_status"] = status
-    row["obsahuje_nemovitost"] = bool(status == "ok" and yes)
+    row["obsahuje_nemovitost"] = bool(status == "ok" and suspected)
     row["nemovitost_signaly"] = hits if status == "ok" else []
-    row["katastralni_uzemi"] = sorted({x["ku_nazev"] for x in infos})
-    row["obce"] = sorted({x["obec"] for x in infos if x["obec"]})
-    row["katastralni_pracoviste"] = all_offices
-    row["lv"] = details["lv"]
-    row["parcely"] = details["parcely"]
-    row["typy_nemovitosti"] = details["typy"]
-    row["enrichment_version"] = 3
+    row["kraj"] = kraj
+
+    # Staré detailní údaje už ve v7 nepoužíváme.
+    row["katastralni_uzemi"] = []
+    row["katastralni_pracoviste"] = []
+    row["obce"] = []
+    row["lv"] = []
+    row["parcely"] = []
+    row["typy_nemovitosti"] = []
+
+    row["enrichment_version"] = 7
     return row
 
 def main():
@@ -512,15 +458,13 @@ def main():
 
     if backfill_complete:
         print("FÁZE 2: analyzuji PDF soupisů", flush=True)
-        mp, office_map = load_cuzk()
-
         todo = [
             key for key in valid_keys
             if (
                 not existing[key].get("pdf_checked")
                 or (
                     existing[key].get("obsahuje_nemovitost") is True
-                    and int(existing[key].get("enrichment_version") or 0) < 3
+                    and int(existing[key].get("enrichment_version") or 0) < 7
                 )
             )
         ]
@@ -533,7 +477,7 @@ def main():
         )
 
         for i, key in enumerate(this_run, 1):
-            existing[key] = enrich(existing[key], mp, office_map)
+            existing[key] = enrich(existing[key])
             pdf_done_this_run = i
 
             if i % 10 == 0 or i == len(this_run):

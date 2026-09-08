@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ISIR – nemovitosti</title>
+<title>ISIR – PDF s podezřením na nemovitost</title>
 <style>
 :root{
   --bg:#f5f7fb;--card:#fff;--text:#0f172a;--muted:#64748b;--line:#e2e8f0;
@@ -11,7 +11,7 @@
 }
 *{box-sizing:border-box}
 body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;margin:0;background:var(--bg);color:var(--text)}
-.wrap{max-width:1500px;margin:auto;padding:24px}
+.wrap{max-width:1450px;margin:auto;padding:24px}
 .header{display:flex;gap:20px;justify-content:space-between;align-items:flex-start;flex-wrap:wrap}
 h1{font-size:34px;line-height:1.12;margin:0 0 8px}
 .muted{color:var(--muted)}
@@ -26,31 +26,21 @@ h1{font-size:34px;line-height:1.12;margin:0 0 8px}
 input,select,button{font:inherit}
 input,select{padding:12px 14px;border:1px solid #cbd5e1;border-radius:10px;background:white}
 input{min-width:300px;flex:1}
-select{min-width:260px}
+select{min-width:240px}
 button{border:0;border-radius:10px;padding:10px 14px;cursor:pointer}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;font-weight:650;border-radius:9px;padding:9px 12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;font-weight:650;border-radius:9px;padding:9px 12px;white-space:nowrap}
 .btn-primary{background:var(--blue);color:white}.btn-light{background:#f8fafc;color:#0f172a;border:1px solid #cbd5e1}
 .tablewrap{overflow:auto}
-table{width:100%;border-collapse:collapse;min-width:1100px}
+table{width:100%;border-collapse:collapse;min-width:950px}
 th,td{padding:13px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top;font-size:14px}
 th{background:#f8fafc;font-weight:750;white-space:nowrap}
-tr.record{cursor:pointer}tr.record:hover{background:#f8fbff}
 .badge{display:inline-block;padding:4px 8px;border-radius:999px;background:var(--blue2);color:#1d4ed8;margin:1px 3px 1px 0;font-size:12px}
-.detailrow td{padding:0;background:#fbfdff}
-.detail{display:grid;grid-template-columns:1fr 1.35fr .75fr;gap:18px;padding:20px}
-.detailcard{background:white;border:1px solid var(--line);border-radius:12px;padding:16px}
-.detail h3{margin:0 0 12px;font-size:16px}
-.kv{display:grid;grid-template-columns:150px 1fr;gap:8px 10px;font-size:14px}
-.kv div:nth-child(odd){color:var(--muted)}
-.prop-table{width:100%;min-width:0}.prop-table th,.prop-table td{font-size:13px;padding:8px}
-.actions{display:flex;flex-direction:column;gap:8px}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
 .small{font-size:12px;color:var(--muted)}
-.chev{font-weight:bold;color:var(--blue);width:20px}
 .empty{padding:34px;text-align:center;color:var(--muted)}
 @media(max-width:900px){
   .wrap{padding:14px}h1{font-size:29px}
   .stats{grid-template-columns:1fr 1fr}.stat{border-right:0;border-bottom:1px solid var(--line);padding:12px}
-  .detail{grid-template-columns:1fr}
   input,select{min-width:100%;width:100%}
 }
 </style>
@@ -60,34 +50,41 @@ tr.record{cursor:pointer}tr.record:hover{background:#f8fbff}
 
 <div class="header">
   <div>
-    <h1>ISIR – nemovitosti v soupisu majetkové podstaty</h1>
-    <div class="muted">Pouze úspěšně přečtené PDF dokumenty, ve kterých crawler potvrdil znaky nemovitosti.</div>
+    <h1>ISIR – PDF s podezřením na nemovitost</h1>
+    <div class="muted">
+      Přehled soupisů majetkové podstaty, ve kterých crawler našel znaky možného nemovitého majetku.
+      Kraj se uvádí pouze tehdy, když je v PDF přímo nalezen údaj „Katastrální úřad pro … kraj“.
+    </div>
   </div>
   <div class="statusbox">
     <b id="headerState">ISIR —</b><br>
-    <span class="small" id="headerUpdated">Poslední aktualizace —</span>
+    <span class="small" id="headerUpdated">Aktualizace —</span>
   </div>
 </div>
 
 <div class="panel stats">
   <div class="stat"><div class="label">Období</div><div class="value"><span id="days">—</span> dní</div></div>
-  <div class="stat"><div class="label">Potvrzené nemovitosti</div><div class="value" id="realCount">—</div></div>
+  <div class="stat"><div class="label">PDF s podezřením</div><div class="value" id="realCount">—</div></div>
   <div class="stat"><div class="label">PDF čeká na kontrolu</div><div class="value" id="remaining">—</div></div>
   <div class="stat"><div class="label">Fáze</div><div class="value" id="phase">—</div></div>
   <div class="stat"><div class="label">Stav ISIR</div><div class="value" id="state">—</div></div>
 </div>
 
 <div class="panel controls">
-  <input id="q" placeholder="Spis, text, obec, k. ú., LV, parcela…" oninput="render()">
-  <select id="office" onchange="render()"><option value="">Všechna katastrální pracoviště</option></select>
+  <input id="q" placeholder="Spis, kraj, text…" oninput="render()">
+  <select id="region" onchange="render()"><option value="">Všechny kraje</option></select>
   <button class="btn-light" onclick="load()">↻ Obnovit data</button>
 </div>
 
 <div class="panel tablewrap">
 <table>
 <thead><tr>
-  <th></th><th>Datum</th><th>Spis</th><th>Katastrální území</th><th>Katastrální pracoviště</th>
-  <th>Signály nemovitosti</th><th>Popis</th><th>Akce</th>
+  <th>Datum</th>
+  <th>Spis</th>
+  <th>Kraj</th>
+  <th>Signály podezření</th>
+  <th>Popis</th>
+  <th>Akce</th>
 </tr></thead>
 <tbody id="rows"></tbody>
 </table>
@@ -98,129 +95,105 @@ tr.record{cursor:pointer}tr.record:hover{background:#f8fbff}
 
 <script>
 let data={items:[]};
-let opened=new Set();
 
 function esc(s){return String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
 function badges(arr){return (arr||[]).map(x=>`<span class="badge">${esc(x)}</span>`).join('')}
+
 function fmtDate(s){
-  if(!s)return '—'; const d=new Date(s);
-  return isNaN(d)?esc(s):d.toLocaleString('cs-CZ');
+  if(!s)return '—';
+  const d=new Date(s);
+  if(isNaN(d))return esc(s);
+  return `${d.getDate()}. ${d.getMonth()+1}. ${d.getFullYear()}`;
 }
-function confirmedItems(){
-  return (data.items||[]).filter(x=>x.obsahuje_nemovitost===true&&x.pdf_checked===true&&x.pdf_status==='ok'&&!!x.dokument_url);
+
+function suspectedItems(){
+  return (data.items||[]).filter(x=>
+    x.obsahuje_nemovitost===true &&
+    x.pdf_checked===true &&
+    x.pdf_status==='ok' &&
+    !!x.dokument_url
+  );
 }
+
 function phaseLabel(p){
   if(p==='isir_backfill')return '1/2 – historie';
   if(p==='pdf_analysis')return '2/2 – analyzuje PDF';
   if(p==='complete')return 'Hotovo';
   return p||'—';
 }
-function populateOffices(){
-  const s=document.getElementById('office');
+
+function populateRegions(){
+  const s=document.getElementById('region');
   const keep=s.value;
-  const arr=[...new Set(confirmedItems().flatMap(x=>x.katastralni_pracoviste||[]))].sort((a,b)=>a.localeCompare(b,'cs'));
-  s.innerHTML='<option value="">Všechna katastrální pracoviště</option>'+arr.map(o=>`<option>${esc(o)}</option>`).join('');
+  const arr=[...new Set(suspectedItems().map(x=>x.kraj).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'cs'));
+  s.innerHTML='<option value="">Všechny kraje</option>'+arr.map(o=>`<option>${esc(o)}</option>`).join('');
   if(arr.includes(keep))s.value=keep;
 }
-function eIsirSearchAction(x){
+
+function wholeCaseAction(x){
   const spis=x.spisova_znacka||'';
-  // Přímý detail použijeme, pokud ho crawler někdy doplní.
   if(x.isir_rizeni_url){
-    return `<a class="btn btn-light" target="_blank" href="${esc(x.isir_rizeni_url)}">↗ Zobrazit řízení v ISIR</a>`;
+    return `<a class="btn btn-light" target="_blank" href="${esc(x.isir_rizeni_url)}">↗ Celé řízení</a>`;
   }
-  // Bez spolehlivého detail URL nic nehádáme: zkopírujeme spis a otevřeme oficiální eISIR.
-  return `<button class="btn btn-light" onclick='openIsir(${JSON.stringify(spis)})'>↗ Vyhledat řízení v eISIR</button>`;
+  return `<button class="btn btn-light" onclick='openIsir(${JSON.stringify(spis)})'>↗ Celé řízení</button>`;
 }
+
 async function openIsir(spis){
   try{await navigator.clipboard.writeText(spis)}catch(e){}
   window.open('https://eisir.justice.cz/','_blank','noopener');
 }
-function detailHtml(x){
-  const lvs=x.lv||[], parcely=x.parcely||[], typy=x.typy_nemovitosti||[];
-  return `
-  <tr class="detailrow"><td colspan="8">
-    <div class="detail">
-      <div class="detailcard">
-        <h3>Základní informace</h3>
-        <div class="kv">
-          <div>Spisová značka</div><div><b>${esc(x.spisova_znacka||'—')}</b></div>
-          <div>Datum soupisu</div><div>${fmtDate(x.datum_zverejneni||x.datum_zalozeni)}</div>
-          <div>Katastrální území</div><div>${badges(x.katastralni_uzemi)||'—'}</div>
-          <div>Katastrální pracoviště</div><div>${badges(x.katastralni_pracoviste)||'—'}</div>
-          <div>Typ nemovitosti</div><div>${badges(typy)||'—'}</div>
-        </div>
-      </div>
-      <div class="detailcard">
-        <h3>Nalezené údaje v soupisu</h3>
-        <table class="prop-table">
-          <thead><tr><th>Typ údaje</th><th>Hodnoty</th></tr></thead>
-          <tbody>
-            <tr><td>List vlastnictví</td><td>${badges(lvs)||'—'}</td></tr>
-            <tr><td>Parcely</td><td>${badges(parcely)||'—'}</td></tr>
-            <tr><td>Signály</td><td>${badges(x.nemovitost_signaly)||'—'}</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="detailcard">
-        <h3>Dokumenty a řízení</h3>
-        <div class="actions">
-          <a class="btn btn-primary" target="_blank" href="${esc(x.dokument_url)}">▣ Otevřít PDF</a>
-          ${eIsirSearchAction(x)}
-        </div>
-        <p class="small">Pokud přímý odkaz na detail řízení není k dispozici, tlačítko zkopíruje spisovou značku a otevře oficiální eISIR.</p>
-      </div>
-    </div>
-  </td></tr>`;
-}
+
 function render(){
   const q=(document.getElementById('q').value||'').trim().toLowerCase();
-  const office=document.getElementById('office').value;
-  const items=confirmedItems().filter(x=>{
+  const region=document.getElementById('region').value;
+
+  const items=suspectedItems().filter(x=>{
     const hay=[
-      x.spisova_znacka,x.popis_udalosti,x.poznamka,
-      ...(x.katastralni_uzemi||[]),...(x.katastralni_pracoviste||[]),...(x.obce||[]),
-      ...(x.nemovitost_signaly||[]),...(x.lv||[]),...(x.parcely||[]),...(x.typy_nemovitosti||[])
+      x.spisova_znacka,x.popis_udalosti,x.poznamka,x.kraj,
+      ...(x.nemovitost_signaly||[])
     ].join(' ').toLowerCase();
-    return (!q||hay.includes(q)) && (!office||(x.katastralni_pracoviste||[]).includes(office));
+    return (!q||hay.includes(q)) && (!region||x.kraj===region);
   });
 
-  const html=[];
-  for(const x of items){
-    const id=String(x.id);
-    html.push(`<tr class="record" onclick="toggleRow('${esc(id)}')">
-      <td class="chev">${opened.has(id)?'⌄':'›'}</td>
+  document.getElementById('rows').innerHTML=items.map(x=>`
+    <tr>
       <td>${fmtDate(x.datum_zverejneni||x.datum_zalozeni)}</td>
       <td><b>${esc(x.spisova_znacka)}</b></td>
-      <td>${badges(x.katastralni_uzemi)||'—'}</td>
-      <td>${badges(x.katastralni_pracoviste)||'—'}</td>
-      <td>${badges(x.nemovitost_signaly)}</td>
+      <td>${x.kraj?`<span class="badge">${esc(x.kraj)}</span>`:'—'}</td>
+      <td>${badges(x.nemovitost_signaly)||'—'}</td>
       <td>${esc(x.popis_udalosti||x.poznamka)}</td>
-      <td onclick="event.stopPropagation()">
-        <a class="btn btn-primary" target="_blank" href="${esc(x.dokument_url)}">Otevřít PDF</a>
+      <td>
+        <div class="actions">
+          <a class="btn btn-primary" target="_blank" href="${esc(x.dokument_url)}">Otevřít PDF</a>
+          ${wholeCaseAction(x)}
+        </div>
       </td>
-    </tr>`);
-    if(opened.has(id))html.push(detailHtml(x));
-  }
-  document.getElementById('rows').innerHTML=html.join('');
+    </tr>
+  `).join('');
+
   document.getElementById('empty').style.display=items.length?'none':'block';
 }
-function toggleRow(id){opened.has(id)?opened.delete(id):opened.add(id);render()}
 
 async function load(){
   try{
     const r=await fetch('results.json?ts='+Date.now());
     data=await r.json();
-    const items=confirmedItems();
+    const items=suspectedItems();
+
     document.getElementById('days').textContent=data.days_back??'—';
     document.getElementById('realCount').textContent=items.length;
     document.getElementById('remaining').textContent=(data.remaining_pdf_analysis??0).toLocaleString('cs-CZ');
     document.getElementById('phase').textContent=phaseLabel(data.phase);
+
     const current=data.current_id??0, latest=data.latest_id??0;
     const st=data.caught_up?'Aktuální':`${current.toLocaleString('cs-CZ')} / ${latest.toLocaleString('cs-CZ')}`;
     document.getElementById('state').textContent=st;
     document.getElementById('headerState').textContent=data.caught_up?'✓ ISIR aktuální':'ISIR se aktualizuje';
-    document.getElementById('headerUpdated').textContent='Aktualizace: '+(data.updated_at?new Date(data.updated_at).toLocaleString('cs-CZ'):'—');
-    populateOffices();render();
+    document.getElementById('headerUpdated').textContent=
+      'Aktualizace: '+(data.updated_at?new Date(data.updated_at).toLocaleString('cs-CZ'):'—');
+
+    populateRegions();
+    render();
   }catch(e){
     document.getElementById('headerState').textContent='Chyba načtení dat';
   }
