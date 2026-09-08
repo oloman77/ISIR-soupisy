@@ -67,6 +67,14 @@ KU_RX = [
     ),
 ]
 
+OFFICE_RX = [
+    re.compile(
+        r"katastr[aá]ln[ií]\s+pracovi[sš]t[eě]\s*[:\-]?\s*"
+        r"([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][A-Za-zÁ-ž .'\-]{1,80})",
+        re.I,
+    ),
+]
+
 def build_session():
     retry = Retry(
         total=5,
@@ -216,6 +224,7 @@ def load_cuzk():
 
     delim = ";" if text[:10000].count(";") >= text[:10000].count(",") else ","
     mp = {}
+    office_map = {}
     for row in csv.DictReader(io.StringIO(text), delimiter=delim):
         ku = (row.get("KU_NAZEV") or "").strip()
         office = (row.get("PRARES_NAZEV") or "").strip()
@@ -225,9 +234,14 @@ def load_cuzk():
                 "obec": (row.get("OBEC_NAZEV") or "").strip(),
                 "pracoviste": office,
             }
+            office_map[norm(office)] = office
 
-    print(f"ČÚZK: načteno {len(mp)} katastrálních území", flush=True)
-    return mp
+    print(
+        f"ČÚZK: načteno {len(mp)} katastrálních území, "
+        f"{len(office_map)} pracovišť",
+        flush=True,
+    )
+    return mp, office_map
 
 def pdf_text(url):
     if not url:
@@ -271,20 +285,72 @@ def detect_real(text):
 
     return len(uniq) >= 2, uniq[:8]
 
+def _match_ku_candidate(candidate, mp):
+    """Najdi nejdelší katastrální území, které odpovídá začátku kandidáta."""
+    n = norm(candidate)
+    if not n:
+        return None
+    if n in mp:
+        return mp[n]
+
+    matches = []
+    for key, info in mp.items():
+        # PDF často přilepí za název k. ú. další text stejného řádku.
+        if n.startswith(key + " ") or n == key:
+            matches.append((len(key), info))
+    if matches:
+        return max(matches, key=lambda x: x[0])[1]
+    return None
+
 def extract_ku(text, mp):
     found = {}
     for rx in KU_RX:
         for m in rx.finditer(text or ""):
             cand = re.split(r"[,;\n\r\(\)]", m.group(1), maxsplit=1)[0].strip(" .:-")
-            n = norm(cand)
-            if n in mp:
-                found[n] = mp[n]
+            info = _match_ku_candidate(cand, mp)
+            if info:
+                found[norm(info["ku_nazev"])] = info
+
+    # Druhá, tolerantnější cesta: po frázi "katastrální území" zkus až 120 znaků
+    # a vyber nejdelší známý název z číselníku ČÚZK.
+    for m in re.finditer(r"katastr[aá]ln[ií]\s+[úu]zem[ií]\s*[:\-]?\s*", text or "", re.I):
+        tail = (text or "")[m.end():m.end()+120]
+        tail = re.split(r"[\n\r;\(\)]", tail, maxsplit=1)[0]
+        info = _match_ku_candidate(tail, mp)
+        if info:
+            found[norm(info["ku_nazev"])] = info
+
     return list(found.values())
 
-def enrich(row, mp):
+def extract_offices(text, office_map):
+    found = set()
+    for rx in OFFICE_RX:
+        for m in rx.finditer(text or ""):
+            cand = re.split(r"[,;\n\r\(\)]", m.group(1), maxsplit=1)[0].strip(" .:-")
+            n = norm(cand)
+            if n in office_map:
+                found.add(office_map[n])
+                continue
+
+            # Tolerantně odřízni případný text přilepený za názvem pracoviště.
+            matches = [
+                (len(key), office)
+                for key, office in office_map.items()
+                if n == key or n.startswith(key + " ")
+            ]
+            if matches:
+                found.add(max(matches, key=lambda x: x[0])[1])
+
+    return sorted(found)
+
+def enrich(row, mp, office_map):
     text, status = pdf_text(row.get("dokument_url"))
     yes, hits = detect_real(text)
     infos = extract_ku(text, mp)
+    direct_offices = extract_offices(text, office_map)
+
+    offices_from_ku = {x["pracoviste"] for x in infos if x.get("pracoviste")}
+    all_offices = sorted(offices_from_ku | set(direct_offices))
 
     row["pdf_checked"] = True
     row["pdf_status"] = status
@@ -292,7 +358,8 @@ def enrich(row, mp):
     row["nemovitost_signaly"] = hits if status == "ok" else []
     row["katastralni_uzemi"] = sorted({x["ku_nazev"] for x in infos})
     row["obce"] = sorted({x["obec"] for x in infos if x["obec"]})
-    row["katastralni_pracoviste"] = sorted({x["pracoviste"] for x in infos})
+    row["katastralni_pracoviste"] = all_offices
+    row["enrichment_version"] = 2
     return row
 
 def main():
@@ -384,11 +451,17 @@ def main():
 
     if backfill_complete:
         print("FÁZE 2: analyzuji PDF soupisů", flush=True)
-        mp = load_cuzk()
+        mp, office_map = load_cuzk()
 
         todo = [
             key for key in valid_keys
-            if not existing[key].get("pdf_checked")
+            if (
+                not existing[key].get("pdf_checked")
+                or (
+                    existing[key].get("obsahuje_nemovitost") is True
+                    and int(existing[key].get("enrichment_version") or 0) < 2
+                )
+            )
         ]
         this_run = todo[:MAX_PDF_PER_RUN]
 
@@ -399,7 +472,7 @@ def main():
         )
 
         for i, key in enumerate(this_run, 1):
-            existing[key] = enrich(existing[key], mp)
+            existing[key] = enrich(existing[key], mp, office_map)
             pdf_done_this_run = i
 
             if i % 10 == 0 or i == len(this_run):
