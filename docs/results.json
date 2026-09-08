@@ -1,15 +1,36 @@
 {
-  "updated_at": "2026-09-08T08:15:51.387582+00:00",
+  "updated_at": "2026-09-08T08:19:47.821908+00:00",
   "days_back": 180,
-  "current_id": 80291159,
-  "latest_id": 80291161,
-  "caught_up": false,
-  "phase": "isir_backfill",
-  "count_all_soupisy": 16668,
-  "count_real_estate": 0,
-  "remaining_pdf_analysis": 13594,
+  "current_id": 80291295,
+  "latest_id": 80291295,
+  "caught_up": true,
+  "backfill_complete": true,
+  "phase": "pdf_analysis",
+  "count_all_soupisy": 16670,
+  "count_real_estate": 1,
+  "remaining_pdf_analysis": 13446,
   "katastralni_pracoviste_options": [],
   "items": [
+    {
+      "id": 80291233,
+      "datum_zverejneni": "2026-09-08T10:17:53.000+02:00",
+      "datum_zalozeni": "2026-09-08T10:17:53.000+02:00",
+      "spisova_znacka": "INS 23543/2025",
+      "typ_udalosti": "334",
+      "popis_udalosti": "Soupis majetkové podstaty",
+      "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHK</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
+      "dokument_url": ""
+    },
+    {
+      "id": 80291196,
+      "datum_zverejneni": "2026-09-08T10:16:27.000+02:00",
+      "datum_zalozeni": "2026-09-08T10:16:27.000+02:00",
+      "spisova_znacka": "INS 3638/2026",
+      "typ_udalosti": "334",
+      "popis_udalosti": "Soupis majetkové podstaty",
+      "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
+      "dokument_url": ""
+    },
     {
       "id": 80290782,
       "datum_zverejneni": "2026-09-08T10:04:57.000+02:00",
@@ -18,7 +39,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80290784,
@@ -28,7 +56,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80290645,
@@ -38,7 +73,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80290654,
@@ -48,7 +90,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSECULP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80290640,
@@ -58,7 +107,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80290446,
@@ -68,7 +124,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80290304,
@@ -78,7 +141,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80290231,
@@ -88,7 +158,14 @@
       "typ_udalosti": "454",
       "popis_udalosti": "Soupis majetkové podstaty - doplnění",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSZPCPM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80290170,
@@ -98,7 +175,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHK</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80290154,
@@ -108,7 +192,14 @@
       "typ_udalosti": "454",
       "popis_udalosti": "Soupis majetkové podstaty - doplnění",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSZPCPM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80290024,
@@ -118,7 +209,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOSP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289950,
@@ -128,7 +226,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289897,
@@ -138,7 +243,14 @@
       "typ_udalosti": "454",
       "popis_udalosti": "Soupis majetkové podstaty - doplnění",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289704,
@@ -148,7 +260,14 @@
       "typ_udalosti": "538",
       "popis_udalosti": "Soupis majetkové podstaty - změna",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289688,
@@ -158,7 +277,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSZPCPM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289660,
@@ -168,7 +294,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289645,
@@ -178,7 +311,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289628,
@@ -188,7 +328,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289593,
@@ -198,7 +345,14 @@
       "typ_udalosti": "454",
       "popis_udalosti": "Soupis majetkové podstaty - doplnění",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289565,
@@ -208,7 +362,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289488,
@@ -218,7 +379,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289368,
@@ -228,7 +396,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSECULP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80289128,
@@ -238,7 +413,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288979,
@@ -248,7 +430,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSECULP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288908,
@@ -258,7 +447,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288856,
@@ -268,7 +464,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288622,
@@ -278,7 +481,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288611,
@@ -288,7 +498,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288535,
@@ -298,7 +515,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288457,
@@ -308,7 +532,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80594846"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80594846",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288358,
@@ -318,7 +549,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288283,
@@ -328,7 +566,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288180,
@@ -338,7 +583,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288136,
@@ -348,7 +600,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288100,
@@ -358,7 +617,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80288082,
@@ -368,7 +634,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHK</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80287521,
@@ -378,7 +651,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80593947"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80593947",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80287356,
@@ -388,7 +668,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHKP1</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80287273,
@@ -398,7 +685,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ÚPADEK</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80593699"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80593699",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80287170,
@@ -408,7 +702,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSZPCPM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80287155,
@@ -418,7 +719,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80287054,
@@ -428,7 +736,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286925,
@@ -438,7 +753,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286818,
@@ -448,7 +770,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80593279"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80593279",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286616,
@@ -458,7 +787,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286630,
@@ -468,7 +804,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286581,
@@ -478,7 +821,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286573,
@@ -488,7 +838,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSECULP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286459,
@@ -498,7 +855,14 @@
       "typ_udalosti": "538",
       "popis_udalosti": "Soupis majetkové podstaty - změna",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286467,
@@ -508,7 +872,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286372,
@@ -518,7 +889,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286351,
@@ -528,7 +906,14 @@
       "typ_udalosti": "454",
       "popis_udalosti": "Soupis majetkové podstaty - doplnění",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHK</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80592855"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80592855",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286303,
@@ -538,7 +923,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286271,
@@ -548,7 +940,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286113,
@@ -558,7 +957,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286015,
@@ -568,7 +974,17 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80592539"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80592539",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": true,
+      "nemovitost_signaly": [
+        "LV č. 614",
+        "nemovitost"
+      ],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80286008,
@@ -578,7 +994,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80285956,
@@ -588,7 +1011,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80285790,
@@ -598,7 +1028,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80285744,
@@ -608,7 +1045,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80285703,
@@ -618,7 +1062,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSZPCPM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80592253"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80592253",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80285584,
@@ -628,7 +1079,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80592156"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80592156",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80285505,
@@ -638,7 +1096,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHK</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80285154,
@@ -648,7 +1113,14 @@
       "typ_udalosti": "454",
       "popis_udalosti": "Soupis majetkové podstaty - doplnění",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80285118,
@@ -658,7 +1130,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHK</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 80278924,
@@ -50019,7 +50498,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79790808,
@@ -50029,7 +50515,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79790779,
@@ -50039,7 +50532,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHK</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79790701,
@@ -50049,7 +50549,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79790600,
@@ -50059,7 +50566,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSZPCPM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79790594,
@@ -50069,7 +50583,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79790529,
@@ -50079,7 +50600,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHK</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80158995"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80158995",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79790467,
@@ -50089,7 +50617,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80158929"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80158929",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79790325,
@@ -50099,7 +50634,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79790297,
@@ -50109,7 +50651,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79790055,
@@ -50119,7 +50668,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHKP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79789999,
@@ -50129,7 +50685,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79789775,
@@ -50139,7 +50702,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80158257"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80158257",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79789503,
@@ -50149,7 +50719,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80157969"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80157969",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79789376,
@@ -50159,7 +50736,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79789364,
@@ -50169,7 +50753,14 @@
       "typ_udalosti": "538",
       "popis_udalosti": "Soupis majetkové podstaty - změna",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79789195,
@@ -50179,7 +50770,14 @@
       "typ_udalosti": "538",
       "popis_udalosti": "Soupis majetkové podstaty - změna",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79789031,
@@ -50189,7 +50787,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80157517"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80157517",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79788814,
@@ -50199,7 +50804,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHKP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79788767,
@@ -50209,7 +50821,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHK</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79788604,
@@ -50219,7 +50838,14 @@
       "typ_udalosti": "538",
       "popis_udalosti": "Soupis majetkové podstaty - změna",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79788348,
@@ -50229,7 +50855,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOSP1</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79788308,
@@ -50239,7 +50872,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79788310,
@@ -50249,7 +50889,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79788113,
@@ -50259,7 +50906,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79787579,
@@ -50269,7 +50923,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79787467,
@@ -50279,7 +50940,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHKP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79787405,
@@ -50289,7 +50957,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79787358,
@@ -50299,7 +50974,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHKP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786899,
@@ -50309,7 +50991,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHKP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786840,
@@ -50319,7 +51008,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786812,
@@ -50329,7 +51025,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786794,
@@ -50339,7 +51042,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786736,
@@ -50349,7 +51059,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786692,
@@ -50359,7 +51076,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786662,
@@ -50369,7 +51093,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786629,
@@ -50379,7 +51110,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786633,
@@ -50389,7 +51127,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786640,
@@ -50399,7 +51144,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786573,
@@ -50409,7 +51161,14 @@
       "typ_udalosti": "454",
       "popis_udalosti": "Soupis majetkové podstaty - doplnění",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786405,
@@ -50419,7 +51178,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786345,
@@ -50429,7 +51195,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79786276,
@@ -50439,7 +51212,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79785671,
@@ -50449,7 +51229,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79785649,
@@ -50459,7 +51246,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79785637,
@@ -50469,7 +51263,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79785618,
@@ -50479,7 +51280,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79785589,
@@ -50489,7 +51297,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHK</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79785573,
@@ -50499,7 +51314,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79785329,
@@ -50509,7 +51331,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79784889,
@@ -50519,7 +51348,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79784721,
@@ -50529,7 +51365,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79784545,
@@ -50539,7 +51382,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSZPCPM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80154306"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80154306",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79784310,
@@ -50549,7 +51399,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSZPCPM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79783779,
@@ -50559,7 +51416,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSZPCPM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79783642,
@@ -50569,7 +51433,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79783602,
@@ -50579,7 +51450,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOSP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79783463,
@@ -50589,7 +51467,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79783415,
@@ -50599,7 +51484,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ÚPADEK</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79783323,
@@ -50609,7 +51501,14 @@
       "typ_udalosti": "454",
       "popis_udalosti": "Soupis majetkové podstaty - doplnění",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJICCB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79783299,
@@ -50619,7 +51518,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79783045,
@@ -50629,7 +51535,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79782616,
@@ -50639,7 +51552,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOSP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80151172"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80151172",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79782478,
@@ -50649,7 +51569,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSEMOS</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79782409,
@@ -50659,7 +51586,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79781951,
@@ -50669,7 +51603,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79781855,
@@ -50679,7 +51620,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79781863,
@@ -50689,7 +51637,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79781818,
@@ -50699,7 +51654,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79781649,
@@ -50709,7 +51671,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSZPCPM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79781367,
@@ -50719,7 +51688,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHKP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80147047"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80147047",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79781385,
@@ -50729,7 +51705,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSVYCHKP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79780531,
@@ -50739,7 +51722,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79780401,
@@ -50749,7 +51739,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79780394,
@@ -50759,7 +51756,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79779919,
@@ -50769,7 +51773,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>MSPHAAB</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79778848,
@@ -50779,7 +51790,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79778506,
@@ -50789,7 +51807,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79778355,
@@ -50799,7 +51824,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79778349,
@@ -50809,7 +51841,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79778321,
@@ -50819,7 +51858,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSJIMBM</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79777080,
@@ -50829,7 +51875,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSECULP1</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79776933,
@@ -50839,7 +51892,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSCEUL</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80146804"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80146804",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79776911,
@@ -50849,7 +51909,14 @@
       "typ_udalosti": "454",
       "popis_udalosti": "Soupis majetkové podstaty - doplnění",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSZPCPM</idOsobyPuvodce><vec><druhStavRizeni>KONKURS</druhStavRizeni></vec><priznakAnVedlejsiUdalost>F</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80146783"
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80146783",
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79776874,
@@ -50859,7 +51926,14 @@
       "typ_udalosti": "334",
       "popis_udalosti": "Soupis majetkové podstaty",
       "poznamka": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?><ns2:udalost xmlns:ns2=\"http://www.cca.cz/isir/poznamka\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" verzeXsd=\"1_11\" xsi:schemaLocation=\"https://isir.justice.cz:8443/isir_public_ws/xsd/poznamka_1_11.xsd\"><idOsobyPuvodce>KSSTCAB</idOsobyPuvodce><vec><druhStavRizeni>ODDLUŽENÍ</druhStavRizeni></vec><priznakAnVedlejsiUdalost>T</priznakAnVedlejsiUdalost><priznakAnVedlejsiDokument>F</priznakAnVedlejsiDokument><priznakPlatnyVeritel>F</priznakPlatnyVeritel><priznakMylnyZapisVeritelPohled>F</priznakMylnyZapisVeritelPohled></ns2:udalost>",
-      "dokument_url": ""
+      "dokument_url": "",
+      "pdf_checked": true,
+      "pdf_status": "no_url",
+      "obsahuje_nemovitost": false,
+      "nemovitost_signaly": [],
+      "katastralni_uzemi": [],
+      "obce": [],
+      "katastralni_pracoviste": []
     },
     {
       "id": 79776813,
