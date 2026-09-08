@@ -285,54 +285,82 @@ def detect_real(text):
 
     return len(uniq) >= 2, uniq[:8]
 
+def normalize_pdf_text(text):
+    """Normalizace textu z PDF bez ztráty slov, ale s odstraněním rozbitých whitespace."""
+    t = (text or "").replace("\u00a0", " ")
+    t = re.sub(r"[ \t]+", " ", t)
+    t = re.sub(r"\s*\n\s*", "\n", t)
+    return t
+
 def _match_ku_candidate(candidate, mp):
-    """Najdi nejdelší katastrální území, které odpovídá začátku kandidáta."""
     n = norm(candidate)
     if not n:
         return None
     if n in mp:
         return mp[n]
-
     matches = []
     for key, info in mp.items():
-        # PDF často přilepí za název k. ú. další text stejného řádku.
-        if n.startswith(key + " ") or n == key:
+        if n == key or n.startswith(key + " "):
             matches.append((len(key), info))
-    if matches:
-        return max(matches, key=lambda x: x[0])[1]
-    return None
+    return max(matches, key=lambda x: x[0])[1] if matches else None
+
+def _find_all_known_ku(text, mp):
+    """
+    Robustní fallback: hledá známá katastrální území z číselníku ČÚZK
+    v normalizovaném textu PDF. Aby nevznikaly falešné shody, preferuje
+    delší názvy a vyžaduje hranice slov.
+    """
+    nt = " " + norm(text) + " "
+    found = {}
+    # Delší názvy první.
+    for key in sorted(mp.keys(), key=len, reverse=True):
+        if len(key) < 5:
+            continue
+        if f" {key} " in nt:
+            found[key] = mp[key]
+    return list(found.values())
 
 def extract_ku(text, mp):
+    text = normalize_pdf_text(text)
     found = {}
+
+    # 1) standardní výrazy
     for rx in KU_RX:
-        for m in rx.finditer(text or ""):
+        for m in rx.finditer(text):
             cand = re.split(r"[,;\n\r\(\)]", m.group(1), maxsplit=1)[0].strip(" .:-")
             info = _match_ku_candidate(cand, mp)
             if info:
                 found[norm(info["ku_nazev"])] = info
 
-    # Druhá, tolerantnější cesta: po frázi "katastrální území" zkus až 120 znaků
-    # a vyber nejdelší známý název z číselníku ČÚZK.
-    for m in re.finditer(r"katastr[aá]ln[ií]\s+[úu]zem[ií]\s*[:\-]?\s*", text or "", re.I):
-        tail = (text or "")[m.end():m.end()+120]
-        tail = re.split(r"[\n\r;\(\)]", tail, maxsplit=1)[0]
-        info = _match_ku_candidate(tail, mp)
+    # 2) varianty "k.ú.", "k. ú.", "kú" a text v tabulkách
+    direct_rx = re.compile(
+        r"(?:k\s*\.\s*[úu]\s*\.?|katastr[aá]ln[ií]\s+[úu]zem[ií])"
+        r"\s*[:\-]?\s*([A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][^\n\r;,()]{2,120})",
+        re.I,
+    )
+    for m in direct_rx.finditer(text):
+        info = _match_ku_candidate(m.group(1), mp)
         if info:
+            found[norm(info["ku_nazev"])] = info
+
+    # 3) fallback přes celý číselník; používáme hlavně u potvrzených nemovitostí.
+    if not found:
+        for info in _find_all_known_ku(text, mp):
             found[norm(info["ku_nazev"])] = info
 
     return list(found.values())
 
 def extract_offices(text, office_map):
+    text = normalize_pdf_text(text)
     found = set()
+
     for rx in OFFICE_RX:
-        for m in rx.finditer(text or ""):
+        for m in rx.finditer(text):
             cand = re.split(r"[,;\n\r\(\)]", m.group(1), maxsplit=1)[0].strip(" .:-")
             n = norm(cand)
             if n in office_map:
                 found.add(office_map[n])
                 continue
-
-            # Tolerantně odřízni případný text přilepený za názvem pracoviště.
             matches = [
                 (len(key), office)
                 for key, office in office_map.items()
@@ -341,16 +369,46 @@ def extract_offices(text, office_map):
             if matches:
                 found.add(max(matches, key=lambda x: x[0])[1])
 
+    # Fallback: hledej přesný známý název pracoviště kdekoliv v textu.
+    nt = " " + norm(text) + " "
+    if not found:
+        for key, office in sorted(office_map.items(), key=lambda kv: len(kv[0]), reverse=True):
+            if f" {key} " in nt:
+                found.add(office)
+
     return sorted(found)
+
+def extract_property_details(text):
+    """Lehké vytěžení LV, parcel a typů nemovitostí pro detail na webu."""
+    t = normalize_pdf_text(text)
+    lvs = sorted(set(re.findall(r"\bLV\s*(?:č\.?|číslo)?\s*(\d+)", t, re.I)))
+    parcels = sorted(set(
+        m.group(1) for m in re.finditer(
+            r"(?:parc(?:ela|ely|\.?)|p\.\s*č\.)\s*(?:č\.?|číslo)?\s*([0-9]+(?:/[0-9]+)?)",
+            t, re.I
+        )
+    ))
+    types = []
+    for label, pat in [
+        ("Rodinný dům", r"rodinn[ýy]\s+d[ůu]m"),
+        ("Byt / jednotka", r"\bbyt\b|\bjednotka\b"),
+        ("Pozemek", r"\bpozemek\b"),
+        ("Stavba", r"\bstavba\b|\bbudova\b"),
+        ("Garáž", r"\bgar[aá][žz]\b"),
+    ]:
+        if re.search(pat, t, re.I):
+            types.append(label)
+    return {"lv": lvs[:20], "parcely": parcels[:30], "typy": types}
 
 def enrich(row, mp, office_map):
     text, status = pdf_text(row.get("dokument_url"))
     yes, hits = detect_real(text)
-    infos = extract_ku(text, mp)
-    direct_offices = extract_offices(text, office_map)
 
+    infos = extract_ku(text, mp) if status == "ok" else []
+    direct_offices = extract_offices(text, office_map) if status == "ok" else []
     offices_from_ku = {x["pracoviste"] for x in infos if x.get("pracoviste")}
     all_offices = sorted(offices_from_ku | set(direct_offices))
+    details = extract_property_details(text) if status == "ok" else {"lv": [], "parcely": [], "typy": []}
 
     row["pdf_checked"] = True
     row["pdf_status"] = status
@@ -359,7 +417,10 @@ def enrich(row, mp, office_map):
     row["katastralni_uzemi"] = sorted({x["ku_nazev"] for x in infos})
     row["obce"] = sorted({x["obec"] for x in infos if x["obec"]})
     row["katastralni_pracoviste"] = all_offices
-    row["enrichment_version"] = 2
+    row["lv"] = details["lv"]
+    row["parcely"] = details["parcely"]
+    row["typy_nemovitosti"] = details["typy"]
+    row["enrichment_version"] = 3
     return row
 
 def main():
@@ -459,7 +520,7 @@ def main():
                 not existing[key].get("pdf_checked")
                 or (
                     existing[key].get("obsahuje_nemovitost") is True
-                    and int(existing[key].get("enrichment_version") or 0) < 2
+                    and int(existing[key].get("enrichment_version") or 0) < 3
                 )
             )
         ]
