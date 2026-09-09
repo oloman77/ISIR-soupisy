@@ -1,0 +1,86 @@
+name: ISIR pilot - read only
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/pilot.yml'
+      - 'crawler.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install OCR and dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-ces tesseract-ocr-eng
+          pip install requests pypdf
+      - name: Read-only pilot on real documents
+        env:
+          MAX_PDF_PER_RUN: '30'
+          MAX_BATCHES: '30'
+          DAYS_BACK: '180'
+          PYTHONUNBUFFERED: '1'
+        run: |
+          mkdir -p pilot-output
+          python - <<'PY'
+          import hashlib
+          import json
+          import time
+          from pathlib import Path
+          import crawler as c
+
+          protected = [c.STATE_FILE, c.RESULTS_FILE]
+          before = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in protected}
+          report = {"documents": [], "read_only": True}
+          original_pdf = c.pdf_text
+          def measured_pdf(url, progress=None):
+              started = time.monotonic()
+              text, status = original_pdf(url, progress)
+              report["documents"].append({
+                  "id": (progress or {}).get("id"),
+                  "seconds": round(time.monotonic()-started, 3),
+                  "status": status,
+                  "characters": len(text),
+                  "completed_pages": (progress or {}).get("pdf_resume_page"),
+              })
+              return text, status
+          c.pdf_text = measured_pdf
+
+          # Keep the checkout's data unchanged, collecting only summary statistics.
+          def capture(path, obj):
+              if path == c.RESULTS_FILE:
+                  report["summary"] = {k:v for k,v in obj.items() if k != "items"}
+              elif path == c.STATE_FILE:
+                  report["state"] = obj
+              else:
+                  raise RuntimeError("Unexpected write destination")
+          c.save_json = capture
+          started = time.monotonic()
+          try:
+              c.main()
+          finally:
+              report["elapsed_seconds"] = round(time.monotonic()-started, 3)
+              after = {str(p): hashlib.sha256(p.read_bytes()).hexdigest() for p in protected}
+              report["production_files_unchanged"] = before == after
+              Path("pilot-output/report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2))
+              print("PILOT_REPORT=" + json.dumps(report, ensure_ascii=False))
+              if before != after:
+                  raise RuntimeError("Pilot modified protected files")
+          PY
+      - name: Save pilot measurements
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: isir-pilot-report
+          path: pilot-output/report.json
+          if-no-files-found: warn
+          retention-days: 7
