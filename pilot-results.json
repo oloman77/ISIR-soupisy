@@ -1,0 +1,82 @@
+{
+  "tested_source_commit": "2ab31ed16cca4cab82e6de30a23eeef63ba98002",
+  "environment": "Local runtime with Tesseract ces+eng; not GitHub Actions",
+  "live_pdf_sample": [
+    {
+      "id": 80313085,
+      "status": "ok",
+      "seconds": 28.75,
+      "ocr_pages": 8,
+      "characters": 10330,
+      "signals": [
+        true,
+        [
+          "LV č. 257",
+          "parc.č. 7/2",
+          "stavba",
+          "nemovitost"
+        ]
+      ]
+    },
+    {
+      "id": 79837515,
+      "status": "partial:time_limit",
+      "seconds": 121.37,
+      "ocr_pages": 40,
+      "characters": 100114,
+      "signals": [
+        false,
+        [
+          "byt"
+        ]
+      ]
+    },
+    {
+      "id": 79823799,
+      "status": "ok",
+      "seconds": 19.19,
+      "ocr_pages": 3,
+      "characters": 5604,
+      "signals": [
+        false,
+        []
+      ]
+    },
+    {
+      "id": 80315001,
+      "status": "ok",
+      "seconds": 9.66,
+      "ocr_pages": 0,
+      "characters": 1603,
+      "signals": [
+        false,
+        []
+      ]
+    },
+    {
+      "id": 80315002,
+      "status": "ok",
+      "seconds": 9.68,
+      "ocr_pages": 0,
+      "characters": 595,
+      "signals": [
+        false,
+        []
+      ]
+    },
+    {
+      "id": 80315004,
+      "status": "ok",
+      "seconds": 9.49,
+      "ocr_pages": 0,
+      "characters": 1024,
+      "signals": [
+        false,
+        []
+      ]
+    }
+  ],
+  "current_revision_unit_tests": 11,
+  "resume_live_validation": "not performed; covered by regression test",
+  "capacity_status": "not established; sample arrival rate exceeds old fixed cap"
+}
