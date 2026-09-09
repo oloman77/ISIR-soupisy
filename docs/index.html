@@ -53,7 +53,7 @@ th{background:#f8fafc;font-weight:750;white-space:nowrap}
     <h1>ISIR – PDF s podezřením na nemovitost</h1>
     <div class="muted">
       Přehled dokumentů, ve kterých crawler našel znaky možného nemovitého majetku. Nálezy vyžadují ověření vlastnictví.
-      Kraj se uvádí pouze tehdy, když je v PDF přímo nalezen údaj „Katastrální úřad pro … kraj“.
+      Kraje jsou odvozené z názvů úřadů a katastrálních území uvedených v PDF. Dokument může zmiňovat více krajů i srovnávací nemovitosti; poloha a vlastnictví vyžadují ověření.
     </div>
   </div>
   <div class="statusbox">
@@ -124,10 +124,16 @@ function phaseLabel(p){
   return p||'—';
 }
 
+function regionsOf(x){return Array.isArray(x.kraje)?x.kraje:(x.kraj?[x.kraj]:[])}
+function regionDetails(x){
+  const evidence=x.lokalita_doklady||[];
+  return evidence.length ? '<details><summary>Zdroj určení</summary>'+evidence.map(e=>
+    '<div class="small">'+esc(e.kraj)+' — '+esc(e.doklad)+(e.ku_nazev?' · '+esc(e.ku_nazev):'')+'</div>').join('')+'</details>' : '';
+}
 function populateRegions(){
   const s=document.getElementById('region');
   const keep=s.value;
-  const arr=[...new Set(suspectedItems().map(x=>x.kraj).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'cs'));
+  const arr=[...new Set(suspectedItems().flatMap(regionsOf).filter(Boolean))].sort((a,b)=>a.localeCompare(b,'cs'));
   s.innerHTML='<option value="">Všechny kraje</option>'+arr.map(o=>`<option>${esc(o)}</option>`).join('');
   if(arr.includes(keep))s.value=keep;
 }
@@ -149,17 +155,17 @@ function render(){
 
   const items=suspectedItems().filter(x=>{
     const hay=[
-      x.spisova_znacka,x.popis_udalosti,x.poznamka,x.kraj,
+      x.spisova_znacka,x.popis_udalosti,x.poznamka,...regionsOf(x),...(x.katastralni_uzemi||[]),
       ...(x.nemovitost_signaly||[])
     ].join(' ').toLowerCase();
-    return (!q||hay.includes(q)) && (!region||x.kraj===region);
+    return (!q||hay.includes(q)) && (!region||regionsOf(x).includes(region));
   });
 
   document.getElementById('rows').innerHTML=items.map(x=>`
     <tr>
       <td>${fmtDate(x.datum_zverejneni||x.datum_zalozeni)}</td>
       <td><b>${esc(x.spisova_znacka)}</b></td>
-      <td>${x.kraj?`<span class="badge">${esc(x.kraj)}</span>`:'—'}</td>
+      <td>${regionsOf(x).length?badges(regionsOf(x)):'Kraj nezjištěn'}${regionDetails(x)}</td>
       <td>${esc(x.popis_udalosti||x.poznamka)}</td>
       <td>
         <div class="actions">
@@ -207,4 +213,5 @@ load();
 </script>
 </body>
 </html>
+
 
