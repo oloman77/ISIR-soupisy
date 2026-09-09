@@ -1,6 +1,12 @@
 name: ISIR crawler + Pages
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'crawler.py'
+      - '.github/workflows/isir.yml'
+      - 'docs/index.html'
   workflow_dispatch:
   schedule:
     - cron: "*/30 * * * *"
