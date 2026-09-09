@@ -20,8 +20,8 @@ jobs:
           python-version: '3.12'
       - name: Install OCR and dependencies
         run: |
-          sudo apt-get update
-          sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-ces tesseract-ocr-eng
+          sudo apt-get -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/ubuntu.sources -o Dir::Etc::sourceparts=- update
+          sudo apt-get -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/ubuntu.sources -o Dir::Etc::sourceparts=- install -y poppler-utils tesseract-ocr tesseract-ocr-ces tesseract-ocr-eng
           pip install requests pypdf
       - name: Read-only pilot on real documents
         env:

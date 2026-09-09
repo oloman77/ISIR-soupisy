@@ -1,0 +1,30 @@
+name: Region extraction pilot
+on:
+  pull_request:
+    paths:
+      - regions.py
+      - crawler.py
+      - test_regions.py
+      - pilot_regions.py
+      - .github/workflows/regions-pilot.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: pip install requests pypdf
+      - run: python -m unittest -v
+      - run: sudo apt-get -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/ubuntu.sources -o Dir::Etc::sourceparts=- update && sudo apt-get -o Dir::Etc::sourcelist=/etc/apt/sources.list.d/ubuntu.sources -o Dir::Etc::sourceparts=- install -y poppler-utils tesseract-ocr tesseract-ocr-ces
+      - run: python pilot_regions.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: region-pilot
+          path: region-pilot.json

@@ -18,6 +18,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from pypdf import PdfReader
+from regions import extract_regions
 
 SERVICE_URL = "https://isir.justice.cz:8443/isir_public_ws/IsirWsPublicService"
 CUZK_KU_URL = "https://services.cuzk.cz/sestavy/cis/SC_SEZNAMKUKRA_DOTAZ.zip"
@@ -243,8 +244,11 @@ def load_cuzk():
         ku = (row.get("KU_NAZEV") or "").strip()
         office = (row.get("PRARES_NAZEV") or "").strip()
         if ku and office:
-            mp[norm(ku)] = {
+            mp[(row.get("KU_KOD") or norm(ku)).strip()] = {
                 "ku_nazev": ku,
+                "ku_kod": (row.get("KU_KOD") or "").strip(),
+                "okres": (row.get("OKRES_NAZEV") or "").strip(),
+                "kraj": (row.get("KRAJ_NAZEV") or "").strip(),
                 "obec": (row.get("OBEC_NAZEV") or "").strip(),
                 "pracoviste": office,
             }
@@ -411,20 +415,9 @@ def detect_suspicion(text):
     return suspected, uniq[:8]
 
 def extract_kraj(text):
-    """
-    Vezme první přímý údaj typu 'Katastrální úřad pro ... kraj'.
-    Hledáme jen v první části dokumentu, abychom omezili vliv referenčních
-    nemovitostí ve znaleckých přílohách.
-    """
-    t = normalize_pdf_text(text)[:30000]
-    m = KRAJ_RX.search(t)
-    if not m:
-        return ""
-
-    raw = re.sub(r"\s+", " ", m.group(1)).strip(" .,:;-")
-    # Hezčí kapitalizace zachovávající českou diakritiku.
-    parts = raw.split()
-    return " ".join(p[:1].upper() + p[1:] for p in parts)
+    evidence = extract_regions(text)
+    regions = sorted({x["kraj"] for x in evidence})
+    return regions[0] if len(regions) == 1 else ""
 
 def isir_search_url(row):
     spis = row.get("spisova_znacka") or ""
@@ -498,7 +491,9 @@ def enrich(row, mp=None, office_map=None):
             row.pop(key, None)
 
     suspected, hits = detect_suspicion(text) if status == "ok" else (False, [])
-    kraj = extract_kraj(text) if status == "ok" and suspected else ""
+    evidence = extract_regions(text, (mp or {}).values()) if status == "ok" and suspected else []
+    kraje = sorted({x["kraj"] for x in evidence})
+    kraj = kraje[0] if len(kraje) == 1 else ""
     detail_url = resolve_isir_detail(row) if status == "ok" and suspected else ""
 
     row["pdf_checked"] = status == "ok"
@@ -514,12 +509,15 @@ def enrich(row, mp=None, office_map=None):
     row["obsahuje_nemovitost"] = bool(status == "ok" and suspected)
     row["nemovitost_signaly"] = hits if status == "ok" else []
     row["kraj"] = kraj
+    row["kraje"] = kraje
+    row["lokalita_doklady"] = evidence
+    row["lokalita_version"] = 1
     row["isir_rizeni_url"] = detail_url
 
     # Staré detailní údaje už ve v7 nepoužíváme.
-    row["katastralni_uzemi"] = []
-    row["katastralni_pracoviste"] = []
-    row["obce"] = []
+    row["katastralni_uzemi"] = sorted({x["ku_nazev"] for x in evidence if x.get("ku_nazev")})
+    row["katastralni_pracoviste"] = sorted({x["pracoviste"] for x in evidence if x.get("pracoviste")})
+    row["obce"] = sorted({x["obec"] for x in evidence if x.get("obec")})
     row["lv"] = []
     row["parcely"] = []
     row["typy_nemovitosti"] = []
@@ -627,10 +625,15 @@ def main():
             flush=True,
         )
 
+        try:
+            ku_map, office_map = load_cuzk() if this_run else ({}, {})
+        except Exception as e:
+            print(f"ČÚZK nedostupné, určování jen podle názvu úřadu: {e}", flush=True)
+            ku_map, office_map = {}, {}
         for i, key in enumerate(this_run, 1):
             if time.monotonic() >= analysis_deadline:
                 break
-            existing[key] = enrich(existing[key])
+            existing[key] = enrich(existing[key], ku_map, office_map)
             pdf_done_this_run = i
 
             if i % 10 == 0 or i == len(this_run):
@@ -725,4 +728,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
