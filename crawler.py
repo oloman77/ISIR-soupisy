@@ -1,4 +1,6 @@
 import io
+import subprocess
+import tempfile
 import csv
 import json
 import os
@@ -29,7 +31,6 @@ MAX_PDF_PER_RUN = int(os.getenv("MAX_PDF_PER_RUN", "150"))
 PAUSE = float(os.getenv("PAUSE", "0.05"))
 SOAP_TIMEOUT = int(os.getenv("SOAP_TIMEOUT", "45"))
 PDF_TIMEOUT = int(os.getenv("PDF_TIMEOUT", "25"))
-MAX_PDF_PAGES = int(os.getenv("MAX_PDF_PAGES", "40"))
 
 SOUPIS_RX = re.compile(
     r"(soupis.{0,50}majetkov[ée].{0,30}podstat|"
@@ -258,28 +259,55 @@ def load_cuzk():
 def pdf_text(url):
     if not url:
         return "", "no_url"
+    parts = []
+    started = time.monotonic()
     try:
         r = SESSION.get(url, timeout=PDF_TIMEOUT)
         r.raise_for_status()
-        ctype = (r.headers.get("content-type") or "").lower()
-        if "pdf" not in ctype and not r.content.startswith(b"%PDF"):
+        if not r.content.startswith(b"%PDF"):
             return "", "not_pdf"
-
         reader = PdfReader(io.BytesIO(r.content))
-        parts = []
-        for page in reader.pages[:MAX_PDF_PAGES]:
-            try:
-                parts.append(page.extract_text() or "")
-            except Exception:
-                pass
-
+        with tempfile.TemporaryDirectory() as tmp:
+            source = Path(tmp) / "source.pdf"
+            source.write_bytes(r.content)
+            # Read every page. Low-text pages need OCR even in mixed PDFs.
+            for number, page in enumerate(reader.pages, 1):
+                if time.monotonic() - started > 120:
+                    return "\n".join(parts), "partial:time_limit"
+                try:
+                    text = page.extract_text() or ""
+                except Exception:
+                    text = ""
+                if len(text.strip()) < 100:
+                    prefix = str(Path(tmp) / "page")
+                    subprocess.run(
+                        ["pdftoppm", "-f", str(number), "-l", str(number),
+                         "-singlefile", "-scale-to", "2400", "-png", str(source), prefix],
+                        check=True, capture_output=True, timeout=30,
+                    )
+                    result = subprocess.run(
+                        ["tesseract", prefix + ".png", "stdout", "-l", "ces+eng"],
+                        check=True, capture_output=True, timeout=45,
+                    )
+                    ocr = result.stdout.decode("utf-8", errors="replace").strip()
+                    text = text + "\n" + ocr
+                parts.append(text)
         text = "\n".join(parts).strip()
-        if not text:
-            return "", "no_text"
-        return text, "ok"
-
+        return (text, "ok") if text else ("", "no_text")
     except Exception as e:
-        return "", "error:" + type(e).__name__
+        return "\n".join(parts), "error:" + type(e).__name__
+
+
+def needs_analysis(row):
+    return (not row.get("pdf_checked")
+            or row.get("pdf_status") != "ok"
+            or int(row.get("enrichment_version") or 0) < 10)
+
+
+def retry_due(row, now):
+    due = parse_dt(row.get("pdf_retry_after"))
+    return due is None or due <= now
+
 
 def detect_real(text):
     hits = []
@@ -365,7 +393,7 @@ def extract_kraj(text):
 
 def isir_search_url(row):
     spis = row.get("spisova_znacka") or ""
-    m = re.search(r"\\bINS\\s+(\\d+)\\s*/\\s*(\\d{4})\\b", spis, re.I)
+    m = re.search(r"\bINS\s+(\d+)\s*/\s*(\d{4})\b", spis, re.I)
     if not m:
         return "https://isir.justice.cz/isir/common/index.do"
 
@@ -416,8 +444,8 @@ def resolve_isir_detail(row):
         html = r.text
 
         patterns = [
-            r'href=["\\\']([^"\\\']*evidence_upadcu_detail\\.do\\?id=[^"\\\']+)["\\\']',
-            r'(https?://isir\\.justice\\.cz/isir/ueu/evidence_upadcu_detail\\.do\\?id=[A-Za-z0-9\\-]+)',
+            r"""href=["']([^"']*evidence_upadcu_detail\.do\?id=[^"']+)["']""",
+            r'(https?://isir\.justice\.cz/isir/ueu/evidence_upadcu_detail\.do\?id=[A-Za-z0-9\-]+)',
         ]
         for pat in patterns:
             m = re.search(pat, html, re.I)
@@ -435,7 +463,15 @@ def enrich(row, mp=None, office_map=None):
     kraj = extract_kraj(text) if status == "ok" and suspected else ""
     detail_url = resolve_isir_detail(row) if status == "ok" and suspected else ""
 
-    row["pdf_checked"] = True
+    row["pdf_checked"] = status == "ok"
+    attempts = int(row.get("pdf_attempts") or 0) + 1
+    row["pdf_attempts"] = attempts
+    row["pdf_last_attempt"] = datetime.now(timezone.utc).isoformat()
+    row["pdf_retry_after"] = (
+        (datetime.now(timezone.utc) + timedelta(hours=min(24, 2 ** min(attempts, 5)))).isoformat()
+        if status != "ok" else None
+    )
+    row["review_status"] = "candidate" if suspected else ("no_signal" if status == "ok" else "unread")
     row["pdf_status"] = status
     row["obsahuje_nemovitost"] = bool(status == "ok" and suspected)
     row["nemovitost_signaly"] = hits if status == "ok" else []
@@ -450,7 +486,7 @@ def enrich(row, mp=None, office_map=None):
     row["parcely"] = []
     row["typy_nemovitosti"] = []
 
-    row["enrichment_version"] = 9
+    row["enrichment_version"] = 10
     return row
 
 def main():
@@ -482,6 +518,8 @@ def main():
         backfill_complete = False
         print(f"Historický start ID: {current}", flush=True)
 
+    coverage_start = state.get("all_documents_from_id", current)
+    analysis_deadline = time.monotonic() + 900
     batches = 0
     processed = 0
 
@@ -509,7 +547,7 @@ def main():
                 processed += 1
 
                 dt = parse_dt(row["datum_zverejneni"]) or parse_dt(row["datum_zalozeni"])
-                if dt and dt >= cutoff and is_soupis(row):
+                if dt and dt >= cutoff and (row.get("dokument_url") or is_soupis(row)):
                     key = str(row["id"])
                     if key in existing:
                         for k, v in existing[key].items():
@@ -541,17 +579,12 @@ def main():
     pdf_done_this_run = 0
 
     if backfill_complete:
-        print("FÁZE 2: analyzuji PDF soupisů", flush=True)
-        todo = [
-            key for key in valid_keys
-            if (
-                not existing[key].get("pdf_checked")
-                or (
-                    existing[key].get("obsahuje_nemovitost") is True
-                    and int(existing[key].get("enrichment_version") or 0) < 9
-                )
-            )
-        ]
+        print("FÁZE 2: analyzuji dokumenty", flush=True)
+        todo = [key for key in valid_keys
+                if needs_analysis(existing[key]) and retry_due(existing[key], now)]
+        # Previously attempted rows go behind new documents; oldest new first.
+        todo.sort(key=lambda key: (int(existing[key].get("pdf_attempts") or 0),
+                                   int(existing[key]["id"])))
         this_run = todo[:MAX_PDF_PER_RUN]
 
         print(
@@ -561,6 +594,8 @@ def main():
         )
 
         for i, key in enumerate(this_run, 1):
+            if time.monotonic() >= analysis_deadline:
+                break
             existing[key] = enrich(existing[key])
             pdf_done_this_run = i
 
@@ -570,7 +605,7 @@ def main():
                     if existing[k].get("obsahuje_nemovitost") is True
                 )
                 print(
-                    f"PDF {i}/{len(this_run)} | potvrzené nemovitosti={confirmed_now}",
+                    f"PDF {i}/{len(this_run)} | možné nemovitosti={confirmed_now}",
                     flush=True,
                 )
     else:
@@ -590,7 +625,7 @@ def main():
 
     remaining_pdf = sum(
         1 for x in valid
-        if not x.get("pdf_checked")
+        if needs_analysis(x)
     )
 
     confirmed = [
@@ -608,12 +643,15 @@ def main():
 
     if not backfill_complete:
         phase = "isir_backfill"
+    elif not caught_up_now:
+        phase = "catching_up"
     elif remaining_pdf > 0:
         phase = "pdf_analysis"
     else:
         phase = "complete"
 
     save_json(STATE_FILE, {
+        "all_documents_from_id": coverage_start,
         "current_id": current,
         "latest_id_at_run": latest,
         "last_run": now.isoformat(),
@@ -626,12 +664,15 @@ def main():
     save_json(RESULTS_FILE, {
         "updated_at": now.isoformat(),
         "days_back": DAYS_BACK,
+        "all_documents_from_id": coverage_start,
         "current_id": current,
         "latest_id": latest,
         "caught_up": caught_up_now,
         "backfill_complete": backfill_complete,
         "phase": phase,
-        "count_all_soupisy": len(valid),
+        "count_all_soupisy": sum(is_soupis(x) for x in valid),
+        "count_all_documents": len(valid),
+        "failed_pdf_analysis": sum(needs_analysis(x) and bool(x.get("pdf_attempts")) for x in valid),
         "count_real_estate": len(confirmed),
         "remaining_pdf_analysis": remaining_pdf,
         "katastralni_pracoviste_options": offices,
@@ -648,3 +689,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

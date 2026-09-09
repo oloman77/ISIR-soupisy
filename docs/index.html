@@ -52,7 +52,7 @@ th{background:#f8fafc;font-weight:750;white-space:nowrap}
   <div>
     <h1>ISIR – PDF s podezřením na nemovitost</h1>
     <div class="muted">
-      Přehled soupisů majetkové podstaty, ve kterých crawler našel znaky možného nemovitého majetku.
+      Přehled dokumentů, ve kterých crawler našel znaky možného nemovitého majetku. Nálezy vyžadují ověření vlastnictví.
       Kraj se uvádí pouze tehdy, když je v PDF přímo nalezen údaj „Katastrální úřad pro … kraj“.
     </div>
   </div>
@@ -69,6 +69,8 @@ th{background:#f8fafc;font-weight:750;white-space:nowrap}
   <div class="stat"><div class="label">Fáze</div><div class="value" id="phase">—</div></div>
   <div class="stat"><div class="label">Stav ISIR</div><div class="value" id="state">—</div></div>
 </div>
+
+<div class="panel" id="coverageNotice"></div>
 
 <div class="panel controls">
   <input id="q" placeholder="Spis, kraj, text…" oninput="render()">
@@ -117,7 +119,8 @@ function suspectedItems(){
 function phaseLabel(p){
   if(p==='isir_backfill')return '1/2 – historie';
   if(p==='pdf_analysis')return '2/2 – analyzuje PDF';
-  if(p==='complete')return 'Hotovo';
+  if(p==='catching_up')return 'Doplňuje nové události';
+  if(p==='complete')return 'Zpracováno';
   return p||'—';
 }
 
@@ -174,6 +177,11 @@ async function load(){
   try{
     const r=await fetch('results.json?ts='+Date.now());
     data=await r.json();
+    const stale = !data.updated_at || Date.now()-Date.parse(data.updated_at)>3*60*60*1000;
+    document.getElementById('coverageNotice').textContent =
+      (stale ? 'Pozor: data nejsou aktuální. ' : '') +
+      'Čeká na dořešení po neúspěšné kontrole: ' + (data.failed_pdf_analysis??0) +
+      '. Rozšířené sledování zahrnuje dokumenty přijaté po jeho zapnutí; starší historie obsahuje pouze soupisy. Prázdný přehled při nedokončené kontrole neznamená, že nemovitosti nejsou.';
     const items=suspectedItems();
 
     document.getElementById('days').textContent=data.days_back??'—';
@@ -198,3 +206,4 @@ load();
 </script>
 </body>
 </html>
+
