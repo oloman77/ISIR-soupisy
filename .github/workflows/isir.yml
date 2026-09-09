@@ -39,7 +39,7 @@ jobs:
         env:
           DAYS_BACK: "180"
           MAX_BATCHES: "250"
-          MAX_PDF_PER_RUN: "150"
+          MAX_PDF_PER_RUN: "500"
           PAUSE: "0.05"
           SOAP_TIMEOUT: "45"
           PDF_TIMEOUT: "25"
