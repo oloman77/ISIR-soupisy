@@ -29,6 +29,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Install Czech OCR
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-ces tesseract-ocr-eng
+
       - name: Install dependencies
         run: pip install requests pypdf fonttools
 
@@ -40,7 +43,6 @@ jobs:
           PAUSE: "0.05"
           SOAP_TIMEOUT: "45"
           PDF_TIMEOUT: "25"
-          MAX_PDF_PAGES: "40"
         run: python crawler.py
 
       - name: Commit state and results
@@ -59,3 +61,4 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
+
