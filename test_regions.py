@@ -24,4 +24,13 @@ class RegionsTest(unittest.TestCase):
         self.assertEqual(extract_regions('k.ú. Lhotany',rows),[])
         self.assertEqual(extract_regions('k.ú. Lhota [222222]',rows)[0]['kraj'],'B')
 
+    def test_comparison_section_and_return_to_subject(self):
+        text = "Katastrální úřad pro Pardubický kraj\nOcenění tržním porovnáním\nk.ú. Svojšice\nE. REKAPITULACE\nKatastrální úřad pro Vysočinu"
+        rows = [dict(ku_kod='761338', ku_nazev='Svojšice', kraj='Středočeský kraj')]
+        self.assertEqual({r['kraj'] for r in extract_regions(text, rows)}, {'Pardubický kraj', 'Kraj Vysočina'})
+
+    def test_conflicting_district(self):
+        rows = [dict(ku_kod='761338', ku_nazev='Svojšice', kraj='Středočeský kraj', okres='Příbram')]
+        self.assertEqual(extract_regions('k.ú. Svojšice, okres Pardubice', rows), [])
+
 if __name__=='__main__': unittest.main()

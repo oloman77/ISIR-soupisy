@@ -13,7 +13,19 @@ def norm(text):
     return re.sub(r"\s+", " ", "".join(c for c in text if not unicodedata.combining(c)).lower()).strip()
 
 def extract_regions(text, records=()):
-    t = norm(text)
+    # Ignore explicitly titled comparison sections, ending at the next
+    # major report section. Ordinary mentions of comparison are not enough.
+    lines = (text or "").splitlines(keepends=True)
+    selected = []
+    comparison = False
+    for line in lines:
+        title = norm(line)
+        if re.fullmatch(r"(?:oceneni trznim porovnanim|srovnavane nemovitosti|zaznam o prodeji srovnavane nemovitosti c\. ?\d+)", title):
+            comparison = True
+        elif re.match(r"^[A-Z]\.\s+", line.strip()):
+            comparison = False
+        selected.append("\n" if comparison else line)
+    t = norm("".join(selected))
     found = []
     def add(region, method, evidence, record=None):
         item = {"kraj": region, "metoda": method, "doklad": evidence}
@@ -61,6 +73,9 @@ def extract_regions(text, records=()):
         # Ambiguous names are not guessed.
         if len(candidates) == 1:
             r = candidates[0]
+            district = re.search(r"\bokres\s+([a-z]+(?:[- ](?:nad|pod|u|v) [a-z]+)?)", tail)
+            if district and r.get("okres") and not norm(r["okres"]).startswith(district[1]):
+                continue
             add(r["kraj"], "kod_ku" if code_match else "nazev_ku", evidence, r)
     return found
 

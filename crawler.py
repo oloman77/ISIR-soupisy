@@ -247,6 +247,7 @@ def load_cuzk():
             mp[(row.get("KU_KOD") or norm(ku)).strip()] = {
                 "ku_nazev": ku,
                 "ku_kod": (row.get("KU_KOD") or "").strip(),
+                "okres": (row.get("OKRES_NAZEV") or "").strip(),
                 "kraj": (row.get("KRAJ_NAZEV") or "").strip(),
                 "obec": (row.get("OBEC_NAZEV") or "").strip(),
                 "pracoviste": office,
