@@ -10,6 +10,49 @@ class MonitoringTests(unittest.TestCase):
         self.assertTrue(c.needs_analysis({'pdf_checked': True, 'pdf_status': 'no_text', 'enrichment_version': 9}))
         self.assertFalse(c.needs_analysis({'pdf_checked': True, 'pdf_status': 'ok', 'enrichment_version': 10}))
 
+    def test_missing_urls_do_not_consume_processing_slots(self):
+        rows = {"1": {"id": 1, "pdf_status": "no_url"},
+                "2": {"id": 2, "dokument_url": "test"}}
+        self.assertEqual(c.analysis_queue(rows, list(rows), datetime.now(timezone.utc), 0), ["2"])
+
+    def test_current_documents_and_backlog_both_get_slots(self):
+        rows = {str(i): {"id": i, "dokument_url": "test"} for i in range(1, 11)}
+        queue = c.analysis_queue(rows, list(rows), datetime.now(timezone.utc), 2)
+        self.assertEqual(queue[:5], ["3", "4", "5", "6", "1"])
+        self.assertEqual(set(queue), set(rows))
+        self.assertEqual(len(queue), len(rows))
+
+    def test_partial_pdf_resumes_after_last_completed_page(self):
+        response = SimpleNamespace(content=b"%PDF-fixture", raise_for_status=lambda: None)
+        calls = []
+        def page(n):
+            def extract():
+                calls.append(n)
+                return ("page " + str(n) + " ") * 30
+            return SimpleNamespace(extract_text=extract)
+        progress = {}
+        reader = SimpleNamespace(pages=[page(1), page(2)])
+        with patch.object(c.SESSION, "get", return_value=response), patch.object(c, "PdfReader", return_value=reader), patch.object(c.time, "monotonic", side_effect=[0, 1, 121]):
+            _, status = c.pdf_text("test", progress)
+        self.assertEqual(status, "partial:time_limit")
+        self.assertEqual(progress["pdf_resume_page"], 1)
+        with patch.object(c.SESSION, "get", return_value=response), patch.object(c, "PdfReader", return_value=reader):
+            text, status = c.pdf_text("test", progress)
+        self.assertEqual(status, "ok")
+        self.assertEqual(calls, [1, 2])
+        self.assertIn("page 1", text)
+        self.assertIn("page 2", text)
+
+    def test_changed_pdf_restarts_progress(self):
+        response = SimpleNamespace(content=b"%PDF-new", raise_for_status=lambda: None)
+        progress = {"pdf_resume_page": 9, "pdf_resume_text": "OLD", "pdf_resume_sha256": "old"}
+        reader = SimpleNamespace(pages=[SimpleNamespace(extract_text=lambda: "NEW " * 30)])
+        with patch.object(c.SESSION, "get", return_value=response), patch.object(c, "PdfReader", return_value=reader):
+            text, status = c.pdf_text("test", progress)
+        self.assertEqual(status, "ok")
+        self.assertNotIn("OLD", text)
+        self.assertIn("NEW", text)
+
     def test_retry_backoff(self):
         now = datetime.now(timezone.utc)
         self.assertFalse(c.retry_due({'pdf_retry_after': (now + timedelta(hours=1)).isoformat()}, now))

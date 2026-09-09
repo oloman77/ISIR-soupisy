@@ -1,4 +1,5 @@
 import io
+import hashlib
 import subprocess
 import tempfile
 import csv
@@ -256,9 +257,10 @@ def load_cuzk():
     )
     return mp, office_map
 
-def pdf_text(url):
+def pdf_text(url, progress=None):
     if not url:
         return "", "no_url"
+    progress = progress if progress is not None else {}
     parts = []
     started = time.monotonic()
     try:
@@ -266,12 +268,19 @@ def pdf_text(url):
         r.raise_for_status()
         if not r.content.startswith(b"%PDF"):
             return "", "not_pdf"
+        digest = hashlib.sha256(r.content).hexdigest()
+        if progress.get("pdf_resume_sha256") != digest:
+            progress["pdf_resume_page"] = 0
+            progress["pdf_resume_text"] = ""
+        progress["pdf_resume_sha256"] = digest
+        parts = [progress.get("pdf_resume_text") or ""]
+        first_page = int(progress.get("pdf_resume_page") or 0)
         reader = PdfReader(io.BytesIO(r.content))
         with tempfile.TemporaryDirectory() as tmp:
             source = Path(tmp) / "source.pdf"
             source.write_bytes(r.content)
             # Read every page. Low-text pages need OCR even in mixed PDFs.
-            for number, page in enumerate(reader.pages, 1):
+            for number, page in enumerate(reader.pages[first_page:], first_page + 1):
                 if time.monotonic() - started > 120:
                     return "\n".join(parts), "partial:time_limit"
                 try:
@@ -292,6 +301,8 @@ def pdf_text(url):
                     ocr = result.stdout.decode("utf-8", errors="replace").strip()
                     text = text + "\n" + ocr
                 parts.append(text)
+                progress["pdf_resume_page"] = number
+                progress["pdf_resume_text"] = "\n".join(parts)
         text = "\n".join(parts).strip()
         return (text, "ok") if text else ("", "no_text")
     except Exception as e:
@@ -302,6 +313,30 @@ def needs_analysis(row):
     return (not row.get("pdf_checked")
             or row.get("pdf_status") != "ok"
             or int(row.get("enrichment_version") or 0) < 10)
+
+
+def analysis_queue(existing, valid_keys, now, coverage_start):
+    ready = [key for key in valid_keys
+             if existing[key].get("dokument_url")
+             and needs_analysis(existing[key]) and retry_due(existing[key], now)]
+    fresh = sorted((key for key in ready
+                    if int(existing[key]["id"]) > int(coverage_start)
+                    and not existing[key].get("pdf_attempts")),
+                   key=lambda key: int(existing[key]["id"]))
+    fresh_set = set(fresh)
+    backlog = sorted((key for key in ready if key not in fresh_set),
+                     key=lambda key: (existing[key].get("pdf_last_attempt") or "",
+                                      int(existing[key]["id"])))
+    # Interleave four current documents with one historical/retry document.
+    result = []
+    i = j = 0
+    while i < len(fresh) or j < len(backlog):
+        result.extend(fresh[i:i + 4])
+        i += 4
+        if j < len(backlog):
+            result.append(backlog[j])
+            j += 1
+    return result
 
 
 def retry_due(row, now):
@@ -457,7 +492,10 @@ def resolve_isir_detail(row):
     return ""
 
 def enrich(row, mp=None, office_map=None):
-    text, status = pdf_text(row.get("dokument_url"))
+    text, status = pdf_text(row.get("dokument_url"), row)
+    if status == "ok":
+        for key in ("pdf_resume_page", "pdf_resume_text", "pdf_resume_sha256"):
+            row.pop(key, None)
 
     suspected, hits = detect_suspicion(text) if status == "ok" else (False, [])
     kraj = extract_kraj(text) if status == "ok" and suspected else ""
@@ -580,11 +618,7 @@ def main():
 
     if backfill_complete:
         print("FÁZE 2: analyzuji dokumenty", flush=True)
-        todo = [key for key in valid_keys
-                if needs_analysis(existing[key]) and retry_due(existing[key], now)]
-        # Previously attempted rows go behind new documents; oldest new first.
-        todo.sort(key=lambda key: (int(existing[key].get("pdf_attempts") or 0),
-                                   int(existing[key]["id"])))
+        todo = analysis_queue(existing, valid_keys, now, coverage_start)
         this_run = todo[:MAX_PDF_PER_RUN]
 
         print(
@@ -672,6 +706,8 @@ def main():
         "phase": phase,
         "count_all_soupisy": sum(is_soupis(x) for x in valid),
         "count_all_documents": len(valid),
+        "missing_document_url": sum(not x.get("dokument_url") for x in valid),
+        "ready_pdf_analysis": sum(bool(x.get("dokument_url")) and needs_analysis(x) for x in valid),
         "failed_pdf_analysis": sum(needs_analysis(x) and bool(x.get("pdf_attempts")) for x in valid),
         "count_real_estate": len(confirmed),
         "remaining_pdf_analysis": remaining_pdf,
