@@ -6,6 +6,11 @@ import crawler as c
 
 
 class MonitoringTests(unittest.TestCase):
+    def setUp(self):
+        loader = patch.object(c, "load_cuzk", return_value=({}, {}))
+        loader.start()
+        self.addCleanup(loader.stop)
+
     def test_old_failed_documents_are_retried(self):
         self.assertTrue(c.needs_analysis({'pdf_checked': True, 'pdf_status': 'no_text', 'enrichment_version': 9}))
         self.assertFalse(c.needs_analysis({'pdf_checked': True, 'pdf_status': 'ok', 'enrichment_version': 10}))
