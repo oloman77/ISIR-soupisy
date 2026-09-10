@@ -318,11 +318,48 @@ def needs_analysis(row):
             or row.get("pdf_status") != "ok"
             or int(row.get("enrichment_version") or 0) < 10)
 
+def needs_location(row):
+    # Do not repeatedly retry successfully analysed PDFs just because no region
+    # could be found. Only upgrade candidates not seen by this location version.
+    return (row.get("obsahuje_nemovitost") is True
+            and int(row.get("lokalita_version") or 0) < 1)
+
+
+def pending_pdf(row):
+    return bool(row.get("dokument_url")) and (needs_analysis(row) or needs_location(row))
+
+
+def queue_counts(rows):
+    pending = [x for x in rows if pending_pdf(x)]
+    failed = [x for x in pending if x.get("pdf_attempts")
+              and (x.get("pdf_status") != "ok" or x.get("lokalita_status", "ok") != "ok")]
+    missing = [x for x in rows if not x.get("dokument_url")]
+    secondary = 0
+    for row in missing:
+        try:
+            secondary += find_text(ET.fromstring(row.get("poznamka") or ""), "priznakAnVedlejsiUdalost") == "T"
+        except ET.ParseError:
+            pass
+    return {
+        "remaining_pdf_analysis": len(pending),
+        "ready_pdf_analysis": len(pending),
+        "failed_pdf_analysis": len(failed),
+        "pending_pdf_without_error": len(pending) - len(failed),
+        "pending_location": sum(needs_location(x) for x in pending),
+        "missing_document_url": len(missing),
+        "missing_url_secondary_events": secondary,
+        "missing_url_unclassified": len(missing) - secondary,
+    }
+
 
 def analysis_queue(existing, valid_keys, now, coverage_start):
     ready = [key for key in valid_keys
-             if existing[key].get("dokument_url")
-             and needs_analysis(existing[key]) and retry_due(existing[key], now)]
+             if pending_pdf(existing[key]) and retry_due(existing[key], now)]
+    priority = sorted((key for key in ready if needs_location(existing[key])),
+                      key=lambda key: (existing[key].get("pdf_last_attempt") or "",
+                                       int(existing[key]["id"])))
+    priority_set = set(priority)
+    ready = [key for key in ready if key not in priority_set]
     fresh = sorted((key for key in ready
                     if int(existing[key]["id"]) > int(coverage_start)
                     and not existing[key].get("pdf_attempts")),
@@ -340,7 +377,16 @@ def analysis_queue(existing, valid_keys, now, coverage_start):
         if j < len(backlog):
             result.append(backlog[j])
             j += 1
-    return result
+    # Two location upgrades, then up to four new PDFs and one historical PDF.
+    # Both streams keep making progress; each document appears only once.
+    merged = []
+    i = j = 0
+    while i < len(priority) or j < len(result):
+        merged.extend(priority[i:i + 2])
+        merged.extend(result[j:j + 5])
+        i += 2
+        j += 5
+    return merged
 
 
 def retry_due(row, now):
@@ -484,6 +530,27 @@ def resolve_isir_detail(row):
 
     return ""
 
+def refresh_location(row, mp=None):
+    """Upgrade location only; retain existing candidate and details on failure."""
+    text, status = pdf_text(row.get("dokument_url"), row)
+    row["lokalita_status"] = status
+    row["pdf_attempts"] = int(row.get("pdf_attempts") or 0) + 1
+    row["pdf_last_attempt"] = datetime.now(timezone.utc).isoformat()
+    if status != "ok":
+        row["pdf_retry_after"] = (datetime.now(timezone.utc) + timedelta(hours=2)).isoformat()
+        return row
+    evidence = extract_regions(text, (mp or {}).values())
+    kraje = sorted({x["kraj"] for x in evidence})
+    row.update(kraje=kraje, kraj=kraje[0] if len(kraje) == 1 else "",
+               lokalita_doklady=evidence, lokalita_version=1, pdf_retry_after=None)
+    for field, source in (("katastralni_uzemi", "ku_nazev"),
+                          ("katastralni_pracoviste", "pracoviste"), ("obce", "obec")):
+        row[field] = sorted({x[source] for x in evidence if x.get(source)})
+    for key in ("pdf_resume_page", "pdf_resume_text", "pdf_resume_sha256"):
+        row.pop(key, None)
+    return row
+
+
 def enrich(row, mp=None, office_map=None):
     text, status = pdf_text(row.get("dokument_url"), row)
     if status == "ok":
@@ -512,6 +579,7 @@ def enrich(row, mp=None, office_map=None):
     row["kraje"] = kraje
     row["lokalita_doklady"] = evidence
     row["lokalita_version"] = 1
+    row["lokalita_status"] = "ok"
     row["isir_rizeni_url"] = detail_url
 
     # Staré detailní údaje už ve v7 nepoužíváme.
@@ -633,7 +701,11 @@ def main():
         for i, key in enumerate(this_run, 1):
             if time.monotonic() >= analysis_deadline:
                 break
-            existing[key] = enrich(existing[key], ku_map, office_map)
+            row = existing[key]
+            if needs_location(row) and not needs_analysis(row):
+                existing[key] = refresh_location(row, ku_map)
+            else:
+                existing[key] = enrich(row, ku_map, office_map)
             pdf_done_this_run = i
 
             if i % 10 == 0 or i == len(this_run):
@@ -660,10 +732,8 @@ def main():
         reverse=True,
     )
 
-    remaining_pdf = sum(
-        1 for x in valid
-        if needs_analysis(x)
-    )
+    counts = queue_counts(valid)
+    remaining_pdf = counts["remaining_pdf_analysis"]
 
     confirmed = [
         x for x in valid
@@ -709,11 +779,8 @@ def main():
         "phase": phase,
         "count_all_soupisy": sum(is_soupis(x) for x in valid),
         "count_all_documents": len(valid),
-        "missing_document_url": sum(not x.get("dokument_url") for x in valid),
-        "ready_pdf_analysis": sum(bool(x.get("dokument_url")) and needs_analysis(x) for x in valid),
-        "failed_pdf_analysis": sum(needs_analysis(x) and bool(x.get("pdf_attempts")) for x in valid),
         "count_real_estate": len(confirmed),
-        "remaining_pdf_analysis": remaining_pdf,
+        **counts,
         "katastralni_pracoviste_options": offices,
         "items": valid,
     })
@@ -728,5 +795,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
