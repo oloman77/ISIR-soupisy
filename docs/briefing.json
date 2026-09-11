@@ -1,9 +1,50 @@
 {
-  "updated_at": "2026-09-11T13:58:20.760060+00:00",
+  "updated_at": "2026-09-11T14:30:43.445614+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-11T13:43:17.442242+00:00",
-  "count": 332,
+  "source_updated_at": "2026-09-11T14:14:51.781087+00:00",
+  "count": 333,
   "items": [
+    {
+      "id": 80349194,
+      "datum_zverejneni": "2026-09-11T07:00:59.000+02:00",
+      "datum_zalozeni": "2026-09-11T07:00:59.000+02:00",
+      "spisova_znacka": "INS 4463/2023",
+      "typ_udalosti": "1044",
+      "popis_udalosti": "Žádost dlužníka",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80649255",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV 4462",
+        "nemovitost"
+      ],
+      "kraj": "Ústecký kraj",
+      "kraje": [
+        "Ústecký kraj"
+      ],
+      "obce": [
+        "Litvínov"
+      ],
+      "katastralni_uzemi": [
+        "Horní Litvínov"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Most"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi horni litvinov",
+          "ku_kod": "686042",
+          "ku_nazev": "Horní Litvínov",
+          "obec": "Litvínov",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Most"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=4463&rocnik=2023&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80349075,
       "datum_zverejneni": "2026-09-11T06:54:23.000+02:00",
