@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-11T21:29:07.514147+00:00",
+  "updated_at": "2026-09-11T21:54:59.149230+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-11T21:13:07.346606+00:00",
-  "count": 394,
+  "source_updated_at": "2026-09-11T21:39:06.258589+00:00",
+  "count": 396,
   "items": [
     {
       "id": 80351439,
@@ -37,6 +37,38 @@
         "nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16342&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80351917,
+      "datum_zverejneni": "2026-09-11T08:46:54.000+02:00",
+      "datum_zalozeni": "2026-09-11T08:46:54.000+02:00",
+      "spisova_znacka": "INS 5359/2025",
+      "typ_udalosti": "343",
+      "popis_udalosti": "Návrh na změnu v osobě věřitele",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80651801",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV68"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=5359&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80351843,
+      "datum_zverejneni": "2026-09-11T08:45:54.000+02:00",
+      "datum_zalozeni": "2026-09-11T08:45:54.000+02:00",
+      "spisova_znacka": "INS 10616/2026",
+      "typ_udalosti": "343",
+      "popis_udalosti": "Návrh na změnu v osobě věřitele",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80651734",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "Lv6"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=10616&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80351813,
