@@ -1,8 +1,8 @@
 {
   "all_documents_from_id": 80322065,
-  "current_id": 80368381,
-  "latest_id_at_run": 80368381,
-  "last_run": "2026-09-11T22:13:45.651729+00:00",
+  "current_id": 80368597,
+  "latest_id_at_run": 80368597,
+  "last_run": "2026-09-11T22:40:31.212897+00:00",
   "days_back": 180,
   "caught_up": true,
   "backfill_complete": true,
