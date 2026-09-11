@@ -1,9 +1,153 @@
 {
-  "updated_at": "2026-09-11T13:29:54.614252+00:00",
+  "updated_at": "2026-09-11T13:58:20.760060+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-11T13:14:08.405618+00:00",
-  "count": 327,
+  "source_updated_at": "2026-09-11T13:43:17.442242+00:00",
+  "count": 332,
   "items": [
+    {
+      "id": 80349075,
+      "datum_zverejneni": "2026-09-11T06:54:23.000+02:00",
+      "datum_zalozeni": "2026-09-11T06:54:23.000+02:00",
+      "spisova_znacka": "INS 13596/2026",
+      "typ_udalosti": "563",
+      "popis_udalosti": "Doplnění/oprava/změna přihlášené pohledávky",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80649157",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=13596&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80349049,
+      "datum_zverejneni": "2026-09-11T06:51:59.000+02:00",
+      "datum_zalozeni": "2026-09-11T06:51:59.000+02:00",
+      "spisova_znacka": "INS 4189/2026",
+      "typ_udalosti": "633",
+      "popis_udalosti": "Popření pohledávky přihlášeným věřitelem",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80649129",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=4189&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80349005,
+      "datum_zverejneni": "2026-09-11T06:48:29.000+02:00",
+      "datum_zalozeni": "2026-09-11T06:48:29.000+02:00",
+      "spisova_znacka": "INS 20790/2025",
+      "typ_udalosti": "29",
+      "popis_udalosti": "Sdělení dlužníka",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80649093",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "LV č. 326",
+        "nemovitost"
+      ],
+      "kraj": "Ústecký kraj",
+      "kraje": [
+        "Ústecký kraj"
+      ],
+      "obce": [
+        "Chlumec"
+      ],
+      "katastralni_uzemi": [
+        "Chlumec u Chabařovic"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Ústí nad Labem"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi chlumec u chabarovic",
+          "ku_kod": "651796",
+          "ku_nazev": "Chlumec u Chabařovic",
+          "obec": "Chlumec",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Ústí nad Labem"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=20790&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80348954,
+      "datum_zverejneni": "2026-09-11T06:42:59.000+02:00",
+      "datum_zalozeni": "2026-09-11T06:42:59.000+02:00",
+      "spisova_znacka": "INS 20790/2025",
+      "typ_udalosti": "8",
+      "popis_udalosti": "Návrh",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80649053",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "List vlastnictví",
+        "LV č. 326",
+        "parcely č. 159/1",
+        "pozemek",
+        "stavba",
+        "jednotka",
+        "byt"
+      ],
+      "kraj": "Ústecký kraj",
+      "kraje": [
+        "Ústecký kraj"
+      ],
+      "obce": [
+        "Chlumec"
+      ],
+      "katastralni_uzemi": [
+        "Chlumec u Chabařovic"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Ústí nad Labem"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralni urad pro ustecky kraj"
+        },
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi chlumec u chabarovic",
+          "ku_kod": "651796",
+          "ku_nazev": "Chlumec u Chabařovic",
+          "obec": "Chlumec",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Ústí nad Labem"
+        },
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "kod_ku",
+          "doklad": "katastralni uzemi: chlumec u chabarovic [651796]",
+          "ku_kod": "651796",
+          "ku_nazev": "Chlumec u Chabařovic",
+          "obec": "Chlumec",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Ústí nad Labem"
+        },
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi chlumec u chabarovic",
+          "ku_kod": "651796",
+          "ku_nazev": "Chlumec u Chabařovic",
+          "obec": "Chlumec",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Ústí nad Labem"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=20790&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80348758,
       "datum_zverejneni": "2026-09-11T06:31:59.000+02:00",
@@ -3060,6 +3204,22 @@
       "typ_udalosti": "1090",
       "popis_udalosti": "Usnesení na vydání výtěžku zpeněžení nezajištěnému věřiteli",
       "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80640797",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=23957&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80349027,
+      "datum_zverejneni": "2026-09-10T13:17:42.000+02:00",
+      "datum_zalozeni": "2026-09-11T06:49:59.000+02:00",
+      "spisova_znacka": "INS 23957/2025",
+      "typ_udalosti": "1090",
+      "popis_udalosti": "Usnesení na vydání výtěžku zpeněžení nezajištěnému věřiteli",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80649115",
       "obsahuje_nemovitost": true,
       "pdf_checked": true,
       "pdf_status": "ok",
