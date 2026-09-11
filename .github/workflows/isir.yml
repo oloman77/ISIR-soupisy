@@ -6,6 +6,7 @@ on:
     paths:
       - 'crawler.py'
       - 'regions.py'
+      - 'build_briefing.py'
       - '.github/workflows/isir.yml'
       - 'docs/index.html'
   workflow_dispatch:
@@ -52,11 +53,14 @@ jobs:
           PDF_TIMEOUT: "25"
         run: python crawler.py
 
+      - name: Build lightweight briefing feed
+        run: python build_briefing.py
+
       - name: Commit state and results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/state.json docs/results.json
+          git add data/state.json docs/results.json docs/briefing.json
           git diff --cached --quiet || git commit -m "Update ISIR fast backfill"
           git push
 
@@ -68,4 +72,3 @@ jobs:
 
       - id: deployment
         uses: actions/deploy-pages@v4
-
