@@ -1,9 +1,69 @@
 {
-  "updated_at": "2026-09-11T09:29:39.425076+00:00",
+  "updated_at": "2026-09-11T09:57:54.877793+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-11T09:14:19.914046+00:00",
+  "source_updated_at": "2026-09-11T09:42:51.930073+00:00",
   "count": 328,
   "items": [
+    {
+      "id": 80343344,
+      "datum_zverejneni": "2026-09-10T16:27:42.000+02:00",
+      "datum_zalozeni": "2026-09-10T16:27:42.000+02:00",
+      "spisova_znacka": "INS 15844/2026",
+      "typ_udalosti": "23",
+      "popis_udalosti": "Návrh - přílohy",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80644712",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "List vlastnictví",
+        "pozemek",
+        "stavba",
+        "jednotka",
+        "byt",
+        "nemovitost"
+      ],
+      "kraj": "Zlínský kraj",
+      "kraje": [
+        "Zlínský kraj"
+      ],
+      "obce": [
+        "Kroměříž"
+      ],
+      "katastralni_uzemi": [
+        "Kroměříž"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Zlínský kraj, Katastrální pracoviště Kroměříž"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Zlínský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralnim uradem pro zlinsky kraj"
+        },
+        {
+          "kraj": "Zlínský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi kromeriz",
+          "ku_kod": "674834",
+          "ku_nazev": "Kroměříž",
+          "obec": "Kroměříž",
+          "pracoviste": "Katastrální úřad pro Zlínský kraj, Katastrální pracoviště Kroměříž"
+        },
+        {
+          "kraj": "Zlínský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi kromeriz",
+          "ku_kod": "674834",
+          "ku_nazev": "Kroměříž",
+          "obec": "Kroměříž",
+          "pracoviste": "Katastrální úřad pro Zlínský kraj, Katastrální pracoviště Kroměříž"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=15844&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80343188,
       "datum_zverejneni": "2026-09-10T15:59:12.000+02:00",
@@ -7645,23 +7705,6 @@
         "nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=8587&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
-    },
-    {
-      "id": 80336348,
-      "datum_zverejneni": "2026-09-09T11:44:13.000+02:00",
-      "datum_zalozeni": "2026-09-10T11:15:12.000+02:00",
-      "spisova_znacka": "INS 16176/2026",
-      "typ_udalosti": "23",
-      "popis_udalosti": "Návrh - přílohy",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80638188",
-      "obsahuje_nemovitost": true,
-      "pdf_checked": true,
-      "pdf_status": "ok",
-      "nemovitost_signaly": [
-        "Parcela 47",
-        "byt"
-      ],
-      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16176&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     }
   ]
 }
