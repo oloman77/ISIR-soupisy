@@ -1,9 +1,57 @@
 {
-  "updated_at": "2026-09-11T17:28:39.513992+00:00",
+  "updated_at": "2026-09-11T17:55:58.398133+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-11T17:12:52.712766+00:00",
-  "count": 353,
+  "source_updated_at": "2026-09-11T17:40:39.232127+00:00",
+  "count": 356,
   "items": [
+    {
+      "id": 80350622,
+      "datum_zverejneni": "2026-09-11T08:14:53.000+02:00",
+      "datum_zalozeni": "2026-09-11T08:14:53.000+02:00",
+      "spisova_znacka": "INS 5276/2024",
+      "typ_udalosti": "343",
+      "popis_udalosti": "Návrh na změnu v osobě věřitele",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80650577",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV68"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=5276&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80350561,
+      "datum_zverejneni": "2026-09-11T08:12:23.000+02:00",
+      "datum_zalozeni": "2026-09-11T08:12:23.000+02:00",
+      "spisova_znacka": "INS 6077/2024",
+      "typ_udalosti": "343",
+      "popis_udalosti": "Návrh na změnu v osobě věřitele",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80650525",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV68"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=6077&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80350526,
+      "datum_zverejneni": "2026-09-11T08:10:53.000+02:00",
+      "datum_zalozeni": "2026-09-11T08:10:53.000+02:00",
+      "spisova_znacka": "INS 16297/2026",
+      "typ_udalosti": "23",
+      "popis_udalosti": "Návrh - přílohy",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80650485",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16297&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80350477,
       "datum_zverejneni": "2026-09-11T08:08:53.000+02:00",
