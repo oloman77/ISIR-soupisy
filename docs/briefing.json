@@ -1,9 +1,137 @@
 {
-  "updated_at": "2026-09-12T09:29:52.409610+00:00",
+  "updated_at": "2026-09-12T09:56:26.363607+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-12T09:13:10.421260+00:00",
+  "source_updated_at": "2026-09-12T09:40:34.285649+00:00",
   "count": 382,
   "items": [
+    {
+      "id": 80357278,
+      "datum_zverejneni": "2026-09-11T10:23:09.000+02:00",
+      "datum_zalozeni": "2026-09-11T10:23:09.000+02:00",
+      "spisova_znacka": "INS 2476/2025",
+      "typ_udalosti": "1044",
+      "popis_udalosti": "Žádost dlužníka",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80657030",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "LV č. 5065",
+        "nemovitost"
+      ],
+      "kraj": "Plzeňský kraj",
+      "kraje": [
+        "Plzeňský kraj"
+      ],
+      "obce": [
+        "Plzeň"
+      ],
+      "katastralni_uzemi": [
+        "Skvrňany"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Plzeň-město"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Plzeňský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi skvrnany",
+          "ku_kod": "722596",
+          "ku_nazev": "Skvrňany",
+          "obec": "Plzeň",
+          "pracoviste": "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Plzeň-město"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=2476&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80357263,
+      "datum_zverejneni": "2026-09-11T10:22:59.000+02:00",
+      "datum_zalozeni": "2026-09-11T10:22:59.000+02:00",
+      "spisova_znacka": "INS 882/2026",
+      "typ_udalosti": "1092",
+      "popis_udalosti": "Usnesení o zastavení incidenčního řízení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80657012",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální\núzemí",
+        "parc. č. 267"
+      ],
+      "kraje": [
+        "Olomoucký kraj",
+        "Zlínský kraj"
+      ],
+      "obce": [
+        "Kudlovice",
+        "Plumlov",
+        "Přerov",
+        "Vícov"
+      ],
+      "katastralni_uzemi": [
+        "Hamry",
+        "Kudlovice",
+        "Lýsky",
+        "Vícov"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Prostějov",
+        "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Přerov",
+        "Katastrální úřad pro Zlínský kraj, Katastrální pracoviště Uherské Hradiště"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro olomoucky kraj"
+        },
+        {
+          "kraj": "Zlínský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro zlinsky kraj"
+        },
+        {
+          "kraj": "Zlínský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi kudlovice",
+          "ku_kod": "676934",
+          "ku_nazev": "Kudlovice",
+          "obec": "Kudlovice",
+          "pracoviste": "Katastrální úřad pro Zlínský kraj, Katastrální pracoviště Uherské Hradiště"
+        },
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi lysky",
+          "ku_kod": "782335",
+          "ku_nazev": "Lýsky",
+          "obec": "Přerov",
+          "pracoviste": "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Přerov"
+        },
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi hamry",
+          "ku_kod": "794651",
+          "ku_nazev": "Hamry",
+          "obec": "Plumlov",
+          "pracoviste": "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Prostějov"
+        },
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi vicov",
+          "ku_kod": "781495",
+          "ku_nazev": "Vícov",
+          "obec": "Vícov",
+          "pracoviste": "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Prostějov"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=882&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80357131,
       "datum_zverejneni": "2026-09-11T10:19:29.000+02:00",
@@ -633,6 +761,54 @@
         "Nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16399&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80356367,
+      "datum_zverejneni": "2026-09-11T09:59:29.000+02:00",
+      "datum_zalozeni": "2026-09-11T09:59:30.000+02:00",
+      "spisova_znacka": "INS 16369/2026",
+      "typ_udalosti": "23",
+      "popis_udalosti": "Návrh - přílohy",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80656174",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "Katastrální území",
+        "pozemek",
+        "Byt",
+        "nemovitost"
+      ],
+      "kraj": "Středočeský kraj",
+      "kraje": [
+        "Středočeský kraj"
+      ],
+      "obce": [
+        "Krušovice"
+      ],
+      "katastralni_uzemi": [
+        "Krušovice"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Rakovník"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralnim uradem pro stredocesky kraj"
+        },
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi krusovice",
+          "ku_kod": "675415",
+          "ku_nazev": "Krušovice",
+          "obec": "Krušovice",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Rakovník"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16369&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80356313,
@@ -8193,85 +8369,6 @@
         }
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=691&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
-    },
-    {
-      "id": 80337211,
-      "datum_zverejneni": "2026-09-10T11:51:38.000+02:00",
-      "datum_zalozeni": "2026-09-10T11:51:38.000+02:00",
-      "spisova_znacka": "INS 4994/2021",
-      "typ_udalosti": "28",
-      "popis_udalosti": "Sdělení",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80639005",
-      "obsahuje_nemovitost": true,
-      "pdf_checked": true,
-      "pdf_status": "ok",
-      "nemovitost_signaly": [
-        "katastrální území",
-        "parc. č. 1234/4",
-        "pozemek",
-        "stavba",
-        "byt",
-        "nemovitost"
-      ],
-      "kraj": "Královéhradecký kraj",
-      "kraje": [
-        "Královéhradecký kraj"
-      ],
-      "obce": [
-        "Jaroměř"
-      ],
-      "katastralni_uzemi": [
-        "Jaroměř"
-      ],
-      "katastralni_pracoviste": [
-        "Katastrální úřad pro Královéhradecký kraj, Katastrální pracoviště Náchod"
-      ],
-      "lokalita_doklady": [
-        {
-          "kraj": "Královéhradecký kraj",
-          "metoda": "nazev_ku",
-          "doklad": "k. u. jaromer",
-          "ku_kod": "657336",
-          "ku_nazev": "Jaroměř",
-          "obec": "Jaroměř",
-          "pracoviste": "Katastrální úřad pro Královéhradecký kraj, Katastrální pracoviště Náchod"
-        }
-      ],
-      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=4994&rocnik=2021&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
-    },
-    {
-      "id": 80336957,
-      "datum_zverejneni": "2026-09-10T11:44:53.000+02:00",
-      "datum_zalozeni": "2026-09-10T11:44:53.000+02:00",
-      "spisova_znacka": "INS 7977/2026",
-      "typ_udalosti": "1036",
-      "popis_udalosti": "Zpráva pro oddlužení",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80638767",
-      "obsahuje_nemovitost": true,
-      "pdf_checked": true,
-      "pdf_status": "ok",
-      "nemovitost_signaly": [
-        "byt",
-        "nemovitost"
-      ],
-      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=7977&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
-    },
-    {
-      "id": 80336749,
-      "datum_zverejneni": "2026-09-10T11:32:53.000+02:00",
-      "datum_zalozeni": "2026-09-10T11:32:53.000+02:00",
-      "spisova_znacka": "INS 11680/2026",
-      "typ_udalosti": "26",
-      "popis_udalosti": "Námitky proti povolení oddlužení dle § 403 odst. 2",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80638558",
-      "obsahuje_nemovitost": true,
-      "pdf_checked": true,
-      "pdf_status": "ok",
-      "nemovitost_signaly": [
-        "jednotka",
-        "nemovitost"
-      ],
-      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=11680&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     }
   ]
 }
