@@ -1,9 +1,149 @@
 {
-  "updated_at": "2026-09-12T23:27:58.291137+00:00",
+  "updated_at": "2026-09-12T23:53:59.025869+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-12T23:12:37.546252+00:00",
-  "count": 218,
+  "source_updated_at": "2026-09-12T23:38:48.253283+00:00",
+  "count": 222,
   "items": [
+    {
+      "id": 80360235,
+      "datum_zverejneni": "2026-09-11T12:07:14.000+02:00",
+      "datum_zalozeni": "2026-09-11T12:07:14.000+02:00",
+      "spisova_znacka": "INS 5483/2023",
+      "typ_udalosti": "91",
+      "popis_udalosti": "Usnesení o ustanovení znalce",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80659798",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 10838",
+        "parc. č. 4949/82",
+        "byt"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=5483&rocnik=2023&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80360013,
+      "datum_zverejneni": "2026-09-11T12:02:46.000+02:00",
+      "datum_zalozeni": "2026-09-11T12:02:46.000+02:00",
+      "spisova_znacka": "INS 3047/2026",
+      "typ_udalosti": "217",
+      "popis_udalosti": "Protokol o prohlášení o majetku",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80659598",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 1390",
+        "Nemovitost"
+      ],
+      "kraje": [
+        "Hlavní město Praha",
+        "Středočeský kraj"
+      ],
+      "obce": [
+        "Divišov",
+        "Praha"
+      ],
+      "katastralni_uzemi": [
+        "Divišov u Benešova",
+        "Holešovice"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Benešov",
+        "Katastrální úřad pro hlavní město Prahu, Katastrální pracoviště Praha"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. divisov u benesova",
+          "ku_kod": "626261",
+          "ku_nazev": "Divišov u Benešova",
+          "obec": "Divišov",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Benešov"
+        },
+        {
+          "kraj": "Hlavní město Praha",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. holesovice",
+          "ku_kod": "730122",
+          "ku_nazev": "Holešovice",
+          "obec": "Praha",
+          "pracoviste": "Katastrální úřad pro hlavní město Prahu, Katastrální pracoviště Praha"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=3047&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80360241,
+      "datum_zverejneni": "2026-09-11T12:02:46.000+02:00",
+      "datum_zalozeni": "2026-09-11T12:07:14.000+02:00",
+      "spisova_znacka": "INS 3047/2026",
+      "typ_udalosti": "217",
+      "popis_udalosti": "Protokol o prohlášení o majetku",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80659821",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 1390",
+        "Nemovitost"
+      ],
+      "kraje": [
+        "Hlavní město Praha",
+        "Středočeský kraj"
+      ],
+      "obce": [
+        "Divišov",
+        "Praha"
+      ],
+      "katastralni_uzemi": [
+        "Divišov u Benešova",
+        "Holešovice"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Benešov",
+        "Katastrální úřad pro hlavní město Prahu, Katastrální pracoviště Praha"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. divisov u benesova",
+          "ku_kod": "626261",
+          "ku_nazev": "Divišov u Benešova",
+          "obec": "Divišov",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Benešov"
+        },
+        {
+          "kraj": "Hlavní město Praha",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. holesovice",
+          "ku_kod": "730122",
+          "ku_nazev": "Holešovice",
+          "obec": "Praha",
+          "pracoviste": "Katastrální úřad pro hlavní město Prahu, Katastrální pracoviště Praha"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=3047&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80360007,
+      "datum_zverejneni": "2026-09-11T12:02:45.000+02:00",
+      "datum_zalozeni": "2026-09-11T12:02:45.000+02:00",
+      "spisova_znacka": "INS 22180/2025",
+      "typ_udalosti": "222",
+      "popis_udalosti": "Nařízení jednání",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80659571",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=22180&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80359512,
       "datum_zverejneni": "2026-09-11T11:48:38.000+02:00",
