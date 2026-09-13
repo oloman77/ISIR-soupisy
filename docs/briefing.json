@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-13T03:30:02.603941+00:00",
+  "updated_at": "2026-09-13T03:57:41.484387+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-13T03:14:08.215455+00:00",
-  "count": 272,
+  "source_updated_at": "2026-09-13T03:41:56.349174+00:00",
+  "count": 274,
   "items": [
     {
       "id": 80362271,
@@ -51,6 +51,23 @@
         }
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16388&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80362334,
+      "datum_zverejneni": "2026-09-11T13:15:53.000+02:00",
+      "datum_zalozeni": "2026-09-11T13:15:53.000+02:00",
+      "spisova_znacka": "INS 20354/2024",
+      "typ_udalosti": "420",
+      "popis_udalosti": "Návrh na uspokojení pohledávky za podstatou",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80661821",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "byt",
+        "rodinný dům"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=20354&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80362275,
@@ -861,6 +878,57 @@
         "nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=3875&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80361226,
+      "datum_zverejneni": "2026-09-11T12:35:23.000+02:00",
+      "datum_zalozeni": "2026-09-11T12:35:24.000+02:00",
+      "spisova_znacka": "INS 16314/2026",
+      "typ_udalosti": "23",
+      "popis_udalosti": "Návrh - přílohy",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80660782",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "List vlastnictví",
+        "LV 3601",
+        "parc.č. 2194",
+        "Jednotka",
+        "byt",
+        "nemovitost"
+      ],
+      "kraj": "Karlovarský kraj",
+      "kraje": [
+        "Karlovarský kraj"
+      ],
+      "obce": [
+        "Chodov"
+      ],
+      "katastralni_uzemi": [
+        "Dolní Chodov"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Karlovarský kraj, Katastrální pracoviště Sokolov"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Karlovarský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralni urad pro karlovarsky kraj"
+        },
+        {
+          "kraj": "Karlovarský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. dolni chodov",
+          "ku_kod": "652172",
+          "ku_nazev": "Dolní Chodov",
+          "obec": "Chodov",
+          "pracoviste": "Katastrální úřad pro Karlovarský kraj, Katastrální pracoviště Sokolov"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16314&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80361207,
