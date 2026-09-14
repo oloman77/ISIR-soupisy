@@ -1,9 +1,120 @@
 {
-  "updated_at": "2026-09-14T13:59:59.396033+00:00",
+  "updated_at": "2026-09-14T14:34:24.919421+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-14T13:44:50.420810+00:00",
-  "count": 21,
+  "source_updated_at": "2026-09-14T14:17:49.842511+00:00",
+  "count": 24,
   "items": [
+    {
+      "id": 80376752,
+      "datum_zverejneni": "2026-09-14T08:36:53.000+02:00",
+      "datum_zalozeni": "2026-09-14T08:36:54.000+02:00",
+      "spisova_znacka": "INS 2401/2022",
+      "typ_udalosti": "334",
+      "popis_udalosti": "Soupis majetkové podstaty",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80670455",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "LV 813",
+        "parc. č\n849/258",
+        "stavba",
+        "jednotka",
+        "byt",
+        "rodinný dům",
+        "nemovitost"
+      ],
+      "kraj": "Olomoucký kraj",
+      "kraje": [
+        "Olomoucký kraj"
+      ],
+      "obce": [
+        "Olomouc",
+        "Senice na Hané"
+      ],
+      "katastralni_uzemi": [
+        "Senice na Hané",
+        "Řepčín"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Olomouc"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro olomoucky kraj"
+        },
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi senice na hane",
+          "ku_kod": "747459",
+          "ku_nazev": "Senice na Hané",
+          "obec": "Senice na Hané",
+          "pracoviste": "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Olomouc"
+        },
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi repcin",
+          "ku_kod": "710946",
+          "ku_nazev": "Řepčín",
+          "obec": "Olomouc",
+          "pracoviste": "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Olomouc"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=2401&rocnik=2022&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80376743,
+      "datum_zverejneni": "2026-09-14T08:36:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T08:36:29.000+02:00",
+      "spisova_znacka": "INS 27009/2015",
+      "typ_udalosti": "332",
+      "popis_udalosti": "Zpráva IS o stavu řízení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80670440",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální\núzemí",
+        "LV č. 2616",
+        "parc. č. 3010/53",
+        "nemovitost"
+      ],
+      "kraj": "Jihomoravský kraj",
+      "kraje": [
+        "Jihomoravský kraj"
+      ],
+      "obce": [
+        "Dolní Bojanovice"
+      ],
+      "katastralni_uzemi": [
+        "Dolní Bojanovice"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Hodonín"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralnim uradem pro jihomoravsky kraj"
+        },
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi dolni bojanovice",
+          "ku_kod": "628701",
+          "ku_nazev": "Dolní Bojanovice",
+          "obec": "Dolní Bojanovice",
+          "pracoviste": "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Hodonín"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=27009&rocnik=2015&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80376160,
       "datum_zverejneni": "2026-09-14T08:32:09.000+02:00",
@@ -19,6 +130,38 @@
         "nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16336&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80376522,
+      "datum_zverejneni": "2026-09-14T08:30:59.000+02:00",
+      "datum_zalozeni": "2026-09-14T08:30:59.000+02:00",
+      "spisova_znacka": "INS 1841/2026",
+      "typ_udalosti": "1053",
+      "popis_udalosti": "Vyhláška o zprávě o přezkumu a zprávě pro oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80670232",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "Nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=1841&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80376488,
+      "datum_zverejneni": "2026-09-14T08:29:23.000+02:00",
+      "datum_zalozeni": "2026-09-14T08:29:23.000+02:00",
+      "spisova_znacka": "INS 15606/2026",
+      "typ_udalosti": "78",
+      "popis_udalosti": "Usnesení o úpadku spojené s povolením oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80670210",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=15606&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80376310,
@@ -640,67 +783,6 @@
         }
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=20038&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
-    },
-    {
-      "id": 80370925,
-      "datum_zverejneni": "2026-09-12T16:22:23.000+02:00",
-      "datum_zalozeni": "2026-09-12T16:22:23.000+02:00",
-      "spisova_znacka": "INS 11358/2024",
-      "typ_udalosti": "582",
-      "popis_udalosti": "Žádost insolvenčního správce",
-      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80668057",
-      "obsahuje_nemovitost": true,
-      "pdf_checked": true,
-      "pdf_status": "ok",
-      "nemovitost_signaly": [
-        "pozemek",
-        "nemovitost"
-      ],
-      "kraj": "Plzeňský kraj",
-      "kraje": [
-        "Plzeňský kraj"
-      ],
-      "obce": [
-        "Koloveč",
-        "Úboč"
-      ],
-      "katastralni_uzemi": [
-        "Koloveč",
-        "Úboč"
-      ],
-      "katastralni_pracoviste": [
-        "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Domažlice"
-      ],
-      "lokalita_doklady": [
-        {
-          "kraj": "Plzeňský kraj",
-          "metoda": "nazev_ku",
-          "doklad": "k.u. uboc",
-          "ku_kod": "772551",
-          "ku_nazev": "Úboč",
-          "obec": "Úboč",
-          "pracoviste": "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Domažlice"
-        },
-        {
-          "kraj": "Plzeňský kraj",
-          "metoda": "nazev_ku",
-          "doklad": "k. u. uboc",
-          "ku_kod": "772551",
-          "ku_nazev": "Úboč",
-          "obec": "Úboč",
-          "pracoviste": "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Domažlice"
-        },
-        {
-          "kraj": "Plzeňský kraj",
-          "metoda": "nazev_ku",
-          "doklad": "k. u. kolovec",
-          "ku_kod": "668575",
-          "ku_nazev": "Koloveč",
-          "obec": "Koloveč",
-          "pracoviste": "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Domažlice"
-        }
-      ],
-      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=11358&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     }
   ]
 }
