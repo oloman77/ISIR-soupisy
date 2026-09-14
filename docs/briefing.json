@@ -1,9 +1,187 @@
 {
-  "updated_at": "2026-09-14T19:57:43.781374+00:00",
+  "updated_at": "2026-09-14T20:31:00.431644+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-14T19:41:47.867759+00:00",
-  "count": 48,
+  "source_updated_at": "2026-09-14T20:14:58.616660+00:00",
+  "count": 55,
   "items": [
+    {
+      "id": 80379101,
+      "datum_zverejneni": "2026-09-14T09:36:27.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:23:59.000+02:00",
+      "spisova_znacka": "INS 16445/2026",
+      "typ_udalosti": "410",
+      "popis_udalosti": "Insolvenční návrh spojený s návrhem na prohlášení konkursu",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80672732",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 3029",
+        "Nemovitost"
+      ],
+      "kraj": "Kraj Vysočina",
+      "kraje": [
+        "Kraj Vysočina"
+      ],
+      "obce": [
+        "Velká Bíteš"
+      ],
+      "katastralni_uzemi": [
+        "Velká Bíteš"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Vysočinu, Katastrální pracoviště Žďár nad Sázavou"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Kraj Vysočina",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. velka bites",
+          "ku_kod": "778214",
+          "ku_nazev": "Velká Bíteš",
+          "obec": "Velká Bíteš",
+          "pracoviste": "Katastrální úřad pro Vysočinu, Katastrální pracoviště Žďár nad Sázavou"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16445&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80379413,
+      "datum_zverejneni": "2026-09-14T09:30:53.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:30:53.000+02:00",
+      "spisova_znacka": "INS 14849/2026",
+      "typ_udalosti": "78",
+      "popis_udalosti": "Usnesení o úpadku spojené s povolením oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80673019",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=14849&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80379357,
+      "datum_zverejneni": "2026-09-14T09:29:53.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:29:53.000+02:00",
+      "spisova_znacka": "INS 16069/2026",
+      "typ_udalosti": "78",
+      "popis_udalosti": "Usnesení o úpadku spojené s povolením oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80672984",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16069&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80379236,
+      "datum_zverejneni": "2026-09-14T09:26:59.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:26:59.000+02:00",
+      "spisova_znacka": "INS 2742/2026",
+      "typ_udalosti": "1038",
+      "popis_udalosti": "Usnesení o zprávě o přezkumu",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80672862",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=2742&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80379140,
+      "datum_zverejneni": "2026-09-14T09:24:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:24:29.000+02:00",
+      "spisova_znacka": "INS 8832/2025",
+      "typ_udalosti": "434",
+      "popis_udalosti": "Předvolání k výslechu",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80672750",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=8832&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80379142,
+      "datum_zverejneni": "2026-09-14T09:24:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:24:29.000+02:00",
+      "spisova_znacka": "INS 16599/2022",
+      "typ_udalosti": "741",
+      "popis_udalosti": "Usnesení - o připuštění změny návrhu",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80672760",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 6952",
+        "parc. č. 2277/61"
+      ],
+      "kraj": "Ústecký kraj",
+      "kraje": [
+        "Ústecký kraj"
+      ],
+      "obce": [
+        "Litvínov",
+        "Most"
+      ],
+      "katastralni_uzemi": [
+        "Horní Litvínov",
+        "Most II"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Most"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro ustecky kraj"
+        },
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. horni litvinov",
+          "ku_kod": "686042",
+          "ku_nazev": "Horní Litvínov",
+          "obec": "Litvínov",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Most"
+        },
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. most ii",
+          "ku_kod": "699594",
+          "ku_nazev": "Most II",
+          "obec": "Most",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Most"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16599&rocnik=2022&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80379040,
+      "datum_zverejneni": "2026-09-14T09:22:53.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:22:53.000+02:00",
+      "spisova_znacka": "INS 16242/2026",
+      "typ_udalosti": "78",
+      "popis_udalosti": "Usnesení o úpadku spojené s povolením oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80672678",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16242&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80378949,
       "datum_zverejneni": "2026-09-14T09:20:53.000+02:00",
