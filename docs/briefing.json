@@ -1,9 +1,97 @@
 {
-  "updated_at": "2026-09-14T22:30:35.381437+00:00",
+  "updated_at": "2026-09-14T22:58:32.051662+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-14T22:14:16.336797+00:00",
-  "count": 60,
+  "source_updated_at": "2026-09-14T22:43:13.119266+00:00",
+  "count": 63,
   "items": [
+    {
+      "id": 80380205,
+      "datum_zverejneni": "2026-09-14T09:48:59.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:48:59.000+02:00",
+      "spisova_znacka": "INS 7893/2026",
+      "typ_udalosti": "1036",
+      "popis_udalosti": "Zpráva pro oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80673808",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=7893&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80380171,
+      "datum_zverejneni": "2026-09-14T09:48:23.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:48:24.000+02:00",
+      "spisova_znacka": "INS 1585/2026",
+      "typ_udalosti": "184",
+      "popis_udalosti": "Vyhláška",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80673779",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=1585&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80380023,
+      "datum_zverejneni": "2026-09-14T09:45:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:45:29.000+02:00",
+      "spisova_znacka": "INS 16445/2026",
+      "typ_udalosti": "23",
+      "popis_udalosti": "Návrh - přílohy",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80673627",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "List vlastnictví",
+        "LV 1984",
+        "Parcela 803",
+        "stavba",
+        "Jednotka",
+        "byt",
+        "NEMOVITOST"
+      ],
+      "kraj": "Kraj Vysočina",
+      "kraje": [
+        "Kraj Vysočina"
+      ],
+      "obce": [
+        "Velká Bíteš"
+      ],
+      "katastralni_uzemi": [
+        "Velká Bíteš"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Vysočinu, Katastrální pracoviště Žďár nad Sázavou"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Kraj Vysočina",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralni urad pro vysocinu"
+        },
+        {
+          "kraj": "Kraj Vysočina",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro vysocinu"
+        },
+        {
+          "kraj": "Kraj Vysočina",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi velka bites",
+          "ku_kod": "778214",
+          "ku_nazev": "Velká Bíteš",
+          "obec": "Velká Bíteš",
+          "pracoviste": "Katastrální úřad pro Vysočinu, Katastrální pracoviště Žďár nad Sázavou"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16445&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80379815,
       "datum_zverejneni": "2026-09-14T09:40:53.000+02:00",
