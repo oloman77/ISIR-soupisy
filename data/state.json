@@ -1,10 +1,10 @@
 {
   "all_documents_from_id": 80322065,
-  "current_id": 80384757,
-  "latest_id_at_run": 80384757,
-  "last_run": "2026-09-14T09:44:10.779758+00:00",
+  "current_id": 80385527,
+  "latest_id_at_run": 80385528,
+  "last_run": "2026-09-14T10:15:00.947290+00:00",
   "days_back": 180,
-  "caught_up": true,
+  "caught_up": false,
   "backfill_complete": true,
-  "phase": "pdf_analysis"
+  "phase": "catching_up"
 }
