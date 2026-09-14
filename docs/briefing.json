@@ -1,9 +1,103 @@
 {
-  "updated_at": "2026-09-14T20:57:03.701765+00:00",
+  "updated_at": "2026-09-14T21:30:26.083336+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-14T20:41:57.461440+00:00",
-  "count": 56,
+  "source_updated_at": "2026-09-14T21:13:51.579173+00:00",
+  "count": 58,
   "items": [
+    {
+      "id": 80379683,
+      "datum_zverejneni": "2026-09-14T09:37:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:37:29.000+02:00",
+      "spisova_znacka": "INS 14654/2026",
+      "typ_udalosti": "23",
+      "popis_udalosti": "Návrh - přílohy",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80673310",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=14654&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80379654,
+      "datum_zverejneni": "2026-09-14T09:36:53.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:36:54.000+02:00",
+      "spisova_znacka": "INS 12133/2024",
+      "typ_udalosti": "346",
+      "popis_udalosti": "Návrh na vydání výtěžku zpeněžení zajištěnému věřiteli",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80673276",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "Katastrální území",
+        "LV č. 1835",
+        "Pozemek",
+        "stavba",
+        "jednotka",
+        "byt",
+        "nemovitost"
+      ],
+      "kraj": "Olomoucký kraj",
+      "kraje": [
+        "Olomoucký kraj"
+      ],
+      "obce": [
+        "Olomouc"
+      ],
+      "katastralni_uzemi": [
+        "Holice u Olomouce"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Olomouc"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro olomoucky kraj"
+        },
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. holice u olomouce",
+          "ku_kod": "641227",
+          "ku_nazev": "Holice u Olomouce",
+          "obec": "Olomouc",
+          "pracoviste": "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Olomouc"
+        },
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi holice u olomouce",
+          "ku_kod": "641227",
+          "ku_nazev": "Holice u Olomouce",
+          "obec": "Olomouc",
+          "pracoviste": "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Olomouc"
+        },
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi: holice u olomouce",
+          "ku_kod": "641227",
+          "ku_nazev": "Holice u Olomouce",
+          "obec": "Olomouc",
+          "pracoviste": "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Olomouc"
+        },
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi holice u olomouce",
+          "ku_kod": "641227",
+          "ku_nazev": "Holice u Olomouce",
+          "obec": "Olomouc",
+          "pracoviste": "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Olomouc"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=12133&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80379101,
       "datum_zverejneni": "2026-09-14T09:36:27.000+02:00",
