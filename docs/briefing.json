@@ -1,7 +1,428 @@
 {
-  "updated_at": "2026-09-14T11:47:26.689780+00:00",
+  "updated_at": "2026-09-14T12:36:05.946970+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-14T11:43:42.338047+00:00",
-  "count": 0,
-  "items": []
+  "source_updated_at": "2026-09-14T12:19:27.780982+00:00",
+  "count": 9,
+  "items": [
+    {
+      "id": 80374830,
+      "datum_zverejneni": "2026-09-14T07:10:59.000+02:00",
+      "datum_zalozeni": "2026-09-14T07:10:59.000+02:00",
+      "spisova_znacka": "INS 16421/2025",
+      "typ_udalosti": "1054",
+      "popis_udalosti": "Zpráva insolvenčního správce",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80668675",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "parc. č. 1615",
+        "pozemek",
+        "stavba",
+        "nemovitost"
+      ],
+      "kraj": "Středočeský kraj",
+      "kraje": [
+        "Středočeský kraj"
+      ],
+      "obce": [
+        "Týnec nad Labem"
+      ],
+      "katastralni_uzemi": [
+        "Týnec nad Labem"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Kolín"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro stredocesky kraj"
+        },
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi tynec nad labem",
+          "ku_kod": "772356",
+          "ku_nazev": "Týnec nad Labem",
+          "obec": "Týnec nad Labem",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Kolín"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16421&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80374807,
+      "datum_zverejneni": "2026-09-14T07:08:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T07:08:29.000+02:00",
+      "spisova_znacka": "INS 22665/2025",
+      "typ_udalosti": "927",
+      "popis_udalosti": "Vyjádření k žalobě",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80668663",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "list vlastnictví",
+        "parcela 2499/6",
+        "stavba",
+        "rodinný dům",
+        "nemovitost"
+      ],
+      "kraj": "Jihomoravský kraj",
+      "kraje": [
+        "Jihomoravský kraj"
+      ],
+      "obce": [
+        "Veverská Bítýška"
+      ],
+      "katastralni_uzemi": [
+        "Veverská Bítýška"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Brno-venkov"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro jihomoravsky kraj"
+        },
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi veverska bityska",
+          "ku_kod": "781304",
+          "ku_nazev": "Veverská Bítýška",
+          "obec": "Veverská Bítýška",
+          "pracoviste": "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Brno-venkov"
+        },
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. veverska bityska",
+          "ku_kod": "781304",
+          "ku_nazev": "Veverská Bítýška",
+          "obec": "Veverská Bítýška",
+          "pracoviste": "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Brno-venkov"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=22665&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80374689,
+      "datum_zverejneni": "2026-09-14T06:55:59.000+02:00",
+      "datum_zalozeni": "2026-09-14T06:55:59.000+02:00",
+      "spisova_znacka": "INS 5510/2024",
+      "typ_udalosti": "41",
+      "popis_udalosti": "Vyjádření",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80668558",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "LV č. 7723",
+        "jednotka",
+        "byt",
+        "nemovitost"
+      ],
+      "kraj": "Hlavní město Praha",
+      "kraje": [
+        "Hlavní město Praha"
+      ],
+      "obce": [
+        "Praha"
+      ],
+      "katastralni_uzemi": [
+        "Vysočany"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro hlavní město Prahu, Katastrální pracoviště Praha"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Hlavní město Praha",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi vysocany",
+          "ku_kod": "731285",
+          "ku_nazev": "Vysočany",
+          "obec": "Praha",
+          "pracoviste": "Katastrální úřad pro hlavní město Prahu, Katastrální pracoviště Praha"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=5510&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80374690,
+      "datum_zverejneni": "2026-09-14T06:55:59.000+02:00",
+      "datum_zalozeni": "2026-09-14T06:55:59.000+02:00",
+      "spisova_znacka": "INS 10605/2026",
+      "typ_udalosti": "49",
+      "popis_udalosti": "Zpráva o hospodářské situaci dlužníka",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80668565",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=10605&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80374532,
+      "datum_zverejneni": "2026-09-14T06:36:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T06:36:29.000+02:00",
+      "spisova_znacka": "INS 3412/2009",
+      "typ_udalosti": "606",
+      "popis_udalosti": "Sdělení insolvenčního správce",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80668432",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální\núzemí",
+        "List vlastnictví",
+        "parc. č. 2135/2",
+        "pozemek",
+        "stavba",
+        "nemovitost"
+      ],
+      "kraj": "Jihomoravský kraj",
+      "kraje": [
+        "Jihomoravský kraj"
+      ],
+      "obce": [
+        "Vacenovice"
+      ],
+      "katastralni_uzemi": [
+        "Vacenovice u Kyjova"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Kyjov"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralnim uradem pro jihomoravsky kraj"
+        },
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi vacenovice u kyjova",
+          "ku_kod": "775932",
+          "ku_nazev": "Vacenovice u Kyjova",
+          "obec": "Vacenovice",
+          "pracoviste": "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Kyjov"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=3412&rocnik=2009&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80374490,
+      "datum_zverejneni": "2026-09-14T06:32:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T06:32:29.000+02:00",
+      "spisova_znacka": "INS 8947/2026",
+      "typ_udalosti": "64",
+      "popis_udalosti": "Seznam přihlášených pohledávek",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80668397",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "parcely číslo 712/1",
+        "nemovitost"
+      ],
+      "kraj": "Středočeský kraj",
+      "kraje": [
+        "Středočeský kraj"
+      ],
+      "obce": [
+        "Chlístovice"
+      ],
+      "katastralni_uzemi": [
+        "Všesoky"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Kutná Hora"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralni urad pro stredocesky kraj"
+        },
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralnim uradem pro stredocesky kraj"
+        },
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi vsesoky",
+          "ku_kod": "672424",
+          "ku_nazev": "Všesoky",
+          "obec": "Chlístovice",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Kutná Hora"
+        },
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. vsesoky",
+          "ku_kod": "672424",
+          "ku_nazev": "Všesoky",
+          "obec": "Chlístovice",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Kutná Hora"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=8947&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80374449,
+      "datum_zverejneni": "2026-09-14T06:29:53.000+02:00",
+      "datum_zalozeni": "2026-09-14T06:29:53.000+02:00",
+      "spisova_znacka": "INS 9806/2025",
+      "typ_udalosti": "927",
+      "popis_udalosti": "Vyjádření k žalobě",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80668370",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=9806&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80374413,
+      "datum_zverejneni": "2026-09-14T06:23:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T06:23:29.000+02:00",
+      "spisova_znacka": "INS 20038/2024",
+      "typ_udalosti": "50",
+      "popis_udalosti": "Zpráva o průběhu zpeněžení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80668345",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "List vlastnictví",
+        "LV č. 155",
+        "pozemek",
+        "stavba",
+        "Rodinný dům",
+        "nemovitost",
+        "garáž"
+      ],
+      "kraj": "Královéhradecký kraj",
+      "kraje": [
+        "Královéhradecký kraj"
+      ],
+      "obce": [
+        "Židovice"
+      ],
+      "katastralni_uzemi": [
+        "Židovice"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Královéhradecký kraj, Katastrální pracoviště Jičín"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Královéhradecký kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro kralovehradecky kraj"
+        },
+        {
+          "kraj": "Královéhradecký kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralni urad pro kralovehradecky kraj"
+        },
+        {
+          "kraj": "Královéhradecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. zidovice",
+          "ku_kod": "796832",
+          "ku_nazev": "Židovice",
+          "obec": "Židovice",
+          "pracoviste": "Katastrální úřad pro Královéhradecký kraj, Katastrální pracoviště Jičín"
+        },
+        {
+          "kraj": "Královéhradecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi zidovice",
+          "ku_kod": "796832",
+          "ku_nazev": "Židovice",
+          "obec": "Židovice",
+          "pracoviste": "Katastrální úřad pro Královéhradecký kraj, Katastrální pracoviště Jičín"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=20038&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80370925,
+      "datum_zverejneni": "2026-09-12T16:22:23.000+02:00",
+      "datum_zalozeni": "2026-09-12T16:22:23.000+02:00",
+      "spisova_znacka": "INS 11358/2024",
+      "typ_udalosti": "582",
+      "popis_udalosti": "Žádost insolvenčního správce",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80668057",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "pozemek",
+        "nemovitost"
+      ],
+      "kraj": "Plzeňský kraj",
+      "kraje": [
+        "Plzeňský kraj"
+      ],
+      "obce": [
+        "Koloveč",
+        "Úboč"
+      ],
+      "katastralni_uzemi": [
+        "Koloveč",
+        "Úboč"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Domažlice"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Plzeňský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. uboc",
+          "ku_kod": "772551",
+          "ku_nazev": "Úboč",
+          "obec": "Úboč",
+          "pracoviste": "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Domažlice"
+        },
+        {
+          "kraj": "Plzeňský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. uboc",
+          "ku_kod": "772551",
+          "ku_nazev": "Úboč",
+          "obec": "Úboč",
+          "pracoviste": "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Domažlice"
+        },
+        {
+          "kraj": "Plzeňský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. kolovec",
+          "ku_kod": "668575",
+          "ku_nazev": "Koloveč",
+          "obec": "Koloveč",
+          "pracoviste": "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Domažlice"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=11358&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    }
+  ]
 }
