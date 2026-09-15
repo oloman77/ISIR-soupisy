@@ -1,9 +1,222 @@
 {
-  "updated_at": "2026-09-15T03:59:38.650104+00:00",
+  "updated_at": "2026-09-15T04:32:22.316945+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-15T03:44:33.222321+00:00",
-  "count": 106,
+  "source_updated_at": "2026-09-15T04:15:41.525485+00:00",
+  "count": 113,
   "items": [
+    {
+      "id": 80383892,
+      "datum_zverejneni": "2026-09-14T11:16:15.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:16:15.000+02:00",
+      "spisova_znacka": "INS 8143/2024",
+      "typ_udalosti": "41",
+      "popis_udalosti": "Vyjádření",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80677351",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "LV č. 2829",
+        "parc. č. 512/56",
+        "pozemek",
+        "stavba",
+        "rodinný dům",
+        "nemovitost",
+        "garáž"
+      ],
+      "kraj": "Jihomoravský kraj",
+      "kraje": [
+        "Jihomoravský kraj"
+      ],
+      "obce": [
+        "Ořechov",
+        "Svinošice"
+      ],
+      "katastralni_uzemi": [
+        "Ořechov",
+        "Svinošice"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Blansko",
+        "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Brno-venkov"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi orechov",
+          "ku_kod": "712612",
+          "ku_nazev": "Ořechov",
+          "obec": "Ořechov",
+          "pracoviste": "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Brno-venkov"
+        },
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi orechov",
+          "ku_kod": "712612",
+          "ku_nazev": "Ořechov",
+          "obec": "Ořechov",
+          "pracoviste": "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Brno-venkov"
+        },
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. orechov",
+          "ku_kod": "712612",
+          "ku_nazev": "Ořechov",
+          "obec": "Ořechov",
+          "pracoviste": "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Brno-venkov"
+        },
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. svinosice",
+          "ku_kod": "760889",
+          "ku_nazev": "Svinošice",
+          "obec": "Svinošice",
+          "pracoviste": "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Blansko"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=8143&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80383875,
+      "datum_zverejneni": "2026-09-14T11:15:44.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:15:44.000+02:00",
+      "spisova_znacka": "INS 15614/2026",
+      "typ_udalosti": "22",
+      "popis_udalosti": "Návrh - doplnění návrhu",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80677343",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "Nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=15614&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80383765,
+      "datum_zverejneni": "2026-09-14T11:10:08.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:10:08.000+02:00",
+      "spisova_znacka": "INS 10388/2026",
+      "typ_udalosti": "63",
+      "popis_udalosti": "Přihláška pohledávky",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80677244",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=10388&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80383083,
+      "datum_zverejneni": "2026-09-14T11:05:08.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:05:08.000+02:00",
+      "spisova_znacka": "INS 6363/2026",
+      "typ_udalosti": "1036",
+      "popis_udalosti": "Zpráva pro oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80676558",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "byt",
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=6363&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80383014,
+      "datum_zverejneni": "2026-09-14T11:02:38.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:02:38.000+02:00",
+      "spisova_znacka": "INS 14988/2026",
+      "typ_udalosti": "829",
+      "popis_udalosti": "Výpis z katastru nemovitostí",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80676496",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=14988&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80382893,
+      "datum_zverejneni": "2026-09-14T10:59:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T10:59:29.000+02:00",
+      "spisova_znacka": "INS 6764/2024",
+      "typ_udalosti": "50",
+      "popis_udalosti": "Zpráva o průběhu zpeněžení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80676385",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "list vlastnictví",
+        "LV č. 239",
+        "parc. č. 795",
+        "pozemek",
+        "nemovitost"
+      ],
+      "kraj": "Středočeský kraj",
+      "kraje": [
+        "Středočeský kraj"
+      ],
+      "obce": [
+        "Pavlíkov",
+        "Příčina"
+      ],
+      "katastralni_uzemi": [
+        "Příčina",
+        "Ryšín"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Rakovník"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. pricina",
+          "ku_kod": "735825",
+          "ku_nazev": "Příčina",
+          "obec": "Příčina",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Rakovník"
+        },
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. rysin",
+          "ku_kod": "651451",
+          "ku_nazev": "Ryšín",
+          "obec": "Pavlíkov",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Rakovník"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=6764&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80382877,
+      "datum_zverejneni": "2026-09-14T10:58:59.000+02:00",
+      "datum_zalozeni": "2026-09-14T10:58:59.000+02:00",
+      "spisova_znacka": "INS 4988/2024",
+      "typ_udalosti": "41",
+      "popis_udalosti": "Vyjádření",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80676370",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "Nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=4988&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80382721,
       "datum_zverejneni": "2026-09-14T10:53:59.000+02:00",
