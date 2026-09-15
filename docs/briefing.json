@@ -1,9 +1,60 @@
 {
-  "updated_at": "2026-09-15T19:58:55.407336+00:00",
+  "updated_at": "2026-09-15T20:29:53.111627+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-15T19:41:52.882445+00:00",
-  "count": 204,
+  "source_updated_at": "2026-09-15T20:14:37.017267+00:00",
+  "count": 206,
   "items": [
+    {
+      "id": 80390440,
+      "datum_zverejneni": "2026-09-14T14:35:44.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:35:44.000+02:00",
+      "spisova_znacka": "INS 18765/2024",
+      "typ_udalosti": "41",
+      "popis_udalosti": "Vyjádření",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80683586",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 22494",
+        "nemovitost"
+      ],
+      "kraj": "Středočeský kraj",
+      "kraje": [
+        "Středočeský kraj"
+      ],
+      "obce": [
+        "Kladno"
+      ],
+      "katastralni_uzemi": [
+        "Dubí u Kladna",
+        "Kladno"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Kladno"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. kladno",
+          "ku_kod": "665061",
+          "ku_nazev": "Kladno",
+          "obec": "Kladno",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Kladno"
+        },
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. dubi u kladna",
+          "ku_kod": "665169",
+          "ku_nazev": "Dubí u Kladna",
+          "obec": "Kladno",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Kladno"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=18765&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80390130,
       "datum_zverejneni": "2026-09-14T14:25:14.000+02:00",
@@ -296,6 +347,22 @@
         }
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=18669&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389690,
+      "datum_zverejneni": "2026-09-14T14:13:39.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:13:39.000+02:00",
+      "spisova_znacka": "INS 16463/2026",
+      "typ_udalosti": "23",
+      "popis_udalosti": "Návrh - přílohy",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80682843",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16463&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80389627,
