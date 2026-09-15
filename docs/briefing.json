@@ -1,9 +1,50 @@
 {
-  "updated_at": "2026-09-15T20:29:53.111627+00:00",
+  "updated_at": "2026-09-15T20:57:25.427750+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-15T20:14:37.017267+00:00",
-  "count": 206,
+  "source_updated_at": "2026-09-15T20:41:33.400376+00:00",
+  "count": 208,
   "items": [
+    {
+      "id": 80390484,
+      "datum_zverejneni": "2026-09-14T14:36:44.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:36:44.000+02:00",
+      "spisova_znacka": "INS 14446/2015",
+      "typ_udalosti": "41",
+      "popis_udalosti": "Vyjádření",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80683635",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV 391",
+        "Nemovitost"
+      ],
+      "kraj": "Středočeský kraj",
+      "kraje": [
+        "Středočeský kraj"
+      ],
+      "obce": [
+        "Mořina"
+      ],
+      "katastralni_uzemi": [
+        "Mořina"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Beroun"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. morina",
+          "ku_kod": "699306",
+          "ku_nazev": "Mořina",
+          "obec": "Mořina",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Beroun"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=14446&rocnik=2015&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80390440,
       "datum_zverejneni": "2026-09-14T14:35:44.000+02:00",
@@ -277,6 +318,35 @@
         "nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=9101&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389859,
+      "datum_zverejneni": "2026-09-14T14:16:39.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:16:39.000+02:00",
+      "spisova_znacka": "INS 16437/2026",
+      "typ_udalosti": "23",
+      "popis_udalosti": "Návrh - přílohy",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80683044",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "List vlastnictví",
+        "byt",
+        "NEMOVITOST"
+      ],
+      "kraj": "Moravskoslezský kraj",
+      "kraje": [
+        "Moravskoslezský kraj"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Moravskoslezský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralni urad pro moravskoslezsky kraj"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16437&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80389807,
