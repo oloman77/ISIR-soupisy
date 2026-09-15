@@ -1,9 +1,208 @@
 {
-  "updated_at": "2026-09-14T23:55:24.004445+00:00",
+  "updated_at": "2026-09-15T00:36:15.968366+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-14T23:39:54.713330+00:00",
-  "count": 74,
+  "source_updated_at": "2026-09-15T00:20:50.774113+00:00",
+  "count": 82,
   "items": [
+    {
+      "id": 80381311,
+      "datum_zverejneni": "2026-09-14T10:30:19.000+02:00",
+      "datum_zalozeni": "2026-09-14T10:17:39.000+02:00",
+      "spisova_znacka": "INS 16449/2026",
+      "typ_udalosti": "23",
+      "popis_udalosti": "Návrh - přílohy",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80674822",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "Katastrální území",
+        "Pozemek",
+        "Byt",
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16449&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80380935,
+      "datum_zverejneni": "2026-09-14T10:17:44.000+02:00",
+      "datum_zalozeni": "2026-09-14T10:07:59.000+02:00",
+      "spisova_znacka": "INS 16480/2026",
+      "typ_udalosti": "410",
+      "popis_udalosti": "Insolvenční návrh spojený s návrhem na prohlášení konkursu",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80674485",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "byt",
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16480&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80381207,
+      "datum_zverejneni": "2026-09-14T10:15:38.000+02:00",
+      "datum_zalozeni": "2026-09-14T10:15:38.000+02:00",
+      "spisova_znacka": "INS 9191/2020",
+      "typ_udalosti": "66",
+      "popis_udalosti": "Usnesení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80674744",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 2033",
+        "pozemek",
+        "stavba",
+        "garáž"
+      ],
+      "kraj": "Jihomoravský kraj",
+      "kraje": [
+        "Jihomoravský kraj"
+      ],
+      "obce": [
+        "Ivančice"
+      ],
+      "katastralni_uzemi": [
+        "Němčice u Ivančic"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Brno-venkov"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralnim uradem pro jihomoravsky kraj"
+        },
+        {
+          "kraj": "Jihomoravský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. nemcice u ivancic",
+          "ku_kod": "655813",
+          "ku_nazev": "Němčice u Ivančic",
+          "obec": "Ivančice",
+          "pracoviste": "Katastrální úřad pro Jihomoravský kraj, Katastrální pracoviště Brno-venkov"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=9191&rocnik=2020&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80381169,
+      "datum_zverejneni": "2026-09-14T10:14:38.000+02:00",
+      "datum_zalozeni": "2026-09-14T10:14:38.000+02:00",
+      "spisova_znacka": "INS 15080/2026",
+      "typ_udalosti": "78",
+      "popis_udalosti": "Usnesení o úpadku spojené s povolením oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80674718",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=15080&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80381115,
+      "datum_zverejneni": "2026-09-14T10:12:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T10:12:29.000+02:00",
+      "spisova_znacka": "INS 21492/2025",
+      "typ_udalosti": "226",
+      "popis_udalosti": "Konečná zpráva",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80674672",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 246",
+        "nemovitost"
+      ],
+      "kraj": "Ústecký kraj",
+      "kraje": [
+        "Ústecký kraj"
+      ],
+      "obce": [
+        "Petrohrad"
+      ],
+      "katastralni_uzemi": [
+        "Černčice u Petrohradu"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Žatec"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. cerncice u petrohradu",
+          "ku_kod": "719684",
+          "ku_nazev": "Černčice u Petrohradu",
+          "obec": "Petrohrad",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Žatec"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=21492&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80381055,
+      "datum_zverejneni": "2026-09-14T10:10:59.000+02:00",
+      "datum_zalozeni": "2026-09-14T10:10:59.000+02:00",
+      "spisova_znacka": "INS 4794/2026",
+      "typ_udalosti": "42",
+      "popis_udalosti": "Vyjádření dlužníka",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80674610",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "parc. č. 906/9",
+        "pozemek",
+        "nemovitost"
+      ],
+      "kraj": "Středočeský kraj",
+      "kraje": [
+        "Středočeský kraj"
+      ],
+      "obce": [
+        "Líšnice"
+      ],
+      "katastralni_uzemi": [
+        "Líšnice u Prahy"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Praha-západ"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. lisnice u prahy",
+          "ku_kod": "685054",
+          "ku_nazev": "Líšnice u Prahy",
+          "obec": "Líšnice",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Praha-západ"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=4794&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80380872,
+      "datum_zverejneni": "2026-09-14T10:06:14.000+02:00",
+      "datum_zalozeni": "2026-09-14T10:06:14.000+02:00",
+      "spisova_znacka": "INS 10911/2026",
+      "typ_udalosti": "63",
+      "popis_udalosti": "Přihláška pohledávky",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80674440",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "Lv 508"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=10911&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80380816,
       "datum_zverejneni": "2026-09-14T10:04:38.000+02:00",
@@ -305,6 +504,23 @@
         }
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=4706&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80379756,
+      "datum_zverejneni": "2026-09-14T09:39:23.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:39:24.000+02:00",
+      "spisova_znacka": "INS 16465/2026",
+      "typ_udalosti": "23",
+      "popis_udalosti": "Návrh - přílohy",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80673360",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "Katastrální území",
+        "Nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16465&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80379683,
