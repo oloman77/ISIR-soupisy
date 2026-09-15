@@ -1,9 +1,174 @@
 {
-  "updated_at": "2026-09-15T16:30:24.923702+00:00",
+  "updated_at": "2026-09-15T17:00:05.404141+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-15T16:14:35.619176+00:00",
-  "count": 182,
+  "source_updated_at": "2026-09-15T16:43:03.396175+00:00",
+  "count": 188,
   "items": [
+    {
+      "id": 80389497,
+      "datum_zverejneni": "2026-09-14T14:07:23.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:07:24.000+02:00",
+      "spisova_znacka": "INS 8918/2026",
+      "typ_udalosti": "1037",
+      "popis_udalosti": "Zpráva o přezkumu",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80682697",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=8918&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389487,
+      "datum_zverejneni": "2026-09-14T14:07:14.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:07:14.000+02:00",
+      "spisova_znacka": "INS 11862/2026",
+      "typ_udalosti": "63",
+      "popis_udalosti": "Přihláška pohledávky",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80682686",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=11862&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389439,
+      "datum_zverejneni": "2026-09-14T14:05:14.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:05:14.000+02:00",
+      "spisova_znacka": "INS 13407/2021",
+      "typ_udalosti": "706",
+      "popis_udalosti": "Sdělení o pohledávce",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80682640",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "Katastrální území",
+        "LV č. 694",
+        "stavba",
+        "byt",
+        "rodinný dům",
+        "nemovitost"
+      ],
+      "kraj": "Ústecký kraj",
+      "kraje": [
+        "Ústecký kraj"
+      ],
+      "obce": [
+        "Děčín"
+      ],
+      "katastralni_uzemi": [
+        "Děčín",
+        "Děčín-Staré Město"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Děčín"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralni urad pro ustecky kraj"
+        },
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "kod_ku",
+          "doklad": "katastralni uzemi: decin-stare mesto [625035]",
+          "ku_kod": "625035",
+          "ku_nazev": "Děčín-Staré Město",
+          "obec": "Děčín",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Děčín"
+        },
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi decin",
+          "ku_kod": "624926",
+          "ku_nazev": "Děčín",
+          "obec": "Děčín",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Děčín"
+        },
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. decin-stare mesto",
+          "ku_kod": "625035",
+          "ku_nazev": "Děčín-Staré Město",
+          "obec": "Děčín",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Děčín"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=13407&rocnik=2021&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389424,
+      "datum_zverejneni": "2026-09-14T14:04:23.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:04:23.000+02:00",
+      "spisova_znacka": "INS 10504/2011",
+      "typ_udalosti": "367",
+      "popis_udalosti": "Žádost",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80682627",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV 12",
+        "parc. č. 30/2",
+        "stavba",
+        "rodinný dům"
+      ],
+      "kraj": "Plzeňský kraj",
+      "kraje": [
+        "Plzeňský kraj"
+      ],
+      "obce": [
+        "Kornatice"
+      ],
+      "katastralni_uzemi": [
+        "Kornatice"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Rokycany"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Plzeňský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralnim uradem pro plzensky kraj"
+        },
+        {
+          "kraj": "Plzeňský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. kornatice",
+          "ku_kod": "693511",
+          "ku_nazev": "Kornatice",
+          "obec": "Kornatice",
+          "pracoviste": "Katastrální úřad pro Plzeňský kraj, Katastrální pracoviště Rokycany"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=10504&rocnik=2011&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389368,
+      "datum_zverejneni": "2026-09-14T14:02:24.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:02:24.000+02:00",
+      "spisova_znacka": "INS 8423/2026",
+      "typ_udalosti": "1037",
+      "popis_udalosti": "Zpráva o přezkumu",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80682568",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=8423&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80388630,
       "datum_zverejneni": "2026-09-14T14:00:29.000+02:00",
@@ -19,6 +184,22 @@
         "nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16495&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389288,
+      "datum_zverejneni": "2026-09-14T13:59:53.000+02:00",
+      "datum_zalozeni": "2026-09-14T13:59:53.000+02:00",
+      "spisova_znacka": "INS 3891/2026",
+      "typ_udalosti": "49",
+      "popis_udalosti": "Zpráva o hospodářské situaci dlužníka",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80682498",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=3891&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80389035,
