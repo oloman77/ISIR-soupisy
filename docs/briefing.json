@@ -1,9 +1,249 @@
 {
-  "updated_at": "2026-09-15T04:32:22.316945+00:00",
+  "updated_at": "2026-09-15T04:55:55.789663+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-15T04:15:41.525485+00:00",
-  "count": 113,
+  "source_updated_at": "2026-09-15T04:44:50.114040+00:00",
+  "count": 120,
   "items": [
+    {
+      "id": 80384477,
+      "datum_zverejneni": "2026-09-14T11:33:08.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:33:08.000+02:00",
+      "spisova_znacka": "INS 13248/2026",
+      "typ_udalosti": "22",
+      "popis_udalosti": "Návrh - doplnění návrhu",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80677919",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 1304"
+      ],
+      "kraj": "Zlínský kraj",
+      "kraje": [
+        "Zlínský kraj"
+      ],
+      "obce": [
+        "Velké Karlovice"
+      ],
+      "katastralni_uzemi": [
+        "Velké Karlovice"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Zlínský kraj, Katastrální pracoviště Vsetín"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Zlínský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralnim uradem pro zlinsky kraj"
+        },
+        {
+          "kraj": "Zlínský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. velke karlovice",
+          "ku_kod": "779016",
+          "ku_nazev": "Velké Karlovice",
+          "obec": "Velké Karlovice",
+          "pracoviste": "Katastrální úřad pro Zlínský kraj, Katastrální pracoviště Vsetín"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=13248&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80384406,
+      "datum_zverejneni": "2026-09-14T11:27:44.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:27:44.000+02:00",
+      "spisova_znacka": "INS 6599/2026",
+      "typ_udalosti": "195",
+      "popis_udalosti": "Výzva na správce",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80677853",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=6599&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80384386,
+      "datum_zverejneni": "2026-09-14T11:27:09.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:27:10.000+02:00",
+      "spisova_znacka": "INS 2539/2012",
+      "typ_udalosti": "332",
+      "popis_udalosti": "Zpráva IS o stavu řízení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80677816",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "NEMOVITOST"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=2539&rocnik=2012&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80384275,
+      "datum_zverejneni": "2026-09-14T11:24:44.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:24:44.000+02:00",
+      "spisova_znacka": "INS 14033/2026",
+      "typ_udalosti": "78",
+      "popis_udalosti": "Usnesení o úpadku spojené s povolením oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80677806",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=14033&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80384209,
+      "datum_zverejneni": "2026-09-14T11:23:14.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:23:14.000+02:00",
+      "spisova_znacka": "INS 8835/2025",
+      "typ_udalosti": "413",
+      "popis_udalosti": "Přihláška - návrh na vstup nového věřitele",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80677688",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=8835&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80384101,
+      "datum_zverejneni": "2026-09-14T11:21:08.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:21:08.000+02:00",
+      "spisova_znacka": "INS 17868/2024",
+      "typ_udalosti": "346",
+      "popis_udalosti": "Návrh na vydání výtěžku zpeněžení zajištěnému věřiteli",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80677526",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 897",
+        "parc. č. 65/31",
+        "pozemek",
+        "stavba",
+        "nemovitost"
+      ],
+      "kraj": "Moravskoslezský kraj",
+      "kraje": [
+        "Moravskoslezský kraj"
+      ],
+      "obce": [
+        "Horní Bludovice"
+      ],
+      "katastralni_uzemi": [
+        "Prostřední Bludovice"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Moravskoslezský kraj, Katastrální pracoviště Ostrava"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Moravskoslezský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro moravskoslezsky kraj"
+        },
+        {
+          "kraj": "Moravskoslezský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi prostredni bludovice",
+          "ku_kod": "642410",
+          "ku_nazev": "Prostřední Bludovice",
+          "obec": "Horní Bludovice",
+          "pracoviste": "Katastrální úřad pro Moravskoslezský kraj, Katastrální pracoviště Ostrava"
+        },
+        {
+          "kraj": "Moravskoslezský kraj",
+          "metoda": "kod_ku",
+          "doklad": "katastralnim uzemi 642410",
+          "ku_kod": "642410",
+          "ku_nazev": "Prostřední Bludovice",
+          "obec": "Horní Bludovice",
+          "pracoviste": "Katastrální úřad pro Moravskoslezský kraj, Katastrální pracoviště Ostrava"
+        },
+        {
+          "kraj": "Moravskoslezský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. prostredni bludovice",
+          "ku_kod": "642410",
+          "ku_nazev": "Prostřední Bludovice",
+          "obec": "Horní Bludovice",
+          "pracoviste": "Katastrální úřad pro Moravskoslezský kraj, Katastrální pracoviště Ostrava"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=17868&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80384014,
+      "datum_zverejneni": "2026-09-14T11:19:44.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:19:44.000+02:00",
+      "spisova_znacka": "INS 13980/2023",
+      "typ_udalosti": "334",
+      "popis_udalosti": "Soupis majetkové podstaty",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80677511",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "parc. č.\n5885/2",
+        "Pozemek",
+        "Stavba",
+        "jednotka",
+        "Byt",
+        "nemovitost"
+      ],
+      "kraj": "Ústecký kraj",
+      "kraje": [
+        "Ústecký kraj"
+      ],
+      "obce": [
+        "Chomutov"
+      ],
+      "katastralni_uzemi": [
+        "Chomutov I"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Chomutov"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi chomutov i",
+          "ku_kod": "652458",
+          "ku_nazev": "Chomutov I",
+          "obec": "Chomutov",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Chomutov"
+        },
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi: chomutov i",
+          "ku_kod": "652458",
+          "ku_nazev": "Chomutov I",
+          "obec": "Chomutov",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Chomutov"
+        },
+        {
+          "kraj": "Ústecký kraj",
+          "metoda": "kod_ku",
+          "doklad": "katastralni uzemi chomutov i [652458]",
+          "ku_kod": "652458",
+          "ku_nazev": "Chomutov I",
+          "obec": "Chomutov",
+          "pracoviste": "Katastrální úřad pro Ústecký kraj, Katastrální pracoviště Chomutov"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=13980&rocnik=2023&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80383892,
       "datum_zverejneni": "2026-09-14T11:16:15.000+02:00",
