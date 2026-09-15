@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-15T01:31:24.068265+00:00",
+  "updated_at": "2026-09-15T01:59:54.208553+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-15T01:15:05.177961+00:00",
-  "count": 88,
+  "source_updated_at": "2026-09-15T01:43:58.307909+00:00",
+  "count": 90,
   "items": [
     {
       "id": 80381593,
@@ -19,6 +19,22 @@
         "nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16257&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80381799,
+      "datum_zverejneni": "2026-09-14T10:30:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T10:30:29.000+02:00",
+      "spisova_znacka": "INS 12412/2024",
+      "typ_udalosti": "29",
+      "popis_udalosti": "Sdělení dlužníka",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80675339",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=12412&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80381311,
@@ -554,6 +570,70 @@
         "nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16435&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80379961,
+      "datum_zverejneni": "2026-09-14T09:43:29.000+02:00",
+      "datum_zalozeni": "2026-09-14T09:43:29.000+02:00",
+      "spisova_znacka": "INS 16628/2023",
+      "typ_udalosti": "414",
+      "popis_udalosti": "Návrh dlužníka",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80673577",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "parc. č. 1609",
+        "Stavba",
+        "jednotka",
+        "byt",
+        "rodinný dům",
+        "NEMOVITOST",
+        "garáž"
+      ],
+      "kraj": "Hlavní město Praha",
+      "kraje": [
+        "Hlavní město Praha"
+      ],
+      "obce": [
+        "Praha"
+      ],
+      "katastralni_uzemi": [
+        "Krč"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro hlavní město Prahu, Katastrální pracoviště Praha"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Hlavní město Praha",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. krc",
+          "ku_kod": "727598",
+          "ku_nazev": "Krč",
+          "obec": "Praha",
+          "pracoviste": "Katastrální úřad pro hlavní město Prahu, Katastrální pracoviště Praha"
+        },
+        {
+          "kraj": "Hlavní město Praha",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. krc",
+          "ku_kod": "727598",
+          "ku_nazev": "Krč",
+          "obec": "Praha",
+          "pracoviste": "Katastrální úřad pro hlavní město Prahu, Katastrální pracoviště Praha"
+        },
+        {
+          "kraj": "Hlavní město Praha",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi krc",
+          "ku_kod": "727598",
+          "ku_nazev": "Krč",
+          "obec": "Praha",
+          "pracoviste": "Katastrální úřad pro hlavní město Prahu, Katastrální pracoviště Praha"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16628&rocnik=2023&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80379815,
