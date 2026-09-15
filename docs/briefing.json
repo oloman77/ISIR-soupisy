@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-09-15T17:56:31.920322+00:00",
+  "updated_at": "2026-09-15T18:32:19.835485+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-15T17:41:13.690527+00:00",
-  "count": 194,
+  "source_updated_at": "2026-09-15T18:15:15.500839+00:00",
+  "count": 201,
   "items": [
     {
       "id": 80389576,
@@ -20,6 +20,180 @@
         "nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16493&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389908,
+      "datum_zverejneni": "2026-09-14T14:17:44.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:17:44.000+02:00",
+      "spisova_znacka": "INS 15604/2024",
+      "typ_udalosti": "1087",
+      "popis_udalosti": "Zpráva IS o zpeněžení majetku",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80683078",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "LV č. 3868",
+        "parc. č. 2379/1",
+        "stavba",
+        "jednotka",
+        "byt",
+        "nemovitost"
+      ],
+      "kraj": "Liberecký kraj",
+      "kraje": [
+        "Liberecký kraj"
+      ],
+      "obce": [
+        "Doksy"
+      ],
+      "katastralni_uzemi": [
+        "Doksy u Máchova jezera"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Liberecký kraj, Katastrální pracoviště Česká Lípa"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Liberecký kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro liberecky kraj"
+        },
+        {
+          "kraj": "Liberecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. doksy u machova jezera",
+          "ku_kod": "628212",
+          "ku_nazev": "Doksy u Máchova jezera",
+          "obec": "Doksy",
+          "pracoviste": "Katastrální úřad pro Liberecký kraj, Katastrální pracoviště Česká Lípa"
+        },
+        {
+          "kraj": "Liberecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi doksy u machova jezera",
+          "ku_kod": "628212",
+          "ku_nazev": "Doksy u Máchova jezera",
+          "obec": "Doksy",
+          "pracoviste": "Katastrální úřad pro Liberecký kraj, Katastrální pracoviště Česká Lípa"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=15604&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389903,
+      "datum_zverejneni": "2026-09-14T14:17:38.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:17:38.000+02:00",
+      "spisova_znacka": "INS 23188/2021",
+      "typ_udalosti": "42",
+      "popis_udalosti": "Vyjádření dlužníka",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80683088",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 1623",
+        "Byt"
+      ],
+      "kraj": "Jihočeský kraj",
+      "kraje": [
+        "Jihočeský kraj"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Jihočeský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro jihocesky kraj"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=23188&rocnik=2021&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389883,
+      "datum_zverejneni": "2026-09-14T14:17:09.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:17:09.000+02:00",
+      "spisova_znacka": "INS 9101/2026",
+      "typ_udalosti": "1036",
+      "popis_udalosti": "Zpráva pro oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80683067",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=9101&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389807,
+      "datum_zverejneni": "2026-09-14T14:15:44.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:15:44.000+02:00",
+      "spisova_znacka": "INS 774/2026",
+      "typ_udalosti": "606",
+      "popis_udalosti": "Sdělení insolvenčního správce",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80682975",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV\n696",
+        "nemovitost"
+      ],
+      "kraj": "Středočeský kraj",
+      "kraje": [
+        "Středočeský kraj"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralni urad pro stredocesky kraj"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=774&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389800,
+      "datum_zverejneni": "2026-09-14T14:15:38.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:15:38.000+02:00",
+      "spisova_znacka": "INS 18669/2024",
+      "typ_udalosti": "226",
+      "popis_udalosti": "Konečná zpráva",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80682976",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "parc. č. 314/2",
+        "pozemek",
+        "stavba"
+      ],
+      "kraj": "Olomoucký kraj",
+      "kraje": [
+        "Olomoucký kraj"
+      ],
+      "obce": [
+        "Olomouc"
+      ],
+      "katastralni_uzemi": [
+        "Nedvězí u Olomouce"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Olomouc"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Olomoucký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. nedvezi u olomouce",
+          "ku_kod": "702358",
+          "ku_nazev": "Nedvězí u Olomouce",
+          "obec": "Olomouc",
+          "pracoviste": "Katastrální úřad pro Olomoucký kraj, Katastrální pracoviště Olomouc"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=18669&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80389627,
@@ -403,6 +577,25 @@
         "nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16353&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80387934,
+      "datum_zverejneni": "2026-09-14T13:42:14.000+02:00",
+      "datum_zalozeni": "2026-09-14T13:28:45.000+02:00",
+      "spisova_znacka": "INS 16448/2026",
+      "typ_udalosti": "23",
+      "popis_udalosti": "Návrh - přílohy",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80681198",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "POZEMEK",
+        "BYT",
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16448&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80388356,
@@ -834,6 +1027,23 @@
         }
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=12053&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80387961,
+      "datum_zverejneni": "2026-09-14T13:29:23.000+02:00",
+      "datum_zalozeni": "2026-09-14T13:29:23.000+02:00",
+      "spisova_znacka": "INS 8342/2026",
+      "typ_udalosti": "1036",
+      "popis_udalosti": "Zpráva pro oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80681208",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "byt",
+        "Nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=8342&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80387922,
