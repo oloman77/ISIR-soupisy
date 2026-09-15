@@ -1,9 +1,57 @@
 {
-  "updated_at": "2026-09-15T18:32:19.835485+00:00",
+  "updated_at": "2026-09-15T19:01:32.621360+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-15T18:15:15.500839+00:00",
-  "count": 201,
+  "source_updated_at": "2026-09-15T18:44:31.778538+00:00",
+  "count": 202,
   "items": [
+    {
+      "id": 80390026,
+      "datum_zverejneni": "2026-09-14T14:22:10.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:22:10.000+02:00",
+      "spisova_znacka": "INS 12766/2025",
+      "typ_udalosti": "183",
+      "popis_udalosti": "Rozsudek",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80683195",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV č. 767",
+        "stavba",
+        "rodinný dům",
+        "nemovitost"
+      ],
+      "kraj": "Pardubický kraj",
+      "kraje": [
+        "Pardubický kraj"
+      ],
+      "obce": [
+        "Křižanovice"
+      ],
+      "katastralni_uzemi": [
+        "Křižanovice"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Pardubický kraj, Katastrální pracoviště Chrudim"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Pardubický kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro pardubicky kraj"
+        },
+        {
+          "kraj": "Pardubický kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k. u. krizanovice",
+          "ku_kod": "683141",
+          "ku_nazev": "Křižanovice",
+          "obec": "Křižanovice",
+          "pracoviste": "Katastrální úřad pro Pardubický kraj, Katastrální pracoviště Chrudim"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=12766&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80389576,
       "datum_zverejneni": "2026-09-14T14:21:36.000+02:00",
