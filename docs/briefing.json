@@ -1,9 +1,63 @@
 {
-  "updated_at": "2026-09-15T19:01:32.621360+00:00",
+  "updated_at": "2026-09-15T19:27:56.524405+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-15T18:44:31.778538+00:00",
-  "count": 202,
+  "source_updated_at": "2026-09-15T19:12:49.252674+00:00",
+  "count": 204,
   "items": [
+    {
+      "id": 80390130,
+      "datum_zverejneni": "2026-09-14T14:25:14.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:25:14.000+02:00",
+      "spisova_znacka": "INS 11913/2025",
+      "typ_udalosti": "66",
+      "popis_udalosti": "Usnesení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80683301",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "LV 134",
+        "parc. č. 998",
+        "pozemek",
+        "nemovitost"
+      ],
+      "kraj": "Středočeský kraj",
+      "kraje": [
+        "Středočeský kraj"
+      ],
+      "obce": [
+        "Bělušice",
+        "Němčice"
+      ],
+      "katastralni_uzemi": [
+        "Bělušice",
+        "Němčice u Kolína"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Kolín"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. belusice",
+          "ku_kod": "602027",
+          "ku_nazev": "Bělušice",
+          "obec": "Bělušice",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Kolín"
+        },
+        {
+          "kraj": "Středočeský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. nemcice u kolina",
+          "ku_kod": "616451",
+          "ku_nazev": "Němčice u Kolína",
+          "obec": "Němčice",
+          "pracoviste": "Katastrální úřad pro Středočeský kraj, Katastrální pracoviště Kolín"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=11913&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80390026,
       "datum_zverejneni": "2026-09-14T14:22:10.000+02:00",
@@ -322,6 +376,22 @@
         "nemovitost"
       ],
       "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=18900&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80389506,
+      "datum_zverejneni": "2026-09-14T14:07:53.000+02:00",
+      "datum_zalozeni": "2026-09-14T14:07:53.000+02:00",
+      "spisova_znacka": "INS 12861/2025",
+      "typ_udalosti": "343",
+      "popis_udalosti": "Návrh na změnu v osobě věřitele",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80682696",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=12861&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
     },
     {
       "id": 80389497,
