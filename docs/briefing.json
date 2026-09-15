@@ -1,9 +1,193 @@
 {
-  "updated_at": "2026-09-15T08:16:08.720493+00:00",
+  "updated_at": "2026-09-15T09:02:25.130936+00:00",
   "window_hours": 48,
-  "source_updated_at": "2026-09-15T08:01:02.984075+00:00",
-  "count": 127,
+  "source_updated_at": "2026-09-15T08:46:10.934191+00:00",
+  "count": 132,
   "items": [
+    {
+      "id": 80385139,
+      "datum_zverejneni": "2026-09-14T12:01:08.000+02:00",
+      "datum_zalozeni": "2026-09-14T12:01:08.000+02:00",
+      "spisova_znacka": "INS 16594/2025",
+      "typ_udalosti": "1087",
+      "popis_udalosti": "Zpráva IS o zpeněžení majetku",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80678537",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "parc. č. 21",
+        "pozemek",
+        "byt",
+        "rodinný dům",
+        "nemovitost"
+      ],
+      "kraj": "Moravskoslezský kraj",
+      "kraje": [
+        "Moravskoslezský kraj"
+      ],
+      "obce": [
+        "Holasovice"
+      ],
+      "katastralni_uzemi": [
+        "Štemplovec"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Moravskoslezský kraj, Katastrální pracoviště Opava"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Moravskoslezský kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro moravskoslezsky kraj"
+        },
+        {
+          "kraj": "Moravskoslezský kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi stemplovec",
+          "ku_kod": "640824",
+          "ku_nazev": "Štemplovec",
+          "obec": "Holasovice",
+          "pracoviste": "Katastrální úřad pro Moravskoslezský kraj, Katastrální pracoviště Opava"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=16594&rocnik=2025&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80385123,
+      "datum_zverejneni": "2026-09-14T11:59:44.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:59:44.000+02:00",
+      "spisova_znacka": "INS 15235/2026",
+      "typ_udalosti": "22",
+      "popis_udalosti": "Návrh - doplnění návrhu",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80678511",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "LV č.\n776",
+        "NEMOVITOST"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=15235&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80385114,
+      "datum_zverejneni": "2026-09-14T11:59:39.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:59:39.000+02:00",
+      "spisova_znacka": "INS 8258/2024",
+      "typ_udalosti": "606",
+      "popis_udalosti": "Sdělení insolvenčního správce",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80678520",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "katastrální území",
+        "List vlastnictví",
+        "LV 6026",
+        "pozemek",
+        "stavba",
+        "jednotka",
+        "byt",
+        "nemovitost"
+      ],
+      "kraj": "Královéhradecký kraj",
+      "kraje": [
+        "Královéhradecký kraj"
+      ],
+      "obce": [
+        "Náchod"
+      ],
+      "katastralni_uzemi": [
+        "Běloves"
+      ],
+      "katastralni_pracoviste": [
+        "Katastrální úřad pro Královéhradecký kraj, Katastrální pracoviště Náchod"
+      ],
+      "lokalita_doklady": [
+        {
+          "kraj": "Královéhradecký kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralniho uradu pro kralovehradecky kraj"
+        },
+        {
+          "kraj": "Královéhradecký kraj",
+          "metoda": "nazev_uradu",
+          "doklad": "katastralni urad pro kralovehradecky kraj"
+        },
+        {
+          "kraj": "Královéhradecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "k.u. beloves",
+          "ku_kod": "701301",
+          "ku_nazev": "Běloves",
+          "obec": "Náchod",
+          "pracoviste": "Katastrální úřad pro Královéhradecký kraj, Katastrální pracoviště Náchod"
+        },
+        {
+          "kraj": "Královéhradecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralnim uzemi beloves",
+          "ku_kod": "701301",
+          "ku_nazev": "Běloves",
+          "obec": "Náchod",
+          "pracoviste": "Katastrální úřad pro Královéhradecký kraj, Katastrální pracoviště Náchod"
+        },
+        {
+          "kraj": "Královéhradecký kraj",
+          "metoda": "nazev_ku",
+          "doklad": "katastralni uzemi beloves",
+          "ku_kod": "701301",
+          "ku_nazev": "Běloves",
+          "obec": "Náchod",
+          "pracoviste": "Katastrální úřad pro Královéhradecký kraj, Katastrální pracoviště Náchod"
+        },
+        {
+          "kraj": "Královéhradecký kraj",
+          "metoda": "kod_ku",
+          "doklad": "katastralni uzemi: 701301",
+          "ku_kod": "701301",
+          "ku_nazev": "Běloves",
+          "obec": "Náchod",
+          "pracoviste": "Katastrální úřad pro Královéhradecký kraj, Katastrální pracoviště Náchod"
+        }
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=8258&rocnik=2024&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80385108,
+      "datum_zverejneni": "2026-09-14T11:59:38.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:59:38.000+02:00",
+      "spisova_znacka": "INS 13841/2026",
+      "typ_udalosti": "78",
+      "popis_udalosti": "Usnesení o úpadku spojené s povolením oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80678512",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=13841&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
+    {
+      "id": 80385110,
+      "datum_zverejneni": "2026-09-14T11:59:38.000+02:00",
+      "datum_zalozeni": "2026-09-14T11:59:38.000+02:00",
+      "spisova_znacka": "INS 15421/2026",
+      "typ_udalosti": "78",
+      "popis_udalosti": "Usnesení o úpadku spojené s povolením oddlužení",
+      "dokument_url": "https://isir.justice.cz:8443/isir_public_ws/doc/Document?idDokument=80678516",
+      "obsahuje_nemovitost": true,
+      "pdf_checked": true,
+      "pdf_status": "ok",
+      "nemovitost_signaly": [
+        "nemovitost"
+      ],
+      "isir_search_url": "https://isir.justice.cz/isir/ueu/vysledek_lustrace.do?nazev_osoby=&jmeno_osoby=&ic=&datum_narozeni=&rc=&mesto=&cislo_senatu=&bc_vec=15421&rocnik=2026&id_osoby_puvodce=&druh_stav_konkursu=&datum_stav_od=&datum_stav_do=&aktualnost=AKTUALNI_I_UKONCENA&druh_kod_udalost=&datum_akce_od=&datum_akce_do=&nazev_osoby_f=&cislo_senatu_vsns=&druh_vec_vsns=&bc_vec_vsns=&rocnik_vsns=&cislo_senatu_icm=&bc_vec_icm=&rocnik_icm=&rowsAtOnce=50&spis_znacky_datum=&spis_znacky_obdobi=14DNI"
+    },
     {
       "id": 80384997,
       "datum_zverejneni": "2026-09-14T11:55:38.000+02:00",
