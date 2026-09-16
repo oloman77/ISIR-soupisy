@@ -1,1 +1,1 @@
-{"all_documents_from_id":80322065,"current_id":80446403,"latest_id_at_run":80446404,"last_run":"2026-09-16T22:41:32.028419+00:00","days_back":90,"caught_up":false,"backfill_complete":true,"phase":"catching_up"}
+{"all_documents_from_id":80322065,"current_id":80446632,"latest_id_at_run":80446632,"last_run":"2026-09-16T23:13:16.164773+00:00","days_back":90,"caught_up":true,"backfill_complete":true,"phase":"pdf_analysis"}
