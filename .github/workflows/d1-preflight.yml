@@ -1,0 +1,40 @@
+name: D1 migration preflight
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'd1_preflight.py'
+      - '.github/workflows/d1-preflight.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: isir-d1-preflight
+  cancel-in-progress: false
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Verify D1 access, capacity and lossless sample migration
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_D1_DATABASE_ID: ${{ secrets.CLOUDFLARE_D1_DATABASE_ID }}
+        run: python d1_preflight.py
+      - name: Keep aggregate preflight report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: d1-preflight-report
+          path: d1-preflight-report.json
+          if-no-files-found: ignore
+          retention-days: 7
