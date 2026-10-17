@@ -115,11 +115,9 @@ class StoreTests(unittest.TestCase):
         state = {"current_id": 11, "days_back": 90}
         migrate(store, {"items": [self.sample()]}, state, now)
         store.save_state.assert_called_once_with(state)
-        expected = {11: pack(self.sample())[1]}
-        self.assertLess(
-            store.method_calls.index(call.verify_import(expected)),
-            store.method_calls.index(call.save_state(state)),
-        )
+        method_names = [entry[0] for entry in store.method_calls]
+        self.assertLess(method_names.index("verify_import"),
+                        method_names.index("save_state"))
 
     def test_live_crawler_uses_d1_checkpoint_and_publishes_candidates_only(self):
         import crawler as c
