@@ -55,9 +55,9 @@ export async function onRequestPatch({request,params,env}){
     };
     await env.DB.batch([
       env.DB.prepare(
-        'INSERT INTO property_decisions (property_id,status,priority,tags_json,note,follow_up_date,title_override,district_override,updated_at) VALUES (?,?,?,?,?,?,?,?,datetime("now"))'+
+        'INSERT INTO property_decisions (property_id,status,priority,tags_json,note,follow_up_date,title_override,district_override,updated_at) VALUES (?,?,?,?,?,?,?,?,CURRENT_TIMESTAMP)'+
         ' ON CONFLICT(property_id) DO UPDATE SET status=excluded.status,priority=excluded.priority,tags_json=excluded.tags_json,note=excluded.note,'+
-        ' follow_up_date=excluded.follow_up_date,title_override=excluded.title_override,district_override=excluded.district_override,updated_at=datetime("now")'
+        ' follow_up_date=excluded.follow_up_date,title_override=excluded.title_override,district_override=excluded.district_override,updated_at=CURRENT_TIMESTAMP'
       ).bind(id,next.status,next.priority,next.tags_json,next.note,next.follow_up_date,next.title_override,next.district_override),
       env.DB.prepare('INSERT INTO decision_history (property_id,change_json) VALUES (?,?)').bind(id,JSON.stringify(body))
     ]);
