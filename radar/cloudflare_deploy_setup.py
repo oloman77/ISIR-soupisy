@@ -13,7 +13,10 @@ NAME = "isir-radar"
 EXPECTED_JURISDICTION = "eu"
 
 def api(method, url, data=None):
-    token = os.environ["CLOUDFLARE_API_TOKEN"]
+    token_name = "CLOUDFLARE_PAGES_API_TOKEN" if "/pages/" in url else "CLOUDFLARE_API_TOKEN"
+    token = os.environ.get(token_name)
+    if not token:
+        raise RuntimeError(f"GitHub secret {token_name} is not configured")
     req = urllib.request.Request(
         url,
         data=(json.dumps(data).encode("utf-8") if data is not None else None),
