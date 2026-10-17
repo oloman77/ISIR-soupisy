@@ -174,13 +174,15 @@ class D1Store:
                 break
         return rows
 
-    def verify_import(self, expected):
-        """Full remote ID/digest comparison; no checkpoint if anything differs."""
+    def verify_import(self, expected, cutoff):
+        """Verify all retained IDs/digests; tolerate expired rows from partial retries."""
         after, seen = 0, 0
+        cutoff_str = cutoff.astimezone(timezone.utc).isoformat()
         while True:
             batch = self.query(
-                "SELECT id,digest FROM isir_documents WHERE id > ? ORDER BY id LIMIT 1000",
-                (after,),
+                "SELECT id,digest FROM isir_documents "
+                "WHERE published >= ? AND id > ? ORDER BY id LIMIT 1000",
+                (cutoff_str, after),
             )
             if not batch:
                 break
