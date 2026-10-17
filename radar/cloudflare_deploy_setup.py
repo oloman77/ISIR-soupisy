@@ -33,7 +33,19 @@ def api(method, url, data=None):
     except urllib.error.HTTPError as exc:
         # The HTTP status is enough for diagnosing missing permissions.
         # Do not echo an API error document since it may contain metadata.
-        raise RuntimeError(f"Cloudflare {method} API rejected request: HTTP {exc.code}") from None
+        try:
+            details = json.load(exc)
+            errors = details.get("errors", [])
+            safe_errors = [
+                {"code": e.get("code"), "message": str(e.get("message", ""))[:160]}
+                for e in errors[:3]
+            ]
+        except (ValueError, TypeError):
+            safe_errors = []
+        raise RuntimeError(
+            f"Cloudflare {method} API rejected request: HTTP {exc.code}; "
+            f"errors: {safe_errors}"
+        ) from None
     if not payload.get("success"):
         raise RuntimeError(f"Cloudflare {method} API returned success=false")
     return payload["result"]
@@ -73,11 +85,11 @@ def configure():
         "deployment_configs": {
             "production": {
                 "d1_databases": {"DB": {"id": uuid}},
-                "compatibility_date": "2026-10-18",
+                "compatibility_date": "2026-10-01",
             },
             "preview": {
                 "d1_databases": {"DB": {"id": uuid}},
-                "compatibility_date": "2026-10-18",
+                "compatibility_date": "2026-10-01",
             },
         }
     })
