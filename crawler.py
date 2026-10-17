@@ -28,6 +28,7 @@ STATE_FILE = ROOT / "data/state.json"
 RESULTS_FILE = ROOT / "docs/results.json"
 
 DAYS_BACK = int(os.getenv("DAYS_BACK", "180"))
+USE_D1 = os.getenv("ISIR_STORE", "json") == "d1"
 MAX_BATCHES = int(os.getenv("MAX_BATCHES", "250"))
 MAX_PDF_PER_RUN = int(os.getenv("MAX_PDF_PER_RUN", "150"))
 PAUSE = float(os.getenv("PAUSE", "0.05"))
@@ -597,13 +598,22 @@ def main():
     now = datetime.now(timezone.utc)
     cutoff = now - timedelta(days=DAYS_BACK)
 
-    state = load_json(STATE_FILE, {})
-    old = load_json(RESULTS_FILE, {"items": []})
-    existing = {
-        str(x.get("id")): x
-        for x in old.get("items", [])
-        if x.get("id") is not None
-    }
+    store = None
+    if USE_D1:
+        from d1_store import D1Store, public_candidate
+        store = D1Store()
+        state = store.require_state()
+        existing = store.load_documents(cutoff)
+        print(f"D1 loaded {len(existing)} retained documents", flush=True)
+    else:
+        state = load_json(STATE_FILE, {})
+        old = load_json(RESULTS_FILE, {"items": []})
+        existing = {
+            str(x.get("id")): x
+            for x in old.get("items", [])
+            if x.get("id") is not None
+        }
+    dirty = set()
 
     latest = get_last_id()
     previous_days = int(state.get("days_back") or 0)
@@ -658,6 +668,7 @@ def main():
                             if k not in row:
                                 row[k] = v
                     existing[key] = row
+                    dirty.add(key)
 
             print(
                 f"ISIR {batches}/{MAX_BATCHES} | current={current}/{latest} | "
@@ -706,6 +717,7 @@ def main():
                 existing[key] = refresh_location(row, ku_map)
             else:
                 existing[key] = enrich(row, ku_map, office_map)
+            dirty.add(key)
             pdf_done_this_run = i
 
             if i % 10 == 0 or i == len(this_run):
@@ -757,7 +769,7 @@ def main():
     else:
         phase = "complete"
 
-    save_json(STATE_FILE, {
+    new_state = {
         "all_documents_from_id": coverage_start,
         "current_id": current,
         "latest_id_at_run": latest,
@@ -766,7 +778,16 @@ def main():
         "caught_up": caught_up_now,
         "backfill_complete": backfill_complete,
         "phase": phase,
-    })
+    }
+    if USE_D1:
+        # Persist documents before advancing the cursor. If interrupted, retries
+        # start from the previous checkpoint and idempotently update documents.
+        store.upsert_documents(existing[k] for k in sorted(dirty, key=int)
+                               if k in valid_keys)
+        store.save_state(new_state)
+        store.prune_expired(cutoff)
+    else:
+        save_json(STATE_FILE, new_state)
 
     save_json(RESULTS_FILE, {
         "updated_at": now.isoformat(),
@@ -782,7 +803,9 @@ def main():
         "count_real_estate": len(confirmed),
         **counts,
         "katastralni_pracoviste_options": offices,
-        "items": valid,
+        # The browser sees only compact, confirmed candidates. D1 alone keeps
+        # the pending queue, OCR retry state and all processed documents.
+        "items": [public_candidate(x) for x in confirmed] if USE_D1 else valid,
     })
 
     print(
