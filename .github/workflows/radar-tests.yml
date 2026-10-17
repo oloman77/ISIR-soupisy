@@ -1,0 +1,49 @@
+name: Radar tests
+
+on:
+  pull_request:
+    paths:
+      - 'radar/**'
+      - 'functions/**'
+      - 'test_radar.py'
+      - 'package.json'
+      - '.github/workflows/radar-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Test schema, import and API security basics
+        run: python -m unittest -v test_radar
+      - name: Check JS syntax
+        run: npm run check:radar
+      - name: Check browser script syntax
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          class Extractor(HTMLParser):
+              def __init__(self): super().__init__();self.inside=False;self.script=''
+              def handle_starttag(self,tag,attrs):
+                  if tag=='script':self.inside=True
+              def handle_endtag(self,tag):
+                  if tag=='script':self.inside=False
+              def handle_data(self,data):
+                  if self.inside:self.script+=data
+          parser=Extractor()
+          parser.feed(Path('radar/public/index.html').read_text(encoding='utf-8'))
+          if not parser.script:raise SystemExit('Missing UI script')
+          Path('/tmp/isar-radar-ui.js').write_text(parser.script,encoding='utf-8')
+          PY
+          node --check /tmp/isar-radar-ui.js
