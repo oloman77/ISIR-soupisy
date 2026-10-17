@@ -17,7 +17,7 @@ on:
         type: number
         default: 1
       max_pdf_per_run:
-        description: "Limited manual PDF analyses (0–5)"
+        description: "Limited manual PDF analyses (1–5)"
         required: true
         type: number
         default: 2
@@ -72,7 +72,7 @@ jobs:
         run: |
           if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
             [[ "$MAX_BATCHES" =~ ^[1-5]$ ]] || { echo "Invalid manual batch limit"; exit 1; }
-            [[ "$MAX_PDF_PER_RUN" =~ ^[0-5]$ ]] || { echo "Invalid manual PDF limit"; exit 1; }
+            [[ "$MAX_PDF_PER_RUN" =~ ^[1-5]$ ]] || { echo "Invalid manual PDF limit"; exit 1; }
           fi
           python crawler.py
 
