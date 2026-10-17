@@ -1,0 +1,37 @@
+name: Seed located ISIR candidates in Radar
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/radar-seed.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: isir-radar-database-bootstrap
+  cancel-in-progress: false
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Import geographically located candidates without touching decisions
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          RADAR_ONLY_TARGET_DISTRICTS: '1'
+        run: |
+          python - <<'PY'
+          from radar.initialize import resolve
+          from radar.import_legacy import run
+          resolve()
+          run()
+          PY
