@@ -66,7 +66,7 @@ def inferred_location(row, mapping):
         pairs |= mapping.get(normal(name), set())
     districts = {x[0] for x in pairs}
     # A PDF may discuss other properties. Even unique matches are suggestions.
-    if len(districts) == 1 and next(iter(districts)) in TARGETS:
+    if len(districts) == 1:
         district = next(iter(districts))
         municipality = next(iter({m for d,m in pairs if d == district})) if len(
             {m for d,m in pairs if d == district}) == 1 else ""
