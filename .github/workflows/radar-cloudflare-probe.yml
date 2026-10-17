@@ -1,0 +1,52 @@
+name: Radar Cloudflare permission check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/radar-cloudflare-probe.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check existing Cloudflare API token scopes (read only)
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: |
+          python - <<'PY'
+          import json,os,urllib.error,urllib.request
+          tok=os.environ.get('CLOUDFLARE_API_TOKEN','')
+          account=os.environ.get('CLOUDFLARE_ACCOUNT_ID','')
+          if not tok or not account:
+              print('Secrets unavailable: missing CLOUDFLARE_API_TOKEN or CLOUDFLARE_ACCOUNT_ID')
+              raise SystemExit(1)
+          base=f'https://api.cloudflare.com/client/v4/accounts/{account}'
+          for name,url in [
+              ('D1',base+'/d1/database?name=isir-radar'),
+              ('Pages',base+'/pages/projects?per_page=10'),
+          ]:
+              req=urllib.request.Request(url,headers={
+                  'Authorization':'Bearer '+tok,'Accept':'application/json'})
+              try:
+                  with urllib.request.urlopen(req,timeout=20) as resp:
+                      body=json.load(resp)
+                  print(name,'GET OK',body.get('success',False))
+                  if name=='D1':
+                      for obj in body.get('result',[]):
+                          if obj.get('name')=='isir-radar':
+                              print('RADAR_DATABASE_UUID',obj.get('uuid'))
+                              print('RADAR_DATABASE_JURISDICTION',obj.get('jurisdiction'))
+                  if name=='Pages':
+                      print('RADAR_PAGES_EXISTS',any(x.get('name')=='isir-radar' for x in body.get('result',[])))
+              except urllib.error.HTTPError as e:
+                  print(name,'GET STATUS',e.code)
+              except Exception as e:
+                  print(name,'GET FAILED',type(e).__name__)
+          PY
