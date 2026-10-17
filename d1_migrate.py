@@ -47,7 +47,7 @@ def migrate(store, source, state, now):
     for start in range(0, len(selected), 500):
         store.upsert_documents(selected[start:start + 500])
         print(f"D1 import progress: {min(start + 500, len(selected))}/{len(selected)}", flush=True)
-    verified = store.verify_import(expected)
+    verified = store.verify_import(expected, cutoff)
     print(f"Verified all {verified} records against source SHA-256 checksums", flush=True)
 
     # This is the only checkpoint publication. Until it succeeds, crawler must
