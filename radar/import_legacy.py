@@ -120,7 +120,12 @@ def run():
                 cloud.query(cleaned)
 
     total, matched, unknown = 0, 0, 0
+    only_targets = os.getenv("RADAR_ONLY_TARGET_DISTRICTS", "1") != "0"
     for row, (district, municipality, confidence) in candidates(source, mapping):
+        # Do not pollute the portfolio with hundreds of nationwide unknowns.
+        # Keep them in original ISIR data for later location-enrichment.
+        if only_targets and district not in TARGETS:
+            continue
         rid = int(row["id"])
         prop_id = "isir-doc:" + str(rid)
         spis = (row.get("spisova_znacka") or "nezjištěný spis").strip()
