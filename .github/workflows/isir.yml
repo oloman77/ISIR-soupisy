@@ -10,6 +10,17 @@ on:
       - '.github/workflows/isir.yml'
       - 'docs/index.html'
   workflow_dispatch:
+    inputs:
+      max_batches:
+        description: "Limited manual ISIR batches (1–5)"
+        required: true
+        type: number
+        default: 1
+      max_pdf_per_run:
+        description: "Limited manual PDF analyses (1–5)"
+        required: true
+        type: number
+        default: 2
   schedule:
     - cron: "*/30 * * * *"
 
@@ -24,6 +35,8 @@ concurrency:
 
 jobs:
   crawl-and-deploy:
+    # Schedules stay off until explicitly enabled by repository variable.
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'schedule' && vars.ISIR_SCHEDULE_ENABLED == 'true') }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
     environment:
@@ -46,45 +59,42 @@ jobs:
       - name: ISIR fast backfill / PDF phase
         env:
           DAYS_BACK: "90"
-          MAX_BATCHES: "250"
-          MAX_PDF_PER_RUN: "500"
+          MAX_BATCHES: ${{ github.event_name == 'workflow_dispatch' && inputs.max_batches || '250' }}
+          MAX_PDF_PER_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.max_pdf_per_run || '500' }}
           PAUSE: "0.05"
           SOAP_TIMEOUT: "45"
           PDF_TIMEOUT: "25"
-        run: python crawler.py
+          ISIR_STORE: "d1"
+          ISIR_D1_REQUIRED_NAME: "isir-prod"
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_D1_DATABASE_ID: ${{ secrets.CLOUDFLARE_D1_PROD_DATABASE_ID }}
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "workflow_dispatch" ]]; then
+            [[ "$MAX_BATCHES" =~ ^[1-5]$ ]] || { echo "Invalid manual batch limit"; exit 1; }
+            [[ "$MAX_PDF_PER_RUN" =~ ^[1-5]$ ]] || { echo "Invalid manual PDF limit"; exit 1; }
+          fi
+          python crawler.py
 
       - name: Build lightweight briefing feed
         run: python build_briefing.py
 
-      - name: Compact published results
+      - name: Validate compact Pages payload
         run: |
           python - <<'PY'
-          import json
           from pathlib import Path
-
-          path = Path('docs/results.json')
-          data = json.loads(path.read_text(encoding='utf-8'))
-          removed = 0
-          for row in data.get('items', []):
-              # Once a PDF has been successfully analysed, the raw ISIR note is
-              # no longer needed by the crawler or the public table. Keeping it
-              # for tens of thousands of rows pushed results.json over GitHub's
-              # hard 100 MB per-file limit.
-              if row.get('pdf_checked') and row.get('dokument_url') and 'poznamka' in row:
-                  row.pop('poznamka', None)
-                  removed += 1
-          path.write_text(json.dumps(data, ensure_ascii=False, separators=(',', ':')), encoding='utf-8')
-          size_mb = path.stat().st_size / 1024 / 1024
-          print(f'Compacted results.json: removed raw notes from {removed} analysed rows; size={size_mb:.2f} MB')
-          if size_mb >= 99:
-              raise SystemExit(f'results.json is still too large ({size_mb:.2f} MB)')
+          file = Path('docs/results.json')
+          size = file.stat().st_size
+          print(f'Published results.json size: {size} bytes')
+          if size > 10_000_000:
+              raise SystemExit('Pages JSON over 10 MB; D1 state is safe, publication stopped')
           PY
 
-      - name: Commit state and results
+      - name: Commit published feeds only
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/state.json docs/results.json docs/briefing.json
+          git add docs/results.json docs/briefing.json
           git diff --cached --quiet || git commit -m "Update ISIR fast backfill"
           git push
 
