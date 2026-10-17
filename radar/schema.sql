@@ -1,6 +1,4 @@
 -- ISIR Radar v1. D1 / SQLite. Import never overwrites manual decisions.
-PRAGMA foreign_keys = ON;
-
 CREATE TABLE IF NOT EXISTS properties (
   id TEXT PRIMARY KEY,
   title TEXT NOT NULL,
