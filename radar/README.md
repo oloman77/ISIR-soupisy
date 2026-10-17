@@ -32,15 +32,21 @@ případném přiřazení vlastní domény.
 
 1. Cloudflare D1: vytvořit **samostatnou** databázi `isir-radar`.
    Nesmí to být stávající `isir-test` ani budoucí `isir-prod`.
-2. Cloudflare Pages: vytvořit projekt **isir-radar**, propojit s GitHub repozitářem
-   `oloman77/ISIR-soupisy`, production branch `main`.
-   - Root directory: kořen repozitáře (ne `radar/`).
-   - Framework preset: None.
-   - Build command: prázdný (statický web).
-   - Build output directory: `radar/public`.
-   - Funkce jsou v kořenové složce `functions/`; musí být nasazené.
-3. Pages -> Settings -> Bindings: přidat D1 database binding pod názvem **DB**
-   a vybrat databázi `isir-radar`. Nastavit pro production i preview.
+2. Cloudflare Pages: projekt **isir-radar** vytváří automaticky GitHub
+   Actions workflow `radar-pages.yml` přes Cloudflare Pages API. Používáme
+   **Direct Upload z GitHub Actions**, nikoliv Cloudflare Git integration:
+   push změn Radar na `main` automaticky publikuje `radar/public`.
+   - V GitHub Secrets musí být `CLOUDFLARE_PAGES_API_TOKEN` s oprávněním
+     `Account / Cloudflare Pages / Edit` jen pro potřebný Cloudflare účet.
+   - Původní `CLOUDFLARE_API_TOKEN` zůstává pro D1 (nový token nemá být
+     sdílený s crawlerem).
+   - `functions/` se nahrává Wranglerem jako Pages Functions.
+   - Nový projekt se vytváří jen tehdy, když `isir-radar` neexistuje.
+   - U existujícího projektu propojeného s Git integration se tento
+     mechanismus bez výslovného zásahu nepokouší měnit typ nasazení.
+3. D1 databázový binding **DB** v Production a Preview nastavuje
+   automaticky `radar/cloudflare_deploy_setup.py`. Skript odmítne jiné
+   jméno databáze a ověří jurisdikci EU.
 4. Cloudflare Zero Trust -> Access -> Applications: chránit celý projekt;
    přístup pouze pro svůj e-mail. **Nastavte Access i pro preview deploymenty**,
    nebo je pro běžné návštěvníky zakažte. Aplikace má navíc server-side
