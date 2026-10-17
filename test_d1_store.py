@@ -2,7 +2,7 @@
 import json
 import unittest
 from datetime import datetime, timedelta, timezone
-from unittest.mock import Mock, patch
+from unittest.mock import Mock, patch, call
 
 from d1_preflight import pack
 from d1_store import D1Store, document_flags, public_candidate, unpack
@@ -115,9 +115,10 @@ class StoreTests(unittest.TestCase):
         state = {"current_id": 11, "days_back": 90}
         migrate(store, {"items": [self.sample()]}, state, now)
         store.save_state.assert_called_once_with(state)
+        expected = {11: pack(self.sample())[1]}
         self.assertLess(
-            store.method_calls.index(store.verify_import({11: pack(self.sample())[1]})),
-            store.method_calls.index(store.save_state(state)),
+            store.method_calls.index(call.verify_import(expected)),
+            store.method_calls.index(call.save_state(state)),
         )
 
     def test_live_crawler_uses_d1_checkpoint_and_publishes_candidates_only(self):
