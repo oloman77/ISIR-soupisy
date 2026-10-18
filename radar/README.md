@@ -15,6 +15,12 @@ nezapíná současný crawler ani nevyžaduje dokončení PR #4.
 - Vlastní štítky, priorita a datum další kontroly.
 - Historie změn vlastního hodnocení.
 - Import kandidátů z dosavadního ISIR results.json. **Import není crawler**.
+- Nově: samostatné **konkrétní zveřejněné prodejní nabídky**, jejich parcely, LV,
+  výměra, minimální cena, správce, prodejní zdroj a upozornění na nutnost ověřit aktuální dostupnost.
+  První ručně prověřená položka: Vilémovice u Ledče nad Sázavou, okres Havlíčkův Brod.
+  Jednorázový bezpečný import používá `radar/curated_offers.json`, ověřuje k.ú. vůči
+  oficiálnímu ČÚZK a pouze vkládá nové záznamy; nepřepisuje uživatelská hodnocení.
+  **Nejde zatím o automatické sledování webů ani ověřování aktuálního prodeje.**
 - Vlastní rozhodnutí jsou v samostatné tabulce, kterou import nikdy nepřepisuje.
 
 ## Bezpečnost a přihlášení bez platební karty

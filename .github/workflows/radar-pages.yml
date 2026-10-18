@@ -30,7 +30,7 @@ jobs:
           node-version: '22'
       - name: Validate Radar schema and source code
         run: |
-          python -m unittest -v test_radar
+          python -m unittest -v test_radar radar.test_public_offers
           npm run check:radar
           npm run check:auth
           npm run check:detail
