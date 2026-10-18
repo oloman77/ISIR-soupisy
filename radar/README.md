@@ -8,7 +8,8 @@ nezapíná současný crawler ani nevyžaduje dokončení PR #4.
 - Soukromý webový přehled nemovitostí.
 - Filtry: okres, stav, priorita, text, typ, zdroj, vlastní štítek.
 - Ruční doplnění nemovitosti a odkazu na jiný zdroj.
-- Detail: zdroje, poznámky, vlastní název, ručně opravený okres.
+- Detail: zdroje, poznámky, **úprava názvu nemovitosti přímo v detailu** (projeví se i v seznamu), ručně opravený okres.
+  Původní název ze zdroje zůstává zachovaný a jde ho jedním kliknutím obnovit.
 - Stavy: nová, sledovaná, k oslovení, nabídka odeslána, čekáme na prodej,
   odmítnutá, archivovaná, získaná.
 - Vlastní štítky, priorita a datum další kontroly.
