@@ -19,11 +19,9 @@ class TargetTriageTests(unittest.TestCase):
         src={"items":[
           row(1,katastralni_uzemi=["Zruč nad Sázavou"]),
           row(2,katastralni_uzemi=["Havlíčkův Brod"]),
-          row(3,"kra je":["Středočeský kraj"]),
+          row(3,kraje=["Středočeský kraj"]),
         ]}
         # Do not accept generic region as a district-level evidence.
-        src["items"][2].pop("kra je")
-        src["items"][2]["kraje"]=["Středočeský kraj"]
         out=triage(src,MAPPING)
         c=out["selection_counts"]
         self.assertEqual(c["target_cadastral_mention"],2)
@@ -39,11 +37,10 @@ class TargetTriageTests(unittest.TestCase):
         data={"items":[
           row(1,katastralni_uzemi=["Praha"]),
           row(2),
-          row(3,"kra je":["Moravskoslezský kraj"]),
+          row(3,kraje=["Moravskoslezský kraj"]),
           {**row(4,katastralni_uzemi=["Zruč nad Sázavou"]),
            "popis_udalosti":"Přihláška pohledávky"},
         ]}
-        data["items"][2]["kraje"]=data["items"][2].pop("kra je")
         report=triage(data,MAPPING)
         self.assertEqual(report["selection_counts"]["soupis_metadata_pdf_links"],3)
         self.assertEqual(report["selection_counts"]["other_district_cadastral_mentions"],1)
