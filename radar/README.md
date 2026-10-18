@@ -21,7 +21,7 @@ nezapíná současný crawler ani nevyžaduje dokončení PR #4.
 Cloudflare Zero Trust **není potřeba**. Celé rozhraní i API chrání
 `functions/_middleware.js` přes šifrované HTTPS a HTTP Basic Authentication.
 Pro přihlášení používej uživatelské jméno `radar` a **vlastní, unikátní,
-náhodné heslo dlouhé minimálně 12 znaků**. Při nevyplněném nebo příliš krátkém
+náhodné heslo dlouhé minimálně 11 znaků**. Při nevyplněném nebo příliš krátkém
 hesle aplikace odmítne všechny požadavky (včetně statických souborů).
 
 Cloudflare Dashboard → Workers & Pages → **isir-radar** → Settings →

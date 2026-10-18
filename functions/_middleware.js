@@ -1,7 +1,7 @@
 // ISIR Radar security for Cloudflare Pages: protects all static and API requests.
 // Free password-based alternative when Cloudflare Zero Trust requires billing setup.
 // Fail closed unless RADAR_LOGIN_PASSWORD is configured as a Cloudflare Pages Secret.
-// HTTPS only; never log secrets or Authorization headers. Use a unique random password of at least 12 characters.
+// HTTPS only; never log secrets or Authorization headers. Use a unique random password of at least 11 characters.
 
 const ENCODER = new TextEncoder();
 const unauthorized = (message, status, challenge = false) => {
@@ -46,7 +46,7 @@ async function authorized(header, secret) {
 export async function onRequest(context) {
   const {request, env} = context;
   const secret = env.RADAR_LOGIN_PASSWORD;
-  if (typeof secret !== 'string' || secret.length < 12 || secret.length > 256)
+  if (typeof secret !== 'string' || secret.length < 11 || secret.length > 256)
     return unauthorized('ISIR Radar: ochrana heslem ještě není nastavena.', 503);
 
   const url = new URL(request.url);
