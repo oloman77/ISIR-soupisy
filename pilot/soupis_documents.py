@@ -44,7 +44,7 @@ PARCEL=re.compile(
     r"(?:č(?:íslo|\.)?\s*)?(\d{1,6}(?:/\d{1,6})?)",re.I)
 LV=re.compile(r"(?:list\s+vlastnictv[ií]|\bLV)\s*(?:č(?:íslo|\.)?\s*)?(\d{1,7})\b",re.I)
 KU=re.compile(
-    r"(?:katastr[aá]ln[ií]\s+[úu]zem[ií]|k\s*\.\s*[úu]\s*\.)"
+    r"(?:katastr[aá]ln(?:[ií]|[ií]m|[ií]ho)\s+[úu]zem[ií]|k\s*\.\s*[úu]\s*\.)"
     r"\s*[:\-]?\s*([A-Za-zÁ-ž0-9][A-Za-zÁ-ž0-9 \t'-]{2,99})",re.I)
 
 def safe_pdf_url(value):
