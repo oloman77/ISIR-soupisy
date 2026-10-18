@@ -2,6 +2,7 @@
 // Never read Cloudflare secrets or call the live private database.
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {onRequestGet, onRequestPatch} from './functions/api/property.js';
 
 function fixture() {
@@ -99,4 +100,45 @@ test('PATCH refuses missing property ID',async()=>{
   });
   assert.equal(result.status,404);
   assert.equal(data.seen.length,1);
+});
+
+test('PATCH preserves source title and stores edited user-visible name',async()=>{
+  const data=fixture();
+  const result=await onRequestPatch({
+    request:new Request('https://isir-radar.pages.dev/api/property?id=isir-doc%3A12',
+      {method:'PATCH',headers:{'Content-Type':'application/json'},
+       body:JSON.stringify({title_override:'Pozemek u Sázavy'})}),
+    env:data.env
+  });
+  assert.equal(result.status,200);
+  const body=await result.json();
+  assert.equal(body.decision.title_override,'Pozemek u Sázavy');
+  assert.equal(data.seen[2].args[6],'Pozemek u Sázavy');
+  assert.equal(data.seen[2].args[0],'isir-doc:12');
+});
+
+test('PATCH accepts clearing personal title to restore source title',async()=>{
+  const data=fixture();
+  const result=await onRequestPatch({
+    request:new Request('https://isir-radar.pages.dev/api/property?id=isir-doc%3A12',
+      {method:'PATCH',headers:{'Content-Type':'application/json'},
+       body:JSON.stringify({title_override:null})}),
+    env:data.env
+  });
+  assert.equal(result.status,200);
+  assert.equal(data.seen[2].args[6],null);
+});
+
+test('title field is prominent, prefilled and reflected in drawer and cards',()=>{
+  const html=readFileSync(new URL('./radar/public/index.html',import.meta.url),'utf8');
+  const formStart=html.indexOf('<form id="editForm">');
+  const fieldAt=html.indexOf('id="editTitle"',formStart);
+  const statusAt=html.indexOf('id="editStatus"',formStart);
+  assert.ok(formStart>0 && fieldAt>formStart && fieldAt<statusAt,
+    'editable title is the first field in property detail');
+  assert.ok(html.includes("$('editTitle').value=p.title_override||p.title"));
+  assert.ok(html.includes("title_override:updatedTitle===state.originalTitle?null:updatedTitle"));
+  assert.ok(html.includes("$('drawerTitle').textContent=updatedTitle"));
+  assert.ok(html.includes('id="restoreTitle"'));
+  assert.ok(html.includes('id="originalTitle"'));
 });
