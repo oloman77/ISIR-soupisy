@@ -105,7 +105,8 @@ periodický crawler jen kvůli importu dat do portálu.**
 - `radar/public/index.html` – český responzivní frontend
 - `functions/_middleware.js` – ochrana heslem a CSRF kontrola (včetně statiky)
 - `functions/api/properties.js` – filtrovaný katalog, ruční přidání
-- `functions/api/properties/[id].js` – detail a úpravy vlastního hodnocení
+- `functions/api/property.js` – stabilní detailové API (`?id=...`) pro identifikátory obsahující dvojtečku
+- `functions/api/properties/[id].js` – společná logika detailu a úprav hodnocení
 - `radar/schema.sql` – normalizované tabulky
 - `radar/import_legacy.py` – jednorázový import
 - `test_radar.py` – lokální testy
