@@ -1,0 +1,32 @@
+{
+  "catalog_version": 1,
+  "about": "Ruční rešeršní záznamy z veřejných nabídek; nejde o automaticky ověřenou aktuální dostupnost.",
+  "items": [
+    {
+      "source": "portaldrazeb-insolvency",
+      "source_id": "6y4",
+      "source_url": "https://www.portaldrazeb.cz/insolvencni-zamer/6y4",
+      "title": "Soubor 3 pozemků – Vilémovice u Ledče nad Sázavou (660 m²)",
+      "property_type": "Pozemek",
+      "district": "Havlíčkův Brod",
+      "municipality": "Vilémovice",
+      "cadastral_territory": "Vilémovice u Ledče nad Sázavou",
+      "parcels": [
+        "27",
+        "414/10",
+        "709"
+      ],
+      "lv": "264",
+      "area_m2": 660,
+      "case_number": "KSHK 42 INS 4692/2025",
+      "source_title": "Insolvenční záměr: prodej pozemků mimo dražbu",
+      "price_czk": 314000,
+      "published_at": "2026-04-17",
+      "sale_end": "2026-12-31",
+      "checked_at": "2026-10-18",
+      "administrator": "Wildt & Biolek v.o.s.",
+      "sale_method": "Prodej mimo dražbu",
+      "source_summary": "Prodej mimo dražbu do 31. 12. 2026 dle zveřejněného záměru; ověřit, zda nabídka stále platí. Údaje: 3 parcely, LV 264; opěrná zeď zřícená, členitý terén, přímý přístup parcely 414/10 omezen. Správce: Wildt & Biolek v.o.s. Původní zveřejnění 17. 4. 2026; přezkoumáno 18. 10. 2026."
+    }
+  ]
+}
