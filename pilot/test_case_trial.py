@@ -68,6 +68,9 @@ class PilotTests(unittest.TestCase):
                    side_effect=AssertionError("PDF probe not allowed")):
             out=execute(self.sample(),MAPPING,scan_pdfs=False)
         self.assertEqual(out["sample_size"],3)
+        self.assertEqual(out["all_cases_with_possible_target_district_mention"],1)
+        self.assertEqual(out["all_unknown_candidate_docs_with_possible_target_mention"],1)
+        self.assertEqual(out["all_cases_with_only_non_target_district_mentions"],0)
         self.assertEqual(out["pdf_probes"],[])
         self.assertFalse(out["case_linkage_verified"])
         self.assertFalse(out["property_sale_verified"])
