@@ -1,0 +1,53 @@
+name: Pilot - ISIR estate inventory PDF extraction (30 docs)
+
+on:
+  pull_request:
+    paths:
+      - 'pilot/soupis_documents.py'
+      - 'pilot/test_soupis_documents.py'
+      - '.github/workflows/radar-soupis-30.yml'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/radar-soupis-30.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  safety_tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Validate safety, sampling and cadastral extraction (offline)
+        run: python -m unittest -v pilot.test_soupis_documents
+
+  one_time_pilot:
+    if: github.event_name != 'pull_request'
+    needs: safety_tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install PDF tools with Czech OCR
+        run: |
+          python -m pip install --disable-pip-version-check pypdf==6.1.1
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils tesseract-ocr tesseract-ocr-ces tesseract-ocr-eng >/dev/null
+      - name: Extract from up to 20 candidate soupises and 10 controls
+        run: python -m pilot.soupis_documents --scan
+      - name: Preserve non-sensitive audit metadata for manual verification
+        uses: actions/upload-artifact@v4
+        with:
+          name: isir-soupis-30-review
+          path: soupis-pilot-result.json
+          retention-days: 14
+          if-no-files-found: error
