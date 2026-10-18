@@ -120,6 +120,7 @@ def inspect(row,mapping,include_ocr):
             except Exception:
                 native_text[i]=""
                 extraction_errors+=1
+        native_text_page_count=sum(len(t.strip())>=80 for t in native_text.values())
         # In the 6 interesting PDFs, try OCR only for the first two
         # genuinely blank pages. The other three focus on failure diagnosis.
         attempted=0
@@ -143,8 +144,8 @@ def inspect(row,mapping,include_ocr):
             "analysis_status":"ok",
             "pdf_page_count":total_pages,
             "pages_inspected":pages,
-            "pages_without_native_text":sum(len(t.strip())<80 for t in native_text.values()),
-            "native_text_page_count":sum(len(t.strip())>=80 for t in native_text.values()),
+            "pages_without_native_text":pages-native_text_page_count,
+            "native_text_page_count":native_text_page_count,
             "native_extract_error_count":extraction_errors,
             "ocr_attempted":attempted,"ocr_succeeded":succeeded,
             "inventory_phrase_pages":[x["page"] for x in evidence if x["inventory_phrase"]],
