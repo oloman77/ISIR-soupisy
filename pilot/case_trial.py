@@ -214,6 +214,11 @@ def execute(source, mapping, *, scan_pdfs=True):
     sample=pick_cases(case_records,CASE_LIMIT)
     stats=Counter(r["group"] for r in case_records)
     sample_stats=Counter(r["group"] for r in sample)
+    all_with_target_mentions=[r for r in case_records if
+        set(r["related_districts_mentioned"]) & TARGETS]
+    all_with_non_target_mentions=[r for r in case_records if
+        r["related_districts_mentioned"] and
+        not (set(r["related_districts_mentioned"]) & TARGETS)]
     indicators=[]
     for row in sample:
         peer_districts=row["related_districts_mentioned"]
@@ -248,6 +253,14 @@ def execute(source, mapping, *, scan_pdfs=True):
        "snapshot_updated_at":source.get("updated_at"),
        "archive_covers_cases":len(case_records),
        "cohort_all_counts":dict(stats),
+       "all_cases_with_possible_target_district_mention":len(all_with_target_mentions),
+       "all_unknown_candidate_docs_with_possible_target_mention":sum(
+           r["unknown_candidates"] for r in all_with_target_mentions),
+       "all_cases_with_only_non_target_district_mentions":len(all_with_non_target_mentions),
+       "possible_target_cases":[{"spis":r["spis"],
+           "district_mentions":r["related_districts_mentioned"],
+           "unknown_candidate_docs":r["unknown_candidates"]}
+           for r in all_with_target_mentions[:20]],
        "sample_size":len(sample),
        "cohort_sample_counts":dict(sample_stats),
        "selected_cases":indicators,
@@ -275,7 +288,9 @@ def execute(source, mapping, *, scan_pdfs=True):
 def main():
     source=json.loads((ROOT/"docs/results.json").read_text(encoding="utf-8"))
     mapping=territories()
-    output=execute(source,mapping)
+    import os
+    pdfs=os.getenv("PILOT_SCAN_PDFS","1") == "1"
+    output=execute(source,mapping,scan_pdfs=pdfs)
     print("READ-ONLY HISTORIC ISIR RADAR PILOT — NO DB WRITE, NO CRAWLER")
     print(json.dumps(output,ensure_ascii=False,indent=2))
 

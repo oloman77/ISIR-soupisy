@@ -36,7 +36,7 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
-      - name: Install lightweight PDF text reader
-        run: python -m pip install --disable-pip-version-check pypdf==6.1.1
-      - name: Sample 30 cases, probe at most 12 official PDFs, no writes
+      - name: Analyze nationwide unresolved cases without downloading PDFs
+        env:
+          PILOT_SCAN_PDFS: '0'
         run: python -m pilot.case_trial
