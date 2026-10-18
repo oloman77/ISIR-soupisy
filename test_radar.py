@@ -81,8 +81,8 @@ class RadarTests(unittest.TestCase):
         api=(ROOT/"functions/api/properties.js").read_text()
         self.assertNotIn("docs/results.json",api)
         middleware=(ROOT/"functions/_middleware.js").read_text()
-        self.assertIn("crypto.subtle.verify",middleware)
-        self.assertIn("RADAR_ALLOWED_EMAIL",middleware)
+        self.assertIn("crypto.subtle.digest",middleware)
+        self.assertIn("RADAR_LOGIN_PASSWORD",middleware)
         self.assertIn("await context.next()",middleware)
 
 
