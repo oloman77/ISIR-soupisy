@@ -44,3 +44,34 @@ jobs:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_PAGES_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: npx --yes wrangler@4 pages deploy radar/public --project-name=isir-radar --branch=main --commit-hash="${GITHUB_SHA}"
+      - name: Verify private Radar endpoint requires password
+        run: |
+          python - <<'PY'
+          import time
+          import urllib.error
+          import urllib.request
+
+          for path in ("/", "/api/properties"):
+              last_status = None
+              for attempt in range(12):
+                  request = urllib.request.Request(
+                      "https://isir-radar.pages.dev" + path,
+                      headers={"User-Agent": "ISIR-Radar-Deploy-Check/1.0"})
+                  try:
+                      with urllib.request.urlopen(request, timeout=15) as response:
+                          status = response.status
+                          challenge = response.headers.get("WWW-Authenticate", "")
+                  except urllib.error.HTTPError as error:
+                      status = error.code
+                      challenge = error.headers.get("WWW-Authenticate", "")
+                  if status == 401 and challenge.startswith('Basic realm="ISIR Radar"'):
+                      print("PASS: unauthenticated", path, "requires password (HTTP 401)")
+                      break
+                  last_status = status
+                  time.sleep(4)
+              else:
+                  raise SystemExit(
+                      "Radar security smoke test FAILED at " + path +
+                      "; last HTTP status " + str(last_status) +
+                      ". Expect 401 Basic challenge. Check Production RADAR_LOGIN_PASSWORD Secret.")
+          PY
