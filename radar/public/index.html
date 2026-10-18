@@ -203,13 +203,21 @@ async function openDetail(id){
     $('editFollow').value=p.follow_up_date||'';$('editDistrict').value=p.district_override||'';
     $('editTitle').value=p.title_override||p.title;$('editTags').value=(p.tags||[]).join(', ');
     $('editNote').value=p.note||'';$('saveState').textContent='';
-    $('propertyInfo').textContent=[p.property_type,p.parcel?'parc. '+p.parcel:'',p.lv?'LV '+p.lv:'','Lokalizace: '+p.location_confidence].filter(Boolean).join(' · ');
+    $('propertyInfo').textContent=[p.property_type,p.area_m2?'Celková výměra '+Number(p.area_m2).toLocaleString('cs-CZ')+' m²':'',
+      p.parcel?'parc. '+p.parcel:'',p.lv?'LV '+p.lv:'',
+      p.sale_phase==='listed'?'Zveřejněná nabídka – dostupnost ověřit':'',
+      'Lokalizace: '+p.location_confidence].filter(Boolean).join(' · ');
     $('sources').innerHTML=(data.sources||[]).map(x=>{
       let link='';
       try{const u=new URL(x.source_url);if(['http:','https:'].includes(u.protocol))
         link='<a target="_blank" rel="noopener noreferrer" href="'+escapeHtml(u.href)+'">Otevřít zdroj ↗</a>';}catch{}
+      const isOffer=x.source_type==='portaldrazeb-insolvency';
+      const price=isOffer&&Number(x.price_czk)>0?
+        '<div class="small"><strong>Uvedená minimální cena: '+Number(x.price_czk).toLocaleString('cs-CZ')+' Kč</strong></div>':'';
+      const offerDetails=isOffer&&x.raw_excerpt?
+        '<div class="small">'+escapeHtml(x.raw_excerpt)+'</div>':'';
       return '<li><strong>'+escapeHtml(x.source_title||x.source_type)+'</strong><div class="small">'+escapeHtml(x.source_type)+
-        (x.published_at?' · '+escapeHtml(x.published_at.slice(0,10)):'')+'</div>'+link+'</li>';
+        (x.published_at?' · '+escapeHtml(x.published_at.slice(0,10)):'')+'</div>'+price+offerDetails+link+'</li>';
     }).join('')||'<li class="small">Bez propojených zdrojů.</li>';
     $('history').textContent=(data.history||[]).slice(0,8).map(x=>x.changed_at+' · '+Object.keys(x.change||{}).join(', ')).join('\n')||'Zatím bez změn.';
     $('history').style.whiteSpace='pre-line';
