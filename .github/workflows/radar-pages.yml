@@ -33,6 +33,7 @@ jobs:
           python -m unittest -v test_radar
           npm run check:radar
           npm run check:auth
+          npm run check:detail
       - name: Create isolated Pages project and bind EU D1
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -51,7 +52,7 @@ jobs:
           import urllib.error
           import urllib.request
 
-          for path in ("/", "/api/properties"):
+          for path in ("/", "/api/properties", "/api/property?id=isir-doc%3A12"):
               last_status = None
               for attempt in range(12):
                   request = urllib.request.Request(
