@@ -1,0 +1,53 @@
+name: Audit six ISIR cadastral PDFs and three failed PDFs
+
+on:
+  pull_request:
+    paths:
+      - 'pilot/audit_six_plus_three.py'
+      - 'pilot/test_audit_six_plus_three.py'
+      - '.github/workflows/radar-soupis-review-9.yml'
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/radar-soupis-review-9.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Offline scope, evidence and safety tests
+        run: python -m unittest -v pilot.test_audit_six_plus_three
+
+  targeted_review:
+    if: github.event_name != 'pull_request'
+    needs: validation
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install PDF parser and bounded Czech OCR tools
+        run: |
+          python -m pip install --disable-pip-version-check pypdf==6.1.1
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils tesseract-ocr tesseract-ocr-ces tesseract-ocr-eng >/dev/null
+      - name: Review only 9 fixed public ISIR PDFs, no data writes
+        run: python -m pilot.audit_six_plus_three
+      - name: Save metadata-only results for source review
+        uses: actions/upload-artifact@v4
+        with:
+          name: isir-soupis-six-plus-three-review
+          path: soupis-6-plus-3-review.json
+          retention-days: 14
+          if-no-files-found: error
