@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: "22"
       - name: Test schema, import and API security basics
-        run: python -m unittest -v test_radar
+        run: python -m unittest -v test_radar radar.test_public_offers
       - name: Check JS syntax
         run: npm run check:radar
       - name: Verify password protection and write safeguards
