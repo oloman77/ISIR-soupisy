@@ -15,11 +15,11 @@ from radar.import_legacy import ROOT, TARGETS, candidates, normal, territories
 
 MAX_PDF_BYTES = 18_000_000
 PATTERNS = {
- "sale_or_auction": r"\\b(?:zpen[eě]ž(?:en[ií]|ov[aá]n[ií])|dražb(?:a|y|ě|ou)|prodej(?:e|i|em)?|kupn[ií]\\s+cena|vyvol[aá]vac[ií]\\s+cena)\\b",
+ "sale_or_auction": r"\b(?:zpen[eě]ž(?:en[ií]|ov[aá]n[ií])|dražb(?:a|y|ě|ou)|prodej(?:e|i|em)?|kupn[ií]\s+cena|vyvol[aá]vac[ií]\s+cena)\b",
  "formal_estate_inventory": r"soupis.{0,50}majetkov.{0,25}podstat",
- "estate_property": r"\\b(?:pozem(?:ek|ku|ky|ků)|parc(?:ela|ely|\\.)|nemovitost(?:i|í|em)?|byt(?:u|y)|jednotk(?:a|y|u)|rodinn.{0,4}d[ůu]m)\\b",
- "claims": r"přihl[aá]š(?:en.{0,15}pohled[aá]v|ka\\s+pohled[aá]vk)",
- "ownership": r"(?:list\\s+vlastnictv[ií]|\\bLV\\s*(?:[čc][ií]slo|[čc]\\.)?\\s*\\d{1,7})",
+ "estate_property": r"\b(?:pozem(?:ek|ku|ky|ků)|parc(?:ela|ely|\.)|nemovitost(?:i|í|em)?|byt(?:u|y)|jednotk(?:a|y|u)|rodinn.{0,4}d[ůu]m)\b",
+ "claims": r"přihl[aá]š(?:en.{0,15}pohled[aá]v|ka\s+pohled[aá]vk)",
+ "ownership": r"(?:list\s+vlastnictv[ií]|\bLV\s*(?:[čc][ií]slo|[čc]\.)?\s*\d{1,7})",
 }
 REGEX={key:re.compile(expr,re.I|re.S) for key,expr in PATTERNS.items()}
 
