@@ -1,0 +1,32 @@
+name: Import researched sale offer to private Radar
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/radar-import-public-offers.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: isir-radar-database-bootstrap
+  cancel-in-progress: false
+
+jobs:
+  import-offers:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Validate offer source, precise target locality and idempotent data preservation
+        run: python -m unittest -v radar.test_public_offers
+      - name: Check official CUZK locality and import one public listing only
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        run: python -m radar.import_public_offers
