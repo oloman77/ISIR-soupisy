@@ -80,7 +80,17 @@ def configure():
     if project.get("source") and project["source"].get("type") in ("github", "gitlab"):
         raise RuntimeError("Existing project has a Git source. Refusing to replace it with direct upload.")
 
-    # This is an isolated, new project. D1 binding is limited to its API runtime.
+    # Do not overwrite Pages secrets or other user settings on every deployment.
+    # Cloudflare PATCH of deployment_configs can replace nested configuration.
+    configs = project.get("deployment_configs") or {}
+    def bound(name):
+        entry = (configs.get(name) or {}).get("d1_databases") or {}
+        return (entry.get("DB") or {}).get("id") == uuid
+    if bound("production") and bound("preview"):
+        print("Verified Radar D1 bindings already exist; preserving Pages secrets.")
+        return
+
+    # Initial isolated D1 binding. Never touch any unrelated Pages project.
     project = api("PATCH", f"{base}/pages/projects/{NAME}", {
         "deployment_configs": {
             "production": {
