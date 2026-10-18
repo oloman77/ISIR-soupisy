@@ -48,7 +48,7 @@ tbody tr:hover{background:#fafcff}tbody tr:last-child td{border-bottom:0}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px}.grid2 .field{margin-bottom:8px}
 .sources{padding:0;margin:0;list-style:none}.sources li{border:1px solid var(--line);padding:12px;border-radius:10px;margin-bottom:9px}
 .sources a{color:var(--blue);word-break:break-word}.small{color:var(--muted);font-size:12px}
-.actions{display:flex;gap:10px;align-items:center;margin-top:20px}.alert{background:#fff0f1;border:1px solid #f0c7cc;color:#9b2a3b;padding:12px;border-radius:9px;margin:12px 0;display:none}
+.actions{display:flex;gap:10px;align-items:center;margin-top:20px}.title-edit-help{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;margin:-8px 0 17px}.title-edit-help .small{overflow-wrap:anywhere}.title-edit-help button{flex-shrink:0;padding:3px 6px;font-size:12px}.alert{background:#fff0f1;border:1px solid #f0c7cc;color:#9b2a3b;padding:12px;border-radius:9px;margin:12px 0;display:none}
 .loading{opacity:.6}
 @media(max-width:1020px){.stats{grid-template-columns:repeat(3,1fr)}.layout{grid-template-columns:1fr}.sidebar{position:static;display:grid;grid-template-columns:repeat(3,1fr);gap:0 15px}.sidebar h3,.sidefooter{grid-column:1/-1}}
 @media(max-width:650px){.shell{padding:16px 12px 45px}.top{align-items:start}.lock{display:none}.brand h1{font-size:18px}.mark{width:37px;height:37px}.titlebar h2{font-size:22px}.stats{grid-template-columns:repeat(2,1fr);gap:9px}.stat{padding:12px;min-height:74px}.stat strong{font-size:22px}.sidebar{grid-template-columns:1fr 1fr;padding:14px;column-gap:10px}.sidebar .field:first-of-type{grid-column:1/-1}.nav .primary{padding:9px}.drawer{padding:20px}.grid2{grid-template-columns:1fr}.tablehead{padding:14px}.pager{justify-content:center}}
@@ -94,6 +94,8 @@ tbody tr:hover{background:#fafcff}tbody tr:last-child td{border-bottom:0}
     <header><div><h2 id="drawerTitle">Nemovitost</h2><div class="small" id="drawerSubtitle"></div></div><button class="close" id="close" aria-label="Zavřít">✕</button></header>
     <div class="alert" id="drawerError"></div>
     <form id="editForm">
+      <label class="field"><span>Název nemovitosti *</span><input id="editTitle" name="title_override" minlength="3" maxlength="180" required autocomplete="off"></label>
+      <div class="title-edit-help"><span class="small" id="originalTitle"></span><button class="ghost" type="button" id="restoreTitle">Vrátit původní název</button></div>
       <div class="grid2">
         <label class="field"><span>Vlastní stav</span><select name="status" id="editStatus">
           <option value="new">Nová</option><option value="watching">Sledovaná</option><option value="contact">K oslovení</option><option value="offer_sent">Nabídka odeslána</option><option value="waiting_sale">Čekáme na prodej</option><option value="rejected">Odmítnutá</option><option value="archived">Archivovaná</option><option value="acquired">Získaná</option>
@@ -102,10 +104,9 @@ tbody tr:hover{background:#fafcff}tbody tr:last-child td{border-bottom:0}
         <label class="field"><span>Kontrolovat znovu dne</span><input id="editFollow" name="follow_up_date" type="date"></label>
         <label class="field"><span>Opravený okres (vlastní údaj)</span><select id="editDistrict" name="district_override"><option value="">Beze změny</option><option>Kutná Hora</option><option>Havlíčkův Brod</option></select></label>
       </div>
-      <label class="field"><span>Vlastní název (volitelný)</span><input id="editTitle" name="title_override" maxlength="180" placeholder="Např. pozemek u Sázavy"></label>
       <label class="field"><span>Štítky – odděl čárkou</span><input id="editTags" placeholder="u vody, orná půda, k prověření"></label>
       <label class="field"><span>Moje poznámka</span><textarea id="editNote" name="note" maxlength="4000" placeholder="Vlastní vyhodnocení, cena, rizika, plán oslovení…"></textarea></label>
-      <div class="actions"><button class="primary" type="submit" id="save">Uložit hodnocení</button><span class="small" id="saveState"></span></div>
+      <div class="actions"><button class="primary" type="submit" id="save">Uložit změny</button><span class="small" id="saveState"></span></div>
     </form>
     <form id="newForm" hidden>
       <label class="field"><span>Název nemovitosti *</span><input name="title" required minlength="3" maxlength="180" placeholder="Např. pozemek ve Zruči nad Sázavou"></label>
@@ -130,7 +131,7 @@ const $=id=>document.getElementById(id);
 const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const STATUS={new:'Nová',watching:'Sledovaná',contact:'K oslovení',offer_sent:'Nabídka odeslána',waiting_sale:'Čekáme na prodej',rejected:'Odmítnutá',archived:'Archivovaná',acquired:'Získaná'};
 const PRIORITY={low:'Nízká',normal:'Střední',high:'Vysoká'};
-const state={page:1,total:0,limit:40,items:[],selected:null,options:{}};
+const state={page:1,total:0,limit:40,items:[],selected:null,originalTitle:null,options:{}};
 let timer;
 const api=async(path,init)=>{
   const res=await fetch('/api'+path,{credentials:'same-origin',headers:{'Content-Type':'application/json'},...init});
@@ -186,7 +187,7 @@ async function load(){
 }
 function schedule(){state.page=1;clearTimeout(timer);timer=setTimeout(load,250);}
 function show(){ $('dialog').classList.add('open');$('dialog').setAttribute('aria-hidden','false');document.body.style.overflow='hidden';}
-function close(){ $('dialog').classList.remove('open');$('dialog').setAttribute('aria-hidden','true');document.body.style.overflow='';state.selected=null;}
+function close(){ $('dialog').classList.remove('open');$('dialog').setAttribute('aria-hidden','true');document.body.style.overflow='';state.selected=null;state.originalTitle=null;}
 function error(message){$('drawerError').textContent=message;$('drawerError').style.display='block';}
 async function openDetail(id){
   show();$('drawerTitle').textContent='Načítám…';
@@ -194,11 +195,13 @@ async function openDetail(id){
   try{
     const data=await api('/property?id='+encodeURIComponent(id)),p=data.property;
     state.selected=id;
+    state.originalTitle=p.title;
     $('drawerTitle').textContent=p.title_override||p.title;
+    $('originalTitle').textContent='Původní název ze zdroje: '+p.title;
     $('drawerSubtitle').textContent=[p.district_override||p.district||'Okres neurčen',p.municipality,p.cadastral_territory].filter(Boolean).join(' · ');
     $('editStatus').value=p.status;$('editPriority').value=p.priority;
     $('editFollow').value=p.follow_up_date||'';$('editDistrict').value=p.district_override||'';
-    $('editTitle').value=p.title_override||'';$('editTags').value=(p.tags||[]).join(', ');
+    $('editTitle').value=p.title_override||p.title;$('editTags').value=(p.tags||[]).join(', ');
     $('editNote').value=p.note||'';$('saveState').textContent='';
     $('propertyInfo').textContent=[p.property_type,p.parcel?'parc. '+p.parcel:'',p.lv?'LV '+p.lv:'','Lokalizace: '+p.location_confidence].filter(Boolean).join(' · ');
     $('sources').innerHTML=(data.sources||[]).map(x=>{
@@ -214,7 +217,7 @@ async function openDetail(id){
   }catch(e){error(e.message);$('drawerTitle').textContent='Nelze otevřít detail';}
 }
 function newForm(){
-  show();state.selected=null;$('drawerTitle').textContent='Přidat nemovitost';
+  show();state.selected=null;state.originalTitle=null;$('drawerTitle').textContent='Přidat nemovitost';
   $('drawerSubtitle').textContent='Ruční nález mimo automatické zdroje';
   $('newForm').reset();$('newForm').hidden=false;$('editForm').hidden=true;$('more').hidden=true;
   $('drawerError').style.display='none';
@@ -229,18 +232,24 @@ $('prev').addEventListener('click',()=>{if(state.page>1){state.page--;load();}})
 $('nextPage').addEventListener('click',()=>{if(state.page*state.limit<state.total){state.page++;load();}});
 $('close').addEventListener('click',close);$('shade').addEventListener('click',close);
 window.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+$('restoreTitle').addEventListener('click',()=>{
+  if(state.originalTitle!==null)$('editTitle').value=state.originalTitle;
+});
 $('editForm').addEventListener('submit',async e=>{
   e.preventDefault();if(!state.selected)return;
+  const updatedTitle=$('editTitle').value.trim();
+  if(updatedTitle.length<3){error('Název nemovitosti musí mít alespoň 3 znaky.');return;}
   const payload={
     status:$('editStatus').value,priority:$('editPriority').value,
     follow_up_date:$('editFollow').value||null,
     district_override:$('editDistrict').value||null,
-    title_override:$('editTitle').value||null,
+    title_override:updatedTitle===state.originalTitle?null:updatedTitle,
     tags:$('editTags').value.split(',').map(x=>x.trim()).filter(Boolean),
     note:$('editNote').value
   };
   const btn=$('save');btn.disabled=true;$('drawerError').style.display='none';
   try{await api('/property?id='+encodeURIComponent(state.selected),{method:'PATCH',body:JSON.stringify(payload)});
+    $('drawerTitle').textContent=updatedTitle;
     $('saveState').textContent='✓ Uloženo';await load();}catch(err){error(err.message);}finally{btn.disabled=false;}
 });
 $('newForm').addEventListener('submit',async e=>{
