@@ -16,47 +16,53 @@ nezapíná současný crawler ani nevyžaduje dokončení PR #4.
 - Import kandidátů z dosavadního ISIR results.json. **Import není crawler**.
 - Vlastní rozhodnutí jsou v samostatné tabulce, kterou import nikdy nepřepisuje.
 
-## Bezpečnost
+## Bezpečnost a přihlášení bez platební karty
 
-Portál je **soukromý**. Middleware kontroluje kryptografický podpis
-Cloudflare Access JWT, audience, issuer, expirační čas a povolenou e-mailovou
-adresu. Bez nastavení přístupu nevrací ani statickou stránku.
-V Cloudflare Zero Trust vytvořte Access Application chránící celý projekt
-(ideálně včetně preview URL) a povolte jen svůj účet.
+Cloudflare Zero Trust **není potřeba**. Celé rozhraní i API chrání
+`functions/_middleware.js` přes šifrované HTTPS a HTTP Basic Authentication.
+Pro přihlášení používej uživatelské jméno `radar` a **vlastní, unikátní,
+náhodné heslo dlouhé minimálně 24 znaků**. Při nevyplněném nebo příliš krátkém
+hesle aplikace odmítne všechny požadavky (včetně statických souborů).
 
-Nikdy nezveřejňujte tokeny, databázová hesla ani soukromé poznámky v GitHubu.
-Pro sledování obchodních příležitostí doporučujeme Access chránit i při
-případném přiřazení vlastní domény.
+Cloudflare Dashboard → Workers & Pages → **isir-radar** → Settings →
+**Variables and Secrets** → **Add**:
 
-## Jednorázové kroky v Cloudflare
+- Name: `RADAR_LOGIN_PASSWORD`
+- Type: **Secret** (Encrypted)
+- Value: náhodné heslo z password manageru, ideálně 28–40 znaků
+- Environment: **Production**. Pro Preview totéž, jen pokud chceš
+  používat náhledové verze; jinak je nechej uzamčené.
+- Uložit a provést nové nasazení aplikace, aby se Secret načetl.
 
-1. Cloudflare D1: vytvořit **samostatnou** databázi `isir-radar`.
-   Nesmí to být stávající `isir-test` ani budoucí `isir-prod`.
-2. Cloudflare Pages: projekt **isir-radar** vytváří automaticky GitHub
-   Actions workflow `radar-pages.yml` přes Cloudflare Pages API. Používáme
-   **Direct Upload z GitHub Actions**, nikoliv Cloudflare Git integration:
-   push změn Radar na `main` automaticky publikuje `radar/public`.
-   - V GitHub Secrets musí být `CLOUDFLARE_PAGES_API_TOKEN` s oprávněním
-     `Account / Cloudflare Pages / Edit` jen pro potřebný Cloudflare účet.
-   - Původní `CLOUDFLARE_API_TOKEN` zůstává pro D1 (nový token nemá být
-     sdílený s crawlerem).
-   - `functions/` se nahrává Wranglerem jako Pages Functions.
-   - Nový projekt se vytváří jen tehdy, když `isir-radar` neexistuje.
-   - U existujícího projektu propojeného s Git integration se tento
-     mechanismus bez výslovného zásahu nepokouší měnit typ nasazení.
-3. D1 databázový binding **DB** v Production a Preview nastavuje
-   automaticky `radar/cloudflare_deploy_setup.py`. Skript odmítne jiné
-   jméno databáze a ověří jurisdikci EU.
-4. Cloudflare Zero Trust -> Access -> Applications: chránit celý projekt;
-   přístup pouze pro svůj e-mail. **Nastavte Access i pro preview deploymenty**,
-   nebo je pro běžné návštěvníky zakažte. Aplikace má navíc server-side
-   ověřování JWT i identity.
-5. Pages -> Settings -> Variables and Secrets (Production/Preview):
-   - `ACCESS_TEAM_DOMAIN`: úplná URL `https://<team>.cloudflareaccess.com`
-   - `ACCESS_AUD`: Audience Tag příslušné Access aplikace
-   - `RADAR_ALLOWED_EMAIL`: jediný povolený e-mail (bez uvozovek)
-6. Po nastavení bindingu a variables spustit nový deployment. Při chybě
-   zabezpečení API ani stránky nebudou dostupné (fail closed).
+Heslo **nedávej do GitHubu, kódu ani do chatu**. Cloudflare ho uchová jako
+Secret, server ho nikdy nevrací a v logu se neobjevuje. Webový prohlížeč zobrazí
+standardní přihlašovací dialog (uživatel `radar`, heslo dle Secretu).
+Doporučujeme správce hesel pro vyplňování na PC i telefonu.
+
+**Omezení:** Je to jednouživatelská verze s jedním sdíleným heslem; nenabízí
+individuální uživatelské účty ani jednorázové přihlášení. Při prozrazení
+hesla ho změň v Cloudflare Secret a znovu nasaď. Server vyžaduje HTTPS,
+blokuje cizí Origin u zápisů a u citlivých odpovědí zakazuje cache, ale
+neobsahuje samostatné omezení počtu pokusů. Proto používej **silné, unikátní
+generované heslo**, ne běžnou frázi.
+
+## Nasazení přes GitHub Actions
+
+1. Cloudflare D1: samostatná existující databáze `isir-radar`, jurisdikce
+   EU. Databáze `isir-test` a `isir-prod` zůstávají nedotčené.
+2. Cloudflare Pages `isir-radar` vytváří workflow `radar-pages.yml` jako
+   Direct Upload přes Wrangler; po změně Radaru na `main` se nasadí automaticky.
+3. GitHub Secrets:
+   - `CLOUDFLARE_PAGES_API_TOKEN`: Cloudflare Pages Edit pro daný účet.
+   - `CLOUDFLARE_API_TOKEN`: původní token s D1 oprávněním, zachovat.
+   - `CLOUDFLARE_ACCOUNT_ID`: existující ID účtu.
+4. `radar/cloudflare_deploy_setup.py` ověřuje databázi EU a D1 binding `DB`
+   ve webu. Když binding existuje, nechává původní nastavení a Secrets nedotčené.
+5. Ověřit přístup na `https://isir-radar.pages.dev/`. Bez Secretu musí být
+   odpověď HTTP 503, s heslem standardní HTTP Basic dialog a při správném
+   přihlášení vlastní přehled.
+6. Stávající crawler se nijak neaktivuje a nerestartuje.
+
 
 ## Import stávajících nálezů z ISIR
 
@@ -97,7 +103,7 @@ periodický crawler jen kvůli importu dat do portálu.**
 ## Technický přehled
 
 - `radar/public/index.html` – český responzivní frontend
-- `functions/_middleware.js` – ověření Cloudflare Access (včetně statiky)
+- `functions/_middleware.js` – ochrana heslem a CSRF kontrola (včetně statiky)
 - `functions/api/properties.js` – filtrovaný katalog, ruční přidání
 - `functions/api/properties/[id].js` – detail a úpravy vlastního hodnocení
 - `radar/schema.sql` – normalizované tabulky
