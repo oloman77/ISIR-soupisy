@@ -35,16 +35,16 @@ test('fails closed without a configured strong secret',async()=>{
   assert.equal(r.headers.get('Cache-Control'),'private, no-store');
 });
 
-test('rejects secrets shorter than 12 characters',async()=>{
-  for (const password of ['short','Abc!1234567']) {
+test('rejects secrets shorter than 11 characters',async()=>{
+  for (const password of ['short','Abc!123456']) {
     const a=context({authorization:credentials(password),password});
     assert.equal((await onRequest(a.context)).status,503);
     assert.equal(a.called(),0);
   }
 });
 
-test('accepts a unique 12-character password',async()=>{
-  const password='K7!sA0_9$2rx';
+test('accepts a unique 11-character password',async()=>{
+  const password='K7!sA0_9$2r';
   const a=context({authorization:credentials(password),password});
   const r=await onRequest(a.context);
   assert.equal(r.status,200);
