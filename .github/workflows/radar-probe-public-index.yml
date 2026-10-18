@@ -1,0 +1,23 @@
+name: Probe public insolvent sale discovery feasibility
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/radar-probe-public-index.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Inspect public sale index (bounded, read only)
+        run: python -m radar.probe_public_index
