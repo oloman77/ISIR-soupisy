@@ -1,0 +1,25 @@
+name: Inspect four ISIR Radar candidate PDFs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/radar-audit-pdfs.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Install PDF text parser
+        run: python -m pip install --disable-pip-version-check pypdf==6.1.1
+      - name: Read only four bounded public ISIR source PDFs
+        run: python -m radar.audit_pdfs
