@@ -31,6 +31,8 @@ jobs:
         run: npm run check:radar
       - name: Verify password protection and write safeguards
         run: npm run check:auth
+      - name: Test property detail reading and saving
+        run: npm run check:detail
       - name: Check browser script syntax
         run: |
           python - <<'PY'
