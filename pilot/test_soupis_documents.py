@@ -2,7 +2,7 @@
 import unittest
 
 from pilot.soupis_documents import (
-    category, choose, execute, safe_pdf_url, cadastral_names, SELECT_CONTROL,
+    category, choose, execute, safe_pdf_url, cadastral_names, page_asset_evidence, SELECT_CONTROL,
     SELECT_SOUPIS
 )
 
@@ -66,6 +66,20 @@ class SelectionTests(unittest.TestCase):
             "list vlastnictví 456.", mapping)
         self.assertIn("zruc nad sazavou",correct)
         self.assertFalse(cadastral_names("Adresa Zruč nad Sázavou",mapping))
+
+    def test_page_level_prevents_cross_page_false_link(self):
+        mapping={"Zruč nad Sázavou":{("Kutná Hora","Zruč nad Sázavou")}}
+        a=page_asset_evidence("katastrální území Zruč nad Sázavou",mapping,1)
+        b=page_asset_evidence("parcela č. 123/4",mapping,2)
+        self.assertEqual(a["target_district_mentions"],["Kutná Hora"])
+        self.assertFalse(a["ku_parcel_same_page"])
+        self.assertFalse(b["target_ku_parcel_same_page"])
+        c=page_asset_evidence(
+            "katastrální území Zruč nad Sázavou, parc. č. 123/4, LV 28",
+            mapping,3)
+        self.assertTrue(c["target_ku_parcel_same_page"])
+        self.assertEqual(c["parcels_mentioned"],["123/4"])
+        self.assertIn("28",c["lv_mentioned"])
 
     def test_pilot_does_not_automatically_claim_estate_asset_or_modify_db(self):
         data={"updated_at":"archive","items":[
