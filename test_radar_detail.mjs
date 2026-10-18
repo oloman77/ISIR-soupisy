@@ -18,6 +18,7 @@ function fixture() {
           throw Error('Unexpected SELECT');
         }
       }; }
+      }; 
     },
     async batch(statements){
       for(const s of statements)seen.push(s);
