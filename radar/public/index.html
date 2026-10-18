@@ -192,7 +192,7 @@ async function openDetail(id){
   show();$('drawerTitle').textContent='Načítám…';
   $('newForm').hidden=true;$('editForm').hidden=true;$('more').hidden=true;$('drawerError').style.display='none';
   try{
-    const data=await api('/properties/'+encodeURIComponent(id)),p=data.property;
+    const data=await api('/property?id='+encodeURIComponent(id)),p=data.property;
     state.selected=id;
     $('drawerTitle').textContent=p.title_override||p.title;
     $('drawerSubtitle').textContent=[p.district_override||p.district||'Okres neurčen',p.municipality,p.cadastral_territory].filter(Boolean).join(' · ');
@@ -240,7 +240,7 @@ $('editForm').addEventListener('submit',async e=>{
     note:$('editNote').value
   };
   const btn=$('save');btn.disabled=true;$('drawerError').style.display='none';
-  try{await api('/properties/'+encodeURIComponent(state.selected),{method:'PATCH',body:JSON.stringify(payload)});
+  try{await api('/property?id='+encodeURIComponent(state.selected),{method:'PATCH',body:JSON.stringify(payload)});
     $('saveState').textContent='✓ Uloženo';await load();}catch(err){error(err.message);}finally{btn.disabled=false;}
 });
 $('newForm').addEventListener('submit',async e=>{
