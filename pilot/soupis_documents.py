@@ -131,6 +131,31 @@ def cadastral_names(text,mapping):
                 break
     return found
 
+def page_asset_evidence(text,mapping,page_number):
+    """Correlate cadastral, parcel and LV mentions on the same PDF page.
+
+    These are leads for human review, never proof that a listed parcel
+    belongs to the debtor or has been offered for sale.
+    """
+    names=cadastral_names(text,mapping)
+    districts=sorted({district for pairs in names.values()
+                      for district,_ in pairs})
+    parcel_mentions=sorted(set(PARCEL.findall(text)))[:25]
+    lv_mentions=sorted(set(LV.findall(text)))[:15]
+    target_districts=sorted(set(districts)&TARGETS)
+    return {
+      "page":page_number,
+      "cadastral_names":sorted(names)[:12],
+      "districts_mentioned":districts,
+      "target_district_mentions":target_districts,
+      "parcels_mentioned":parcel_mentions,
+      "lv_mentioned":lv_mentions,
+      "ku_parcel_same_page":bool(names and parcel_mentions),
+      "target_ku_parcel_same_page":bool(target_districts and parcel_mentions),
+      "inventory_phrase":bool(INVENTORY_TEXT.search(text)),
+    }
+
+
 def pdf_text_probe(row,mapping,ocr_budget):
     import subprocess
     import tempfile
@@ -173,9 +198,10 @@ def pdf_text_probe(row,mapping,ocr_budget):
                     except (OSError,subprocess.TimeoutExpired,subprocess.CalledProcessError):
                         item["ocr_error_pages"]=item.get("ocr_error_pages",0)+1
         document="\n".join(alltext)
-        names=cadastral_names(document,mapping)
-        districts=sorted({district for pairs in names.values()
-                          for district,municipality in pairs})
+        pages=[page_asset_evidence(txt,mapping,i+1)
+               for i,txt in enumerate(alltext)]
+        unique_names=sorted({name for p in pages for name in p["cadastral_names"]})
+        districts=sorted({d for p in pages for d in p["districts_mentioned"]})
         targets=sorted(set(districts)&TARGETS)
         item.update({
           "status":"ok",
@@ -185,10 +211,15 @@ def pdf_text_probe(row,mapping,ocr_budget):
           "pdf_inventory_phrase":bool(INVENTORY_TEXT.search(document)),
           "parcel_mentions":len(PARCEL.findall(document)),
           "lv_mentions":len(LV.findall(document)),
-          "cadastral_names_count":len(names),
-          "cadastral_names":sorted(names)[:10],
+          "cadastral_names_count":len(unique_names),
+          "cadastral_names":unique_names[:10],
           "districts_mentioned":districts,
           "target_district_mentions":targets,
+          "page_level_evidence":[p for p in pages if
+              p["cadastral_names"] and (p["parcels_mentioned"] or p["lv_mentioned"])][:25],
+          "pages_with_ku_and_parcel":sum(p["ku_parcel_same_page"] for p in pages),
+          "pages_with_target_ku_and_parcel":sum(
+              p["target_ku_parcel_same_page"] for p in pages),
           "evidence_level":"UNVERIFIED_DOCUMENT_MENTION",
         })
     except Exception as exc:
