@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "check:radar": "node --check functions/_middleware.js && node --check functions/api/properties.js && node --check 'functions/api/properties/[id].js'",
-    "check:auth": "node --test test_radar_auth.mjs"
+    "check:radar": "node --check functions/_middleware.js && node --check functions/api/properties.js && node --check 'functions/api/properties/[id].js' && node --check functions/api/property.js",
+    "check:auth": "node --test test_radar_auth.mjs",
+    "check:detail": "node --test test_radar_detail.mjs"
   }
 }
