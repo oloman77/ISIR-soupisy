@@ -44,10 +44,10 @@ def main():
                 if not txt.strip():continue
                 matches=[]
                 for m in relevant.finditer(txt):
-                    if len(matches)>=18:break
+                    if len(matches)>=30:break
                     a=max(0,m.start()-130);b=min(len(txt),m.end()+320)
                     sample=re.sub(r"\s+"," ",txt[a:b])
-                    if any(abs(m.start()-x[0])<110 for x in matches):continue
+                    if any(abs(m.start()-x[0])<180 for x in matches):continue
                     matches.append((m.start(),sample))
                 summary.append({"file":n,"chars":len(txt),
                        "relevant_excerpt_count":len(matches),
@@ -56,5 +56,5 @@ def main():
             except Exception as exc:
                 summary.append({"file":n,"error":type(exc).__name__})
         print("OFFICIAL_WSDP31_STRUCTURE_AND_TERMS")
-        print(json.dumps(summary[:55],ensure_ascii=False,indent=2))
+        print(json.dumps([x for x in summary if "/ws3_1/wsdp/" in x["file"]],ensure_ascii=False,indent=2))
 if __name__=="__main__":main()
