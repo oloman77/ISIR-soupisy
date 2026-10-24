@@ -23,6 +23,19 @@ Požadované výstupy: katastrální území (ideálně kód), parcela/jednotka 
 
 Vedle počtu záznamů měřit **precision** (podíl správných pozitivních nálezů), **recall/úplnost** (podíl zachycených relevantních případů z ručně ověřeného kontrolního vzorku), podíl doložených lokalit, cenu/čas na použitelný nález, zpoždění od zveřejnění události a reálnou obchodní využitelnost. Dosud **nemáme** validovanou celkovou přesnost ani úplnost; starší uváděná procenta jsou pouze hypotézy, ne výsledky.
 
+### Princip 80/20: jednoduchost před složitostí (rozhodnutí 24. 10. 2026)
+
+**Pracovní zásada pro oba chaty ISIR:** Nejdříve hledej nejmenší, nejlevnější a nejrychlejší způsob, jak ověřit obchodní hodnotu hypotézy. Paretovo pravidlo 80/20: soustřeďme se na malou část práce, která přináší většinu výsledku.
+
+- **Nejdřív obchodní otázka, potom technologie:** jeden reálný případ a jednoduchý důkaz mají přednost před složitým crawlerem, infrastrukturu či velkým backfillem.
+- **Malé, měřitelné testy:** stanov předem, co musí experiment potvrdit/vyvrátit, kolik práce stojí a kdy jej ukončíme.
+- **Ochota změnit směr:** když důkazy chybí, postup se komplikuje nebo klesá přínos, zjednodušit, zastavit či změnit hypotézu; neobhajovat utopené náklady.
+- **Kritické myšlení:** oddělovat fakta, domněnky a marketingová tvrzení. Aktivně hledat protiargumenty a levnější alternativy.
+- **Nadšení až po důkazu:** teprve když najdeme správný, ověřený a obchodně životaschopný směr, dotáhneme technickou kvalitu, automatizaci a provoz naplno.
+- **Ochrana hodnoty:** při změně směru nic zbytečně nemazat; zachovat funkční části, historická data a uživatelská hodnocení.
+
+**Praktická otázka při každém dalším rozhodnutí:** „Jaký nejjednodušší test nám nyní dá nejvíc důkazů o reálné obchodní hodnotě — a co zatím vůbec nemusíme stavět?“
+
 ## 2. Organizace spolupráce
 
 - **01 | Strategie & analýza**: právně a obchodně relevantní signály, zdroje, číselníky, metodika, rizika, piloty, měřítka kvality, rozhodnutí.
