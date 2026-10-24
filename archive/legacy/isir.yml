@@ -1,3 +1,8 @@
+# ARCHIV: původní aktivní workflow (stav na main k 24. 10. 2026)
+# Tento soubor je ZÁMĚRNĚ MIMO .github/workflows/, GitHub Actions jej nevykonává.
+# Nepřesouvat zpět bez samostatného schválení nové strategie, kontroly dat a provozní kapacity.
+# Původní spuštění každých 30 minut a zapisování do docs/results.json NEOBNOVOVAT samovolně.
+
 name: ISIR crawler + Pages
 
 on:
