@@ -55,6 +55,37 @@ def main():
                        "tag_operations":sorted(set(re.findall(r'<(?:wsdl:)?operation\s+name=["\']([^"\']+)',txt)))[:100]})
             except Exception as exc:
                 summary.append({"file":n,"error":type(exc).__name__})
+        # Extract exact WSDP 3.1 request field trees from the OFFICIAL XSD.
+        from xml.etree import ElementTree as ET
+        targets=[
+          n for n in filenames if n.endswith((
+            "/sestavy_v3_1.xsd","/vyhledat_v3_1.xsd",
+            "/baseTypes_v3_1.xsd"))]
+        field_reports=[]
+        for filename in targets:
+            rootxml=ET.fromstring(z.read(filename))
+            for el in rootxml.iter():
+                name=el.attrib.get("name","")
+                if not (name and any(x in name.casefold() for x in
+                    ("generujprehledvlastnictvi","generujevidencipravproosobu",
+                     "najdiosrequest","najdios","sestavybasetype",
+                     "typopravnenehosubjektu","rctype"))):
+                    continue
+                if not (name.endswith("RequestType") or name in
+                    ("SestavyBaseType","TypOpravnenehoSubjektuSestavyType","RcType")):
+                    continue
+                fields=[]
+                for child in el.iter():
+                    if child is el:continue
+                    tag=child.tag.rsplit("}",1)[-1]
+                    if tag not in ("element","group","choice","sequence","attribute"):continue
+                    fields.append({"tag":tag,"name":child.attrib.get("name"),
+                        "ref":child.attrib.get("ref"),"type":child.attrib.get("type"),
+                        "min":child.attrib.get("minOccurs")})
+                field_reports.append({"file":filename.split("/")[-1],
+                    "request_type":name,"fields":fields[:65]})
+        print("OFFICIAL_WSDP31_EXACT_REQUEST_FIELDS")
+        print(json.dumps(field_reports,ensure_ascii=False,indent=2))
         print("OFFICIAL_WSDP31_STRUCTURE_AND_TERMS")
         print(json.dumps([x for x in summary if "/ws3_1/wsdp/" in x["file"]],ensure_ascii=False,indent=2))
 if __name__=="__main__":main()
