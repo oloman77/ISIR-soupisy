@@ -4,7 +4,7 @@ No SOAP, PDF, D1, private data, crawler or external providers.
 """
 from urllib.request import Request,urlopen
 import json
-from pilot.metadata_7d_live import CATALOG,normalize
+from pilot.metadata_7d_live import CATALOG,normalize,official_catalog
 
 def main():
     import xlrd
@@ -24,8 +24,20 @@ def main():
             "soupis","majetk","zpen","drazb","oprava","dopln")):
             if len(matches)<110:matches.append([i,values])
     print("OFFICIAL ISIR CATALOG XLS STRUCTURAL PROBE; GET ONLY")
+    result,entries=official_catalog()
+    if not result.get("loaded") or result["verified_code_entries"]<950:
+        raise RuntimeError("Official event catalog codes not parsed")
+    checked={k:sorted(entries.get(k,set())) for k in
+             ["636","63","124","195","563","593","453"]}
+    relevant=[r for r in result.get("soupis_and_property_related_catalog_codes",[])
+              if any(word in normalize(r["official_label"]) for word in (
+                  "soupis", "zpen", "majetkov"))]
     print(json.dumps({"sheet":sh.name,"row_count":sh.nrows,
-        "column_count":sh.ncols,"first_rows":rows,
-        "matched_relevant_rows_capped":matches},ensure_ascii=False,indent=2))
+        "column_count":sh.ncols,"first_rows":rows[:3],
+        "catalog_parsed_code_count":result["verified_code_entries"],
+        "obsolete_code_count":result["obsolete_code_count"],
+        "live_observed_codes_and_original_soupis_example":checked,
+        "relevant_official_event_codes":relevant},
+        ensure_ascii=False,indent=2))
 
 if __name__=="__main__":main()
