@@ -2,7 +2,7 @@ name: One-time historical early assets and WSDP 3.1 documentation audit
 
 on:
   pull_request:
-    types: [opened]
+    types: [opened, synchronize]
     paths:
       - 'pilot/early_asset_case_study_20261024.py'
       - 'pilot/wsdp31_docs_readonly_20261024.py'
