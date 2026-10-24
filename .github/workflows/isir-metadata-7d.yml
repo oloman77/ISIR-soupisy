@@ -1,0 +1,53 @@
+name: ISIR seven-day metadata pilot (read only, limited)
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    paths:
+      - 'pilot/metadata_7d_live.py'
+      - 'pilot/test_metadata_7d_live.py'
+      - '.github/workflows/isir-metadata-7d.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: isir-seven-day-metadata-readonly
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Offline coverage and safety tests
+        run: python -m unittest -v pilot.test_metadata_7d_live
+
+  one_time_live_sample:
+    # Read-only pilot runs ONLY when the PR is first opened, not on pushes
+    # or on main. A single job makes exactly two SOAP calls, 10m apart.
+    if: github.event.action == 'opened'
+    needs: validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install local legacy XLS decoder (no other services)
+        run: python -m pip install --disable-pip-version-check xlrd==2.0.2
+      - name: Inspect official XLS and up to 800 recent action IDs
+        run: python -m pilot.metadata_7d_live
+      - name: Save anonymized JSON metrics and ALL completeness limitations
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: isir-7day-metadata-partial-or-full
+          path: isir-metadata-7d-report.json
+          if-no-files-found: warn
+          retention-days: 14
