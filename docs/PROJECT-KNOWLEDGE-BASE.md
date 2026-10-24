@@ -1,6 +1,6 @@
 # ISIR — společná znalostní báze projektu
 
-> **Stav zpracování:** návrh k věcné kontrole, 24. 10. 2026.  
+> **Stav zpracování:** 24. 10. 2026 – konsolidováno a technicky ověřeno proti repozitáři; historické chaty a jejich úplný obsah nejsou z GitHubu přímo dostupné, proto mohou obsahovat další dosud nezapsané souvislosti. Při novém zjištění dokument průběžně opravovat.  
 > **Účel:** společný výchozí bod pro chaty „01 | Strategie & analýza“ a „02 | Vývoj & provoz“.  
 > **Zdroj pravdy o kódu a provozu:** aktuální GitHub, workflow a ověřená data; tato stránka je rozcestník, nikoli náhrada technické dokumentace.
 >
@@ -38,7 +38,7 @@ Vedle počtu záznamů měřit **precision** (podíl správných pozitivních n�
 - [`crawler.py`](../crawler.py): SOAP služba `https://isir.justice.cz:8443/isir_public_ws/IsirWsPublicService`, posun po ID událostí; ukládá datum, spisovou značku, `typ_udalosti`, `popis_udalosti`, poznámku a `dokument_url`. Součástí je OCR pro skeny, detekce slovních signálů nemovitostí a orientační geografické mapování.
 - [`data/state.json`](../data/state.json) je **historický snímek**, jeho poslední zaznamenaný běh je **17. 9. 2026**. Z něj nelze usuzovat, že je systém dnes synchronizován s ISIR.
 - [`docs/results.json`](results.json) je starší veliký datový archiv, při kontrole GitHubu přibližně **103 MB**. Nejde o vhodnou budoucí provozní databázi.
-- [`.github/workflows/isir.yml`](../.github/workflows/isir.yml) stále **obsahuje** `schedule: "*/30 * * * *"`, 90denní okno a až 500 PDF na běh. Existence harmonogramu v YAML **není důkazem aktivního běhu**. Před jakýmkoli zásahovým rozhodnutím zjistit skutečný stav workflow v GitHub Actions. Nerozběhnout jej jen kvůli tomuto projektu.
+- **Původní automatizace byla k 24. 10. 2026 zakonzervována:** aktivní `.github/workflows/isir.yml` odstraněn a jeho původní obsah uložen v [`archive/legacy/isir.yml`](../archive/legacy/isir.yml). Původní definice spouštěla každý půlhodinový běh (`*/30 * * * *`), 90denní okno a až 500 PDF na běh. Změna ruší právě tento plánovaný/ručně spustitelný workflow; neodstraňuje kód, data ani piloty. Obnova vyžaduje nové schválení, nikoliv pouhý návrat starého YAML. Viz [konzervační postup](../archive/legacy/README.md).
 - `crawler.py` používá u časti dokumentů slovní `SOUPIS_RX`; samotný oficiální číselník typů událostí dosud netvoří ověřený úplný prioritizační filtr. Čtení PDF v původní architektuře může být blokováno historickou frontou.
 
 ### 3.2 ISIR Radar
@@ -98,7 +98,7 @@ Samostatný projekt [`oloman77/KN-Explorer`](https://github.com/oloman77/KN-Expl
 - **Lokalita:** kde se lokalita skutečné majetkové položky liší od adresy dlužníka, soudu, správce nebo zajištění jiného vlastníka? Více parcel / krajů v jednom dokumentu nevyhodnocovat jedním nevysvětleným krajem.
 - **Identita případu a nemovitosti:** stabilní párování úplné spisové značky, aktualizovaných dokumentů a jednotlivých parcel; zamezit vícenásobným provizorním „nemovitostem“ pro jeden majetek.
 - **Aktuálnost:** vyřazení majetku, sporné položky, změna prodejního záměru, již uskutečněný prodej; určit režim pozdějšího sledování již nalezených řízení.
-- **Provoz:** ověřit, zda je starý `isir.yml` skutečně vypnut nebo jen neúspěšný; zda Cloudflare Radar funguje a D1 odpovídá. Nedělat tento provozní audit automaticky součástí metadata pilota.
+- **Provoz:** poslední dohledaný běh starého crawleru v GitHub Actions nastal **18. 9. 2026** (selhal); historický UI stav zapnuto/vypnuto nebyl přímo ověřen. Jeho workflow nyní archivujeme mimo aktivní `.github/workflows`. Dále je třeba při provozním auditu samostatně prověřit živý Radar a D1; nepovažovat úspěšnou starší GitHub Action za důkaz jejich aktuálního stavu.
 - **Veřejná osobní data a licence:** minimalizovat ukládání osobních údajů, nepublikovat neveřejné poznámky, prověřovat právně přípustné zdroje a podmínky API.
 
 ## 8. Pravidla pro změny, aby se neopakovala minulost
@@ -122,7 +122,7 @@ V chatu „01 | Strategie & analýza“ věcně potvrdit:
 - [ ] Je jasný další krok: **sedmidenní metadata pilot bez PDF a bez DB změn**, potom malý ověřovací PDF vzorek.
 - [ ] Nechybí klíčové poučení ze starších diskusí (geografie, velká fronta, OCR, weby správců, dražby, Cloudflare/D1).
 
-**Až po odsouhlasení:** archivovat staré chaty; **nemazat** je. Archivovaná konverzace zůstává použitelná pro dohledání původních souvislostí. Tento dokument postupně aktualizovat po **ověřených** rozhodnutích a experimentech, ne po každé dílčí debatě.
+**Archivaci chatů lze po této konsolidaci provést; nemažte je.** Dokument vznikl z dostupné historie a repozitáře, ne z kompletního exportu všech konverzací. Pokud se později objeví opomenutá skutečnost, doplnit ji bez nutnosti znovu aktivovat starý chat. Archivovaná konverzace zůstává použitelná pro dohledání původních souvislostí. Tento dokument postupně aktualizovat po **ověřených** rozhodnutích a experimentech, ne po každé dílčí debatě.
 
 ---
 
