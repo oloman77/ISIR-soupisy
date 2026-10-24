@@ -101,20 +101,33 @@ def official_catalog():
         result["loaded"]=True
         result["sheets"]=[{"name":sh.name,"rows":sh.nrows,"cols":sh.ncols}
                           for sh in book.sheets()]
-        # Heuristic extraction only for sheet identification: official
-        # mapping must be manually checked against column headings.
+        # XLS official primary sheet has columns:
+        # "Kód události", "Popis události", "Poznámka", "Poznámka 2"
+        # and codes like I_453 (not bare decimal). Normalize the official
+        # prefix only for comparison against SOAP typUdalosti=453.
+        sh=book.sheet_by_index(0)
+        headings=[str(sh.cell_value(0,c)).strip() for c in range(min(sh.ncols,4))]
+        if headings[:2]!=["Kód události","Popis události"]:
+            raise ValueError("Unexpected official XLS headings")
         entries={}
-        for sh in book.sheets():
-            for r in range(min(sh.nrows,10000)):
-                values=[str(sh.cell_value(r,c)).strip() for c in range(min(sh.ncols,9))]
-                for c in range(min(len(values)-1,3)):
-                    code=values[c]
-                    if re.fullmatch(r"\d+(?:\.0)?",code) and values[c+1] and not values[c+1].isdigit():
-                        k=str(int(float(code)))
-                        entries.setdefault(k,set()).add(values[c+1][:170])
-                        break
-        result["candidate_entries"]=sum(len(v) for v in entries.values())
-        result["candidate_code_sample"]={k:sorted(v)[:2] for k,v in list(entries.items())[:15]}
+        obsolete=set()
+        relevant=[]
+        for r in range(1,sh.nrows):
+            code=str(sh.cell_value(r,0)).strip()
+            label=str(sh.cell_value(r,1)).strip() if sh.ncols>=2 else ""
+            note=str(sh.cell_value(r,2)).strip() if sh.ncols>=3 else ""
+            m=re.fullmatch(r"I_(\d+)",code)
+            if not (m and label):continue
+            k=str(int(m.group(1)))
+            entries.setdefault(k,set()).add(label)
+            if "jiz se nepouziva" in normalize(note):
+                obsolete.add(k)
+            if re.search(r"soupis|majetkov|zpen[eě]z|drazb|prodej",normalize(label)):
+                relevant.append({"code":k,"official_label":label[:180],
+                                 "obsolete":k in obsolete})
+        result["verified_code_entries"]=len(entries)
+        result["obsolete_code_count"]=len(obsolete)
+        result["soupis_and_property_related_catalog_codes"]=relevant[:140]
         return result,entries
     except Exception as exc:
         result["error_type"]=type(exc).__name__
